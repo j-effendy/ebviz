@@ -3,6 +3,12 @@ library(scales)
 library(colorspace)
 
 # Qualitative
+
+## Hue is increasing in a very smooth pattern. More prefer to use this for
+## sequential for ordering
+## for qualitative, we need more variation in the hue line. Need to avoid
+## implicit ordering
+
 scale_fill_quokka <- function(){
   color_palette <- colorspace::qualitative_hcl(6,
                                                h = c(0, 360),
@@ -49,6 +55,8 @@ scale_fill_snake <- function(){
 }
 
 # Diverging
+
+## dingo is not even, 3 blue, 1 grey, 2 recs. Need to be even.
 scale_fill_dingo <- function(){
   color_palette <- colorspace::diverge_hcl(7,
                                            h = c(260, 0),
@@ -60,8 +68,9 @@ scale_fill_dingo <- function(){
                  scales::manual_pal(values = color_palette))
 }
 
+## Maybe change yellow to orange. Yellow tends to fades.
 scale_fill_dolphin <- function(){
-  color_palette <- colorspace::diverging_hcl(n = 6,
+  color_palette <- colorspace::diverging_hcl(n = 7,
                                              h = c(265, 80),
                                              c = 80,
                                              l = c(70, 95),
