@@ -14,6 +14,8 @@ library(dataviz)
 
 # Introduction (300)
 
+According to Cleveland and McGill [-@cleveland1985graphical], data visualisations are effective tools for communicating quantitative information and presenting scientific data.
+
 The aim of this project is to create a package that can produce figures that
 are aesthetically cohesive for a textbook in an automatic and reproducible
 manner. As these graphs are generally aimed to be consumed by other people, it
@@ -24,6 +26,11 @@ There are two styles that will be proposed for this project. These styles
 are built upon existing themes from `ggplot2`.
 
 # Themes (1500)
+
+"An effective design presents information in an organized manner, making it easy for the
+viewer to understand the roles and the relationships between the elements. For example, all of the contextual information (grid, axis, labels, borders) in
+Figure 1 are shades of gray, while the data is brightly colored, which makes the data the
+focus of attention." [-@stone2006choosing]
 
 # theme_wombat
 
@@ -223,7 +230,11 @@ to select a color palette as a poor set of colors may hinder readers' ability
 to understand the purpose of visualizations.
 
 Stone [-@stone2006choosing] mentioned that differentiating one element from one
-another is the most important use of color in data visualization. 
+another is the most important use of color in data visualization.
+
+## Principle of Color
+
+
 
 ## Sequential
 
