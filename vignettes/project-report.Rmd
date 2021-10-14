@@ -227,12 +227,26 @@ comparison of faceted plot between these two themes.
 One of the most important elements in data visualization. When used well, 
 it can enhance the quality of information being presented.  It is essential
 to select a color palette as a poor set of colors may hinder readers' ability
-to understand the purpose of visualizations.
+to understand the purpose of visualizations. Unfortunately, it is often the
+case that color choice is sub-optimal as there is little guidance on how to
+select effective colour palette for graphs [@zeileis2009escaping].
 
 Stone [-@stone2006choosing] mentioned that differentiating one element from one
 another is the most important use of color in data visualization.
 
-## Principle of Color
+## Color Model
+
+According to Zeileis, Hornik, and Murrell [@zeileis2009escaping], Red-Green-Blue
+(RGB) color model is typically used by software packages. However, this color
+model was developed to generate color on computer screen as opposed to developed
+in corresponds to human perception of color. Zeileis, Hornik, and Murrell further
+stated that it is practically impossible for a human to control the perceptual
+properties of a color within this color model as there is no single dimension
+that relates to hue or brightness of a color
+
+One color model that was developed based on human perception is 
+Hue-Chroma-Luminance  (HCL) color model. Hue corresponds to dominant wavelength, 
+chroma to colourfulness, luminance to brightness [@ihaka2003colour].
 
 
 
