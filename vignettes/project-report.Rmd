@@ -1,0 +1,238 @@
+---
+title: "Project Report"
+author: "Jimmy Effendy"
+date: "13/10/2021"
+output: bookdown::pdf_document2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(tidyverse)
+library(dataviz)
+```
+
+# Introduction (300)
+
+The aim of this project is to create a package that can produce figures that
+are aesthetically cohesive for a textbook in an automatic and reproducible
+manner. As these graphs are generally aimed to be consumed by other people, it
+is important for the aesthetics to be engaging. More importantly, the style of 
+the graphs needs to make it easier for users to compare and explore data.
+
+There are two styles that will be proposed for this project. These styles
+are built upon existing themes from `ggplot2`.
+
+# Themes (1500)
+
+# theme_wombat
+
+```{r wombat-scatter, fig.cap="A scatter plot example with 'theme_wombat()'"}
+w1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
+  geom_point(size=3) + 
+  labs(title="Scatter Plot",
+       subtitle = "theme_wombat()",
+       caption = "Data: mtcars") +
+  #scale_y_continuous(expand = c(0.03,0.03)) + 
+  #scale_x_continuous(expand = c(0.01,0.01)) +
+  theme_wombat()
+
+w1
+```
+
+The first figure aesthetic variant is called `theme_wombat()`. Figure 
+\@ref(fig:wombat-scatter) shows a scatter plot that has been applied with 
+`theme_wombat()`. This theme is built upon ggplot2 basic theme `theme_bw()`. One 
+of the main goals of this style is to reduce clutter of plots. This is achieved 
+by:
+
+* Removing minor grid lines in the x and y axis
+* Maximising white space to improve legibility
+* Removing extra space around the plot
+* Move legend position to the bottom of the plot
+* Having a bigger plot title, subtitle, and axis title
+
+Side by side comparison of scatter plots, bar charts, and line charts between
+`theme_wombat` and `theme_bw()` can be found in figure \@ref(fig:wombat-comparison).
+Figure \@ref(fig:wombat-facet) shows the comparison of faceted plot between
+these two themes.
+
+```{r wombat-comparison, fig.cap="Comparison between theme_wombat (left) and theme_bw (right).", fig.height=14, fig.width=11}
+w2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
+  geom_bar() + 
+  scale_y_continuous(expand = c(0,0)) + 
+  scale_x_discrete(expand = c(0,0)) +
+  labs(title="Bar Plot",
+       subtitle = "theme_wombat()",
+       caption = "Data: mtcars") +
+  theme_wombat()
+
+w3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
+  geom_line() +
+   scale_y_continuous(expand = c(0,0)) + 
+   scale_x_date(expand = c(0,0)) +
+  labs(title = "Line Plot",
+       subtitle = "theme_wombat()",
+       caption = "Data: economics_long") +
+  theme_wombat()
+
+bw1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
+  geom_point(size=3) + 
+  labs(title="Scatter Plot",
+       subtitle = "theme_bw()",
+       caption = "Data: mtcars") +
+  theme_bw()
+
+bw2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
+  geom_bar() + 
+  labs(title="Bar Plot",
+       subtitle = "theme_bw()",
+       caption = "Data: mtcars") +
+  theme_bw()
+
+bw3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
+  geom_line() +
+  labs(title = "Line Plot",
+       subtitle = "theme_bw()",
+       caption = "Data: economics_long") +
+  theme_bw()
+
+(w1 + bw1) / (w2 + bw2) / (w3 + bw3)
+```
+
+```{r wombat-facet, fig.height=14, fig.width=11, fig.cap="Comparison between theme_wombat (top) and theme_bw (bottom) for faceted plot."}
+w4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
+  facet_wrap(~ class,scales="free")+
+  labs(title="Plot With Facets",
+       subtitle = "theme_wombat()",
+       caption = "Data: mpg") + 
+  theme_wombat()
+
+bw4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
+  facet_wrap(~ class,scales="free")+
+  labs(title="Plot With Facets",
+       subtitle = "theme_bw()",
+       caption = "Data: mpg") + 
+  theme_bw()
+
+w4 / bw4
+```
+
+\newpage
+
+# theme_seagull
+
+```{r seagull-scatter, fig.cap="A scatter plot example with 'theme_seagull()'"}
+s1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
+  geom_point(size=3) + 
+  labs(title="Scatter Plot",
+       subtitle = "theme_seagull()",
+       caption = "Data: mtcars") +
+  #scale_y_continuous(expand = c(0.03,0.03)) + 
+  #scale_x_continuous(expand = c(0.01,0.01)) +
+  theme_seagull()
+
+s1
+```
+
+Another proposed figure style is `theme_seagull()`. An example of plot applied
+with this style is shown in figure \@ref(fig:seagull-scatter). This theme is built
+based on ggplot2 `theme_minmal()`. In comparison to `theme_wombat()`, this style
+reduce clutter within a plot even further. The following adjustments are made
+to the original `theme_minimal()`:
+
+* Adding a major grid line on the x axis
+* Removing minor grid lines on the x and y axis
+* Maximising white space to improve legibility
+* Removing extra space around the plot
+* Move legend position to the bottom of the plot
+* Having a bigger plot title, subtitle, and axis title
+
+```{r seagull-comparison, fig.cap="Comparison between theme_seagull (left) and theme_minimal (right).", fig.height=14, fig.width=11}
+s2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
+  geom_bar() + 
+  scale_y_continuous(expand = c(0,0)) + 
+  scale_x_discrete(expand = c(0,0)) +
+  labs(title="Bar Plot",
+       subtitle = "theme_seagull()",
+       caption = "Data: mtcars") +
+  theme_seagull()
+
+s3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
+  geom_line() +
+  scale_y_continuous(expand = c(0,0)) + 
+  scale_x_date(expand = c(0,0)) +
+  labs(title = "Line Plot",
+       subtitle = "theme_seagull()",
+       caption = "Data: economics_long") +
+  theme_seagull()
+
+m1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
+  geom_point(size=3) + 
+  labs(title="Scatter Plot",
+       subtitle = "theme_minimal()",
+       caption = "Data: mtcars") +
+  theme_minimal()
+
+m2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
+  geom_bar() + 
+  labs(title="Bar Plot",
+       subtitle = "theme_minimal()",
+       caption = "Data: mtcars") +
+  theme_minimal()
+
+m3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
+  geom_line() +
+  labs(title = "Line Plot",
+       subtitle = "theme_minimal()",
+       caption = "Data: economics_long") +
+  theme_minimal()
+
+(s1 + m1) / (s2 + m2) / (s3 + m3)
+```
+
+```{r seagull-facet, fig.height=14, fig.width=11, fig.cap="Comparison between theme_seagull (top) and theme_minimal (bottom) for faceted plot."}
+s4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
+  facet_wrap(~ class,scales="free")+
+  labs(title="Plot With Facets",
+       subtitle = "theme_seagull()",
+       caption = "Data: mpg") + 
+  theme_seagull()
+
+m4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
+  facet_wrap(~ class,scales="free")+
+  labs(title="Plot With Facets",
+       subtitle = "theme_minimal()",
+       caption = "Data: mpg") + 
+  theme_minimal()
+
+s4 / m4
+```
+
+Side by side comparison of scatter plots, bar charts, and line charts between
+`theme_seagull()` and `theme_minimal()` can be found in figure 
+\@ref(fig:seagull-comparison). Figure \@ref(fig:wombat-facet) shows the 
+comparison of faceted plot between these two themes.
+
+
+# Colour Palettes (1500)
+
+One of the most important elements in data visualization. When used well, 
+it can enhance the quality of information being presented.  It is essential
+to select a color palette as a poor set of colors may hinder readers' ability
+to understand the purpose of visualizations.
+
+Stone [-@stone2006choosing] mentioned that differentiating one element from one
+another is the most important use of color in data visualization. 
+
+## Sequential
+
+## Diverging
+
+## Qualitative
+
+# R Package (1500)
+
+## Testing
+
+# Conclusion (300)
