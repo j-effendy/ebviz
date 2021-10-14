@@ -9,11 +9,13 @@ library(colorspace)
 ## for qualitative, we need more variation in the hue line. Need to avoid
 ## implicit ordering
 
+brewer_qualitative <- c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
+
 scale_fill_quokka <- function(){
   color_palette <- colorspace::qualitative_hcl(6,
-                                               h = c(0, 360),
+                                               h = c(-30, -300),
                                                c = 50,
-                                               l = 60)
+                                               l = 75)
   discrete_scale("fill",
                  "quokka",
                  scales::manual_pal(values = color_palette))
@@ -23,7 +25,7 @@ scale_fill_quoll <- function(){
   color_palette <- colorspace::qualitative_hcl(n = 6,
                                                h = c(60, 240),
                                                c = 50,
-                                               l = 70)
+                                               l = 75)
 
   discrete_scale("fill",
                  "quoll",
