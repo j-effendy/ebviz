@@ -27,6 +27,29 @@ are built upon existing themes from `ggplot2`.
 
 # Themes (1500)
 
+## What makes the plot good? (300)
+
+* Why themes? Look at ggthemes (reference).
+
+* Principles of good plots
+
+## Roles of themes in data visualisation (300)
+
+* Focusing on non-data components of the plots
+* For general plots - how to optimize the usability of data
+* Coherence of a unit by using one theme
+
+## Criteria for good themes (300)
+
+## Potential themes (300)
+
+* How did we create the theme?
+
+## Comparing themes (300)
+
+* Compare with each other and basic theme
+* Advantage and disadvantage
+
 "An effective design presents information in an organized manner, making it easy for the
 viewer to understand the roles and the relationships between the elements. For example, all of the contextual information (grid, axis, labels, borders) in
 Figure 1 are shades of gray, while the data is brightly colored, which makes the data the
@@ -224,6 +247,10 @@ comparison of faceted plot between these two themes.
 
 # Colour Palettes (1500)
 
+## Why color is important and what it is use for (300)
+
+* It can be used for representing different variable, etc.
+
 One of the most important elements in data visualization. When used well, 
 it can enhance the quality of information being presented.  It is essential
 to select a color palette as a poor set of colors may hinder readers' ability
@@ -235,6 +262,10 @@ Stone [-@stone2006choosing] mentioned that differentiating one element from one
 another is the most important use of color in data visualization.
 
 ## Color Model
+
+* What potential color models are there?
+* Benefits and disadvantage of each color model
+* Discuss why do we choose HCL
 
 According to Zeileis, Hornik, and Murrell [@zeileis2009escaping], Red-Green-Blue
 (RGB) color model is typically used by software packages. However, this color
@@ -248,13 +279,31 @@ One color model that was developed based on human perception is
 Hue-Chroma-Luminance  (HCL) color model. Hue corresponds to dominant wavelength, 
 chroma to colourfulness, luminance to brightness [@ihaka2003colour].
 
+## Color scale types (300)
 
+### Sequential
 
-## Sequential
+* Can talk about how Brewer did these color palettes
 
-## Diverging
+### Diverging
 
-## Qualitative
+### Qualitative
+
+## Color palette of choice
+
+### Sequential (200)
+
+* How did we choose them?
+* Come from another package?
+* How do we assess them?
+
+* Talk about the HCL plot
+* Talk about the accessibility
+* Talk about how it should match the data
+
+### Diverging (200)
+
+### Qualitative (200)
 
 # R Package (1500)
 
