@@ -13,6 +13,7 @@ brewer_qualitative <- c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
 tol_qualitative <- c("#4477AA", "#EE6677", "#228833", "#CCBB44", "#66CCEE", "#AA3377", "#BBBBBB")
 
 quokka_test <- c("#74CA99", "#93B1EB", "#AB313D", "#93960F")
+quoll_test <- c('#A05DAD', '#F4E646', '#E39E15', '#34CDC4')
 # make chroma and luminance to have patterns (but not the same with the others)
 
 scale_fill_quokka <- function(){
