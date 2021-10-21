@@ -4,33 +4,16 @@ library(colorspace)
 
 # Qualitative
 
-## Hue is increasing in a very smooth pattern. More prefer to use this for
-## sequential for ordering
-## for qualitative, we need more variation in the hue line. Need to avoid
-## implicit ordering
-
-brewer_qualitative <- c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
-tol_qualitative <- c("#4477AA", "#EE6677", "#228833", "#CCBB44", "#66CCEE", "#AA3377", "#BBBBBB")
-
-quokka_test <- c("#74CA99", "#93B1EB", "#AB313D", "#93960F")
-quoll_test <- c('#A05DAD', '#F4E646', '#E39E15', '#34CDC4')
-# make chroma and luminance to have patterns (but not the same with the others)
-
 scale_fill_quokka <- function(){
-  color_palette <- colorspace::qualitative_hcl(6,
-                                               h = c(-30, -300),
-                                               c = 50,
-                                               l = 75)
+  color_palette <- c("#8C01E6", "#93B1EB", "#AB313D", "#D6CA24")
+
   discrete_scale("fill",
                  "quokka",
                  scales::manual_pal(values = color_palette))
 }
 
 scale_fill_quoll <- function(){
-  color_palette <- colorspace::qualitative_hcl(n = 6,
-                                               h = c(60, 240),
-                                               c = 50,
-                                               l = 75)
+  color_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
 
   discrete_scale("fill",
                  "quoll",

@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(tidyverse)
 library(dataviz)
+library(colorspace)
 ```
 
 # Introduction (300)
@@ -83,21 +84,16 @@ most to least accurate is:
 
 ## Criteria for good themes (300)
 
-## Potential themes (300)
-
-* How did we create the theme?
-
-## Comparing themes (300)
-
-* Compare with each other and basic theme
-* Advantage and disadvantage
-
 "An effective design presents information in an organized manner, making it easy for the
 viewer to understand the roles and the relationships between the elements. For example, all of the contextual information (grid, axis, labels, borders) in
 Figure 1 are shades of gray, while the data is brightly colored, which makes the data the
 focus of attention." [-@stone2006choosing]
 
-# theme_wombat
+* Minimise non-data ink as much as possible
+
+## Potential themes (300)
+
+### theme_wombat
 
 ```{r wombat-scatter, fig.cap="A scatter plot example with 'theme_wombat()'"}
 w1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
@@ -124,10 +120,40 @@ by:
 * Move legend position to the bottom of the plot
 * Having a bigger plot title, subtitle, and axis title
 
-Side by side comparison of scatter plots, bar charts, and line charts between
-`theme_wombat` and `theme_bw()` can be found in figure \@ref(fig:wombat-comparison).
-Figure \@ref(fig:wombat-facet) shows the comparison of faceted plot between
-these two themes.
+### theme_seagull
+
+```{r seagull-scatter, fig.cap="A scatter plot example with 'theme_seagull()'"}
+s1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
+  geom_point(size=3) + 
+  labs(title="Scatter Plot",
+       subtitle = "theme_seagull()",
+       caption = "Data: mtcars") +
+  #scale_y_continuous(expand = c(0.03,0.03)) + 
+  #scale_x_continuous(expand = c(0.01,0.01)) +
+  theme_seagull()
+
+s1
+```
+
+Another proposed figure style is `theme_seagull()`. An example of plot applied
+with this style is shown in figure \@ref(fig:seagull-scatter). This theme is built
+based on ggplot2 `theme_minmal()`. In comparison to `theme_wombat()`, this style
+reduce clutter within a plot even further. The following adjustments are made
+to the original `theme_minimal()`:
+
+* Adding a major grid line on the x axis
+* Removing minor grid lines on the x and y axis
+* Maximising white space to improve legibility
+* Removing extra space around the plot
+* Move legend position to the bottom of the plot
+* Having a bigger plot title, subtitle, and axis title
+
+## Comparing themes (300)
+
+### Individual Plots
+
+* Compare with each other and basic theme
+* Advantage and disadvantage
 
 ```{r wombat-comparison, fig.cap="Comparison between theme_wombat (left) and theme_bw (right).", fig.height=14, fig.width=11}
 w2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
@@ -172,53 +198,10 @@ bw3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
 (w1 + bw1) / (w2 + bw2) / (w3 + bw3)
 ```
 
-```{r wombat-facet, fig.height=14, fig.width=11, fig.cap="Comparison between theme_wombat (top) and theme_bw (bottom) for faceted plot."}
-w4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
-  facet_wrap(~ class,scales="free")+
-  labs(title="Plot With Facets",
-       subtitle = "theme_wombat()",
-       caption = "Data: mpg") + 
-  theme_wombat()
-
-bw4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
-  facet_wrap(~ class,scales="free")+
-  labs(title="Plot With Facets",
-       subtitle = "theme_bw()",
-       caption = "Data: mpg") + 
-  theme_bw()
-
-w4 / bw4
-```
-
-\newpage
-
-# theme_seagull
-
-```{r seagull-scatter, fig.cap="A scatter plot example with 'theme_seagull()'"}
-s1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
-  geom_point(size=3) + 
-  labs(title="Scatter Plot",
-       subtitle = "theme_seagull()",
-       caption = "Data: mtcars") +
-  #scale_y_continuous(expand = c(0.03,0.03)) + 
-  #scale_x_continuous(expand = c(0.01,0.01)) +
-  theme_seagull()
-
-s1
-```
-
-Another proposed figure style is `theme_seagull()`. An example of plot applied
-with this style is shown in figure \@ref(fig:seagull-scatter). This theme is built
-based on ggplot2 `theme_minmal()`. In comparison to `theme_wombat()`, this style
-reduce clutter within a plot even further. The following adjustments are made
-to the original `theme_minimal()`:
-
-* Adding a major grid line on the x axis
-* Removing minor grid lines on the x and y axis
-* Maximising white space to improve legibility
-* Removing extra space around the plot
-* Move legend position to the bottom of the plot
-* Having a bigger plot title, subtitle, and axis title
+Side by side comparison of scatter plots, bar charts, and line charts between
+`theme_wombat` and `theme_bw()` can be found in figure \@ref(fig:wombat-comparison).
+Figure \@ref(fig:wombat-facet) shows the comparison of faceted plot between
+these two themes.
 
 ```{r seagull-comparison, fig.cap="Comparison between theme_seagull (left) and theme_minimal (right).", fig.height=14, fig.width=11}
 s2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
@@ -263,6 +246,31 @@ m3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
 (s1 + m1) / (s2 + m2) / (s3 + m3)
 ```
 
+Side by side comparison of scatter plots, bar charts, and line charts between
+`theme_seagull()` and `theme_minimal()` can be found in figure 
+\@ref(fig:seagull-comparison). Figure \@ref(fig:wombat-facet) shows the 
+comparison of faceted plot between these two themes.
+
+### Faceted Plots
+
+```{r wombat-facet, fig.height=14, fig.width=11, fig.cap="Comparison between theme_wombat (top) and theme_bw (bottom) for faceted plot."}
+w4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
+  facet_wrap(~ class,scales="free")+
+  labs(title="Plot With Facets",
+       subtitle = "theme_wombat()",
+       caption = "Data: mpg") + 
+  theme_wombat()
+
+bw4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
+  facet_wrap(~ class,scales="free")+
+  labs(title="Plot With Facets",
+       subtitle = "theme_bw()",
+       caption = "Data: mpg") + 
+  theme_bw()
+
+w4 / bw4
+```
+
 ```{r seagull-facet, fig.height=14, fig.width=11, fig.cap="Comparison between theme_seagull (top) and theme_minimal (bottom) for faceted plot."}
 s4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
   facet_wrap(~ class,scales="free")+
@@ -280,11 +288,6 @@ m4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) +
 
 s4 / m4
 ```
-
-Side by side comparison of scatter plots, bar charts, and line charts between
-`theme_seagull()` and `theme_minimal()` can be found in figure 
-\@ref(fig:seagull-comparison). Figure \@ref(fig:wombat-facet) shows the 
-comparison of faceted plot between these two themes.
 
 
 # Colour Palettes (1500)
@@ -331,9 +334,45 @@ chroma to colourfulness, luminance to brightness [@ihaka2003colour].
 
 ### Qualitative
 
+
+* for qualitative, we need more variation in the hue line. Need to avoid
+* implicit ordering
+* make chroma and luminance to have patterns (but not the same with the others)
+
 ## Color palette of choice
 
 ### Sequential (200)
+
+* Hue is increasing in a very smooth pattern. More prefer to use this for
+* sequential for ordering
+
+```{r seal}
+seal_palette <- colorspace::sequential_hcl(7,
+                                              h = c(0, -100),
+                                              c = c(80,40),
+                                              l = c(40, 75),
+                                              power = c(1,1))
+
+# color spectrum plot
+specplot(seal_palette) 
+# colorblind filter
+pal.safe(seal_palette, main = "seal_palette")
+```
+
+
+```{r snake}
+snake_palette <- colorspace::sequential_hcl(6,
+                                              h = c(250, 90),
+                                              c = c(40, 55),
+                                              l = c(33,98),
+                                              power = c(0.5,1),
+                                              rev = TRUE)
+
+# color spectrum plot
+specplot(snake_palette)
+# colorblind filter
+pal.safe(snake_palette, main = "snake_palette")
+```
 
 * How did we choose them?
 * Come from another package?
@@ -345,7 +384,57 @@ chroma to colourfulness, luminance to brightness [@ihaka2003colour].
 
 ### Diverging (200)
 
+```{r dingo}
+dingo_palette <- colorspace::diverge_hcl(7,
+                                           h = c(260, 0),
+                                           c = 80,
+                                           l = c(30, 90),
+                                           power = 1.5)
+
+# color spectrum plot
+specplot(dingo_palette)
+# colorblind filter
+pal.safe(dingo_palette, main = "dingo_palette")
+```
+
+```{r dolphin}
+dolphin_palette <- colorspace::diverging_hcl(n = 7,
+                                             h = c(265, 45),
+                                             c = 80,
+                                             l = c(70, 95),
+                                             power = c(0.5, 2),
+                                             rev = TRUE)
+
+# color spectrum plot
+specplot(dolphin_palette)
+# colorblind filter
+pal.safe(dolphin_palette, main = "dolphin_palette")
+```
+
 ### Qualitative (200)
+
+```{r other-qualitative}
+brewer_qualitative <- c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
+tol_qualitative <- c("#4477AA", "#EE6677", "#228833", "#CCBB44", "#66CCEE", "#AA3377", "#BBBBBB")
+```
+
+```{r quokka}
+quokka_palette <- c("#8C01E6", "#93B1EB", "#AB313D", "#D6CA24")
+
+# color spectrum plot
+specplot(quokka_palette)
+# colorblind filter
+pal.safe(quokka_palette, main = "quokka_palette")
+```
+
+```{r quoll}
+quoll_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
+
+# color spectrum plot
+specplot(quoll_palette)
+# colorblind filter
+pal.safe(quoll_palette, main = "quoll_palette")
+```
 
 # R Package (1500)
 
