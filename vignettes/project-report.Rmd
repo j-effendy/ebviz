@@ -74,15 +74,44 @@ most to least accurate is:
 * Volume, curvature
 * Shading, color saturation
 
-* Principles of good plots
-
 ## Roles of themes in data visualisation (300)
-* Why themes? Look at ggthemes (reference).
-* Focusing on non-data components of the plots
-* For general plots - how to optimize the usability of data
-* Coherence of a unit by using one theme
+
+Themes in `ggplot` package refers to **non-data** components of data visualizations.
+Themes allow users to customize plot background and title, axis line, ticks and 
+title, legend position, background, and title, gridlines etc. `ggplot` provides 
+complete themes that users can use, such as `theme_bw()` and `theme_minimal()`.
+
+As stated in previous section, customizing themes is imperative in data 
+visualizations as non-data ink impacts readers' ability to comprehend the graph.
+However, maximizing data-ink ratio needs to be done cautiously as components of
+visualizations that provide information can be mistakenly removed.
+
+Give plot examples.
+
+Theme is especially important in a research book where there are many authors
+contribute to the book. Without a set theme, each authors will have their own
+visualization styles for their research. Themes will allow research books to 
+have consistency in their visualizations.
 
 ## Criteria for good themes (300)
+
+Tufte [-@tufte2001visual] introduced the term data-ink in his book. Data-ink
+is defined as a non-redundant ink; it is ink used on a graph that represent
+the underlying data. 
+
+$$
+\begin{aligned}
+Data-ink ratio = \frac{data-ink}{total ink used to print the graphic}
+\end{aligned}
+$$
+
+Five principles of data graphics in relation to data-ink are proposed by Tufte:
+
+* Above all else show the data
+* Maximise the data-ink ratio
+* Erase non-data-ink, within reason
+* Erase redundant data-ink
+* Revise and edit
 
 "An effective design presents information in an organized manner, making it easy for the
 viewer to understand the roles and the relationships between the elements. For example, all of the contextual information (grid, axis, labels, borders) in
@@ -90,6 +119,7 @@ Figure 1 are shades of gray, while the data is brightly colored, which makes the
 focus of attention." [-@stone2006choosing]
 
 * Minimise non-data ink as much as possible
+* For general plots - how to optimize the usability of data
 
 ## Potential themes (300)
 
@@ -398,6 +428,7 @@ pal.safe(dingo_palette, main = "dingo_palette")
 ```
 
 ```{r dolphin}
+# make the purple darker (modify hue)
 dolphin_palette <- colorspace::diverging_hcl(n = 7,
                                              h = c(265, 45),
                                              c = 80,
@@ -426,6 +457,7 @@ specplot(quokka_palette)
 # colorblind filter
 pal.safe(quokka_palette, main = "quokka_palette")
 ```
+Not ideal for Deutan and Protan because some of the colors looked paired.
 
 ```{r quoll}
 quoll_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
@@ -437,6 +469,10 @@ pal.safe(quoll_palette, main = "quoll_palette")
 ```
 
 # R Package (1500)
+
+## Components of R Package
+
+## How dataviz was created
 
 ## Testing
 
