@@ -178,7 +178,8 @@ operator is used to change the elements of the plots. Axis line on the y axis
 is removed, and axis line on the x axis is thicker. Vertical Major grid lines 
 and minor grid lines on both axis are removed. Horizontal major grid lines are
 not removed as they can aid readers to approximate and compare values between
-data points.
+data points. Moreover, legend position, which is originally located to the
+right of the plot, is moved to the bottom of the plot.
 
 "Recently Cleveland (1993a, 1993b) has demonstrated that
 background grids improve perceptual accuracy of extraction and help in making comparisons. 
