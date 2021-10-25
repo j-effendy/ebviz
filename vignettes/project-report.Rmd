@@ -11,6 +11,7 @@ library(ggplot2)
 library(tidyverse)
 library(dataviz)
 library(colorspace)
+library(patchwork)
 ```
 
 # Introduction (300)
@@ -128,9 +129,6 @@ colored, making the data to be the focus of attention [@stone2006choosing]. This
 assists readers to better understand the roles and relationship between different
 elements of the visualizations.
 
-
-* For general plots - how to optimize the usability of data
-
 ## Potential themes (300)
 
 ```{r scatter-grey, fig.cap="A scatter plot example with 'theme_grey()'"}
@@ -173,30 +171,16 @@ s1
 ```
 
 This `ggplot2` theme is built based on `theme_minmal()`. The idea behind this
-theme is to reduce non-data components as much as possible. `%+replace%` 
-operator is used to change the elements of the plots. Axis line on the y axis 
-is removed, and axis line on the x axis is thicker. Vertical Major grid lines 
-and minor grid lines on both axis are removed. Horizontal major grid lines are
-not removed as they can aid readers to approximate and compare values between
-data points. Moreover, legend position, which is originally located to the
-right of the plot, is moved to the bottom of the plot.
-
-"Recently Cleveland (1993a, 1993b) has demonstrated that
-background grids improve perceptual accuracy of extraction and help in making comparisons. 
-The basic question now is how best to produce gentle background grids" [@carr1994using]
-
-Another proposed figure style is `theme_seagull()`. An example of plot applied
-with this style is shown in figure \@ref(fig:seagull-scatter). This theme is built
-based on ggplot2 `theme_minmal()`. In comparison to `theme_wombat()`, this style
-reduce clutter within a plot even further. The following adjustments are made
-to the original `theme_minimal()`:
-
-* Adding a major grid line on the x axis
-* Removing minor grid lines on the x and y axis
-* Maximising white space to improve legibility
-* Removing extra space around the plot
-* Move legend position to the bottom of the plot
-* Having a bigger plot title, subtitle, and axis title
+theme is to reduce non-data components as much as possible by maximizing white 
+space around the plot. `%+replace%` operator is used to change the elements of 
+the plots. Axis line on the y axis is removed, and axis line on the x axis is 
+thicker. Vertical Major grid lines and minor grid lines on both axis are removed. 
+Horizontal major grid lines are not removed as they can aid readers to 
+approximate and compare values between data points. The grid lines, as shown in 
+figure \@ref(fig:seagull-scatter), are visually muted so that it does not 
+distract the data points. Cleveland [-@cleveland1993visualizing] found that 
+grid lines enhance readers' perceptions in making visual comparison and accuracy 
+of information extraction. 
 
 ### theme_wombat
 
@@ -206,35 +190,28 @@ w1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) +
   labs(title="Scatter Plot",
        subtitle = "theme_wombat()",
        caption = "Data: mtcars") +
-  #scale_y_continuous(expand = c(0.03,0.03)) + 
-  #scale_x_continuous(expand = c(0.01,0.01)) +
   theme_wombat()
 
 w1
 ```
 
-`theme_wombat()` is developed based on `ggplot2` basic theme `theme_bw`.
-
-The first figure aesthetic variant is called `theme_wombat()`. Figure 
-\@ref(fig:wombat-scatter) shows a scatter plot that has been applied with 
-`theme_wombat()`. This theme is built upon ggplot2 basic theme `theme_bw()`. One 
-of the main goals of this style is to reduce clutter of plots. This is achieved 
-by:
-
-* Removing minor grid lines in the x and y axis
-* Maximising white space to improve legibility
-* Removing extra space around the plot
-* Move legend position to the bottom of the plot
-* Having a bigger plot title, subtitle, and axis title
+Another potential theme for `dataviz` package is called `theme_wombat()`.
+This theme is developed  based on `ggplot2` basic theme `theme_bw()`. 
+`%+replace%` operator is also used to develop `theme_wombat()`. Minor grid 
+lines on both axis are removed for this theme. Similar to `theme_seagull()`, 
+`theme_wombat()` has white background and light grey grid lines.
 
 ## Comparing themes (300)
 
-### Individual Plots
+This section is going to compare the potential themes `theme_seagull()` and
+`theme_wombat()` with `ggplot2` built in theme, `theme_bw()`. `theme_bw` is
+chosen for this comparison as it is one of the built-in themes that minimizes
+non-data components while still preserving light colored grid lines.
 
 * Compare with each other and basic theme
 * Advantage and disadvantage
 
-```{r wombat-comparison, fig.cap="Comparison between theme_wombat (left) and theme_bw (right).", fig.height=14, fig.width=11}
+```{r theme-comparison, fig.cap="Comparison between theme_wombat (left) and theme_bw (right).", fig.height=14, fig.width=11}
 w2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
   geom_bar() + 
   scale_y_continuous(expand = c(0,0)) + 
@@ -252,6 +229,24 @@ w3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
        subtitle = "theme_wombat()",
        caption = "Data: economics_long") +
   theme_wombat()
+
+s2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
+  geom_bar() + 
+  scale_y_continuous(expand = c(0,0)) + 
+  scale_x_discrete(expand = c(0,0)) +
+  labs(title="Bar Plot",
+       subtitle = "theme_seagull()",
+       caption = "Data: mtcars") +
+  theme_seagull()
+
+s3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
+  geom_line() +
+  scale_y_continuous(expand = c(0,0)) + 
+  scale_x_date(expand = c(0,0)) +
+  labs(title = "Line Plot",
+       subtitle = "theme_seagull()",
+       caption = "Data: economics_long") +
+  theme_seagull()
 
 bw1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
   geom_point(size=3) + 
@@ -274,56 +269,26 @@ bw3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
        caption = "Data: economics_long") +
   theme_bw()
 
-(w1 + bw1) / (w2 + bw2) / (w3 + bw3)
+(s1 + w1 + bw1) / (s2 + w2 + bw2) / (s3 + w3 + bw3)
 ```
 
 Side by side comparison of scatter plots, bar charts, and line charts between
-`theme_wombat` and `theme_bw()` can be found in figure \@ref(fig:wombat-comparison).
+the three themes can be found in figure \@ref(fig:theme-comparison). One of 
+the difference between `dataviz` potential themes and `theme_bw()` is the size
+of the text. The axis title, plot title, subtitle, and caption with 
+`theme_seagull()` and `theme_wombat()` are easier to read in comparison to
+`theme_bw()`. Secondly, the legend position is located on the bottom of the
+plot as opposed to the right of the plot. The reason to the change in legend
+position is to maximize the data-ink ratio of the plots. Putting the legend
+on the right of the plot takes up the space that can be used to display the
+underlying data. Another way of maximising data-ink ratio is by minimising
+the margin around the plot. As shown in figure \@ref(fig:theme-comparison) 
+there are no extra space between the bars and lines with the axis lines in the 
+plots with `theme_seagull()` and `theme_wombat()`.
+
+
 Figure \@ref(fig:wombat-facet) shows the comparison of faceted plot between
 these two themes.
-
-```{r seagull-comparison, fig.cap="Comparison between theme_seagull (left) and theme_minimal (right).", fig.height=14, fig.width=11}
-s2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
-  geom_bar() + 
-  scale_y_continuous(expand = c(0,0)) + 
-  scale_x_discrete(expand = c(0,0)) +
-  labs(title="Bar Plot",
-       subtitle = "theme_seagull()",
-       caption = "Data: mtcars") +
-  theme_seagull()
-
-s3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
-  geom_line() +
-  scale_y_continuous(expand = c(0,0)) + 
-  scale_x_date(expand = c(0,0)) +
-  labs(title = "Line Plot",
-       subtitle = "theme_seagull()",
-       caption = "Data: economics_long") +
-  theme_seagull()
-
-m1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
-  geom_point(size=3) + 
-  labs(title="Scatter Plot",
-       subtitle = "theme_minimal()",
-       caption = "Data: mtcars") +
-  theme_minimal()
-
-m2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
-  geom_bar() + 
-  labs(title="Bar Plot",
-       subtitle = "theme_minimal()",
-       caption = "Data: mtcars") +
-  theme_minimal()
-
-m3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
-  geom_line() +
-  labs(title = "Line Plot",
-       subtitle = "theme_minimal()",
-       caption = "Data: economics_long") +
-  theme_minimal()
-
-(s1 + m1) / (s2 + m2) / (s3 + m3)
-```
 
 Side by side comparison of scatter plots, bar charts, and line charts between
 `theme_seagull()` and `theme_minimal()` can be found in figure 
