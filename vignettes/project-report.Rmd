@@ -3,15 +3,17 @@ title: "Project Report"
 author: "Jimmy Effendy"
 date: "13/10/2021"
 output: bookdown::pdf_document2
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(ggplot2)
 library(tidyverse)
 library(dataviz)
 library(colorspace)
 library(patchwork)
+library(pals)
 ```
 
 # Introduction (300)
@@ -38,32 +40,31 @@ is defined by three criteria:
 * The graph is readable and support exploration, examination, and communications
 of data.
 
-Without careful considerations in building data visualizations, it has the 
+Without careful considerations, data visualisation has the 
 potential to cause confusion resulting in misunderstanding or error in decision
 makings [@evergreen2011]. In addition, inefficient visual decoding may result in
-users to not detect important aspect of the data [@cleveland1993model]. Inefficient
-graphs are not uncommon occurrence, especially with increasing number of options 
-in data visualizations over the years. Tufte [-@tufte2001visual] found that 
-prevalent errors and data misrepresentation were found in mass media. Another 
-study found that 30% of graphs found in Volume 207 (1980) of *Science* have one 
-or more type of errors [@cleveland1984graphs].
+users to not detect important aspect of the data [@cleveland1993model]. 
+Unfortunately, inefficient graphs are not uncommon occurrence, especially with 
+increasing number of options in data visualizations over the years. Tufte 
+[-@tufte2001visual] found that prevalent errors and data misrepresentation were 
+found in mass media. Another study found that 30% of graphs found in Volume 207 
+(1980) of *Science* have one or more type of errors [@cleveland1984graphs].
 
-With the widespread error in data visualisations, guidelines on better graphs
+With widespread error in data visualisations, guidelines for better graphs
 for quantitative and qualitative data were established. According to Tufte 
-[-@tufte2001visual] visualisations need to bring viewers' attention to the 
+[-@tufte2001visual], visualisations need to bring viewers' attention to the 
 substance of the data as opposed to graphic design, methodology or something 
-else. In addition, graphs should prevent distortion of the data, 
- and should encourage viewers to compare different parts of data. Another 
-suggestion from Tufte is to avoid the usage of chartjunk. Chartjunk is any
-decoration that do not provide new information to readers. This can easily cause
-viewers to be confused or distracted from the data. Some examples of chartjunk
-are moiré effect, heavy grid lines, noisy background, a fake perspective (i.e. 
-3-D charts).
+else. In addition, graphs should prevent distortion of the data and should 
+encourage viewers to compare different parts of data. Another suggestion from 
+Tufte is to avoid the usage of chartjunk. Chartjunk is any decorations that do 
+not provide new information to readers. This can easily cause viewers to be 
+confused or distracted from the data. Some examples of chartjunk are moiré 
+effect, heavy grid lines, noisy background, a fake perspective (i.e. 3-D charts).
 
 Cleveland and McGill [-@cleveland1984graphical] conducted a study of effective
 data visualisation based on graphical perception - humans' ability to visually
 decode information encoded on graphs. In the study, people are given elementary
-perceptual tasks to decode information from graphs. Then, the tasks are ordered
+perceptual tasks to decode information from graphs. The tasks are then ordered
 based on the accuracy of the performance. The order of the elementary tasks from 
 most to least accurate is:
 
@@ -83,16 +84,15 @@ title, legend position, background, and title, grid lines, etc. On default,
 complete themes that users can use, such as `theme_bw()` and `theme_minimal()`.
 
 Theme is especially important for a research book where there are many authors
-contribute to the book. Without a set theme, it is likely that each authors will 
-have apply their own visualization styles for their research. Not only setting 
-a theme for a research book assist allows authors not to spend their time to 
+contributing to the book. Without a set theme, it is likely that each author 
+will apply their own visualization styles for their research. Not only setting 
+a theme for a research book allows authors not to spend their time to 
 customize their plots' appearance, but it also allows research books to 
 have consistency in their visualizations.
 
 As stated in previous section, customizing plot themes is imperative in data 
-visualizations as non-data ink impacts readers' ability to comprehend the graph.
-However, maximizing data-ink ratio needs to be done cautiously as components of
-the graph that provide useful information can be mistakenly removed.
+visualizations as non-data components impacts readers' ability to comprehend the 
+graph.
 
 Give plot examples.
 
@@ -111,27 +111,29 @@ $$
 Five principles of data graphics in relation to data-ink are proposed by Tufte:
 
 * Above all else show the data
-* Maximise the data-ink ratio
+* Maximize the data-ink ratio
 * Erase non-data-ink, within reason
 * Erase redundant data-ink
 * Revise and edit
 
-Two of these principles are related to non-data components of visualisations.
+Two of these principles are related to non-data components of visualizations.
 Good graphical representations can be achieved by reducing non-data ink as this
-a way to maximise data-ink ratio. Graphical inks that provide no new information
+a way to maximize data-ink ratio. Graphical inks that provide no new information
 about the underlying data are not beneficial to readers and sometimes result
-graphical clutters.
+graphical clutters. However, maximizing data-ink ratio needs to be done 
+cautiously as components of the graph that provide useful information can be 
+mistakenly removed.
 
 Design choices on data visualizations need to allow information presented in an
 organised fashion. For example, the color of non-data components (axis, labels, 
 grid lines, borders) can be grey, and the data component can be brightly
-colored, making the data to be the focus of attention [@stone2006choosing]. This
-assists readers to better understand the roles and relationship between different
-elements of the visualizations.
+colored, making the data to be the focus of attention [@stone2006choosing]. 
+This will assist readers to better understand the roles and relationship between 
+different elements of the visualizations.
 
 ## Potential themes (300)
 
-```{r scatter-grey, fig.cap="A scatter plot example with 'theme_grey()'"}
+```{r scatter-grey, fig.cap="A scatter plot example with 'theme_grey()'", fig.height=5, fig.width=5}
 g1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
   geom_point(size=3) + 
   labs(title="Scatter Plot",
@@ -142,24 +144,24 @@ g1
 ```
 
 `theme_grey()` is the default `ggplot2` theme with grey background and white 
-grid lines. These color combinations for background and grid lines as the 
-background reduces the contrast and gives the data plots more value-added 
-appearance [@carr1994using]. While having a grey background and white grid
-lines have their benefits, some steps can be made to improve the plots. As
+grid lines. These color combinations reduces the contrast between the background 
+and grid lines and gives the data plots more value-added appearance 
+[@carr1994using]. While having a grey background and white grid
+lines have their benefits, some steps can be made to improve the theme. As
 shown in figure \@ref(fig:scatter-grey), having a grey panel background  
 on top of a white plot background unnecessarily increase non-data components.
-In addition, having both major and minor grid lines distracts readers from 
+In addition, having both major and minor grid lines distracts readers from the
 real data, and rarely needed as data visualizations are not meant to provide
 precise quantitative value [@few2005grid].
 
 A ggplot theme is developed in `dataviz` package that is not only based on 
 Tufte principles of data graphics, but also to create a theme that is suitable 
-for a wide range of plots. There are two themes that were developed for 
+for a wide range of plots. There are two potential themes that were developed for 
 `dataviz`: `theme_seagull()` and `theme_wombat()`.
 
 ### theme_seagull
 
-```{r seagull-scatter, fig.cap="A scatter plot example with 'theme_seagull()'"}
+```{r seagull-scatter, fig.cap="A scatter plot example with 'theme_seagull()'", fig.height=5, fig.width=5}
 s1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
   geom_point(size=3) + 
   labs(title="Scatter Plot",
@@ -174,17 +176,15 @@ This `ggplot2` theme is built based on `theme_minmal()`. The idea behind this
 theme is to reduce non-data components as much as possible by maximizing white 
 space around the plot. `%+replace%` operator is used to change the elements of 
 the plots. Axis line on the y axis is removed, and axis line on the x axis is 
-thicker. Vertical Major grid lines and minor grid lines on both axis are removed. 
-Horizontal major grid lines are not removed as they can aid readers to 
-approximate and compare values between data points. The grid lines, as shown in 
-figure \@ref(fig:seagull-scatter), are visually muted so that it does not 
-distract the data points. Cleveland [-@cleveland1993visualizing] found that 
-grid lines enhance readers' perceptions in making visual comparison and accuracy 
-of information extraction. 
+thicker. The major vertical grid lines and minor grid lines on both axis are removed. 
+The grid lines, as shown in figure \@ref(fig:seagull-scatter), are visually 
+muted so that it does not distract the data points. Cleveland 
+[-@cleveland1993visualizing] found that grid lines enhance readers' perceptions 
+in making visual comparison and accuracy of information extraction. 
 
 ### theme_wombat
 
-```{r wombat-scatter, fig.cap="A scatter plot example with 'theme_wombat()'"}
+```{r wombat-scatter, fig.cap="A scatter plot example with 'theme_wombat()'", fig.height=5, fig.width=5}
 w1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
   geom_point(size=3) + 
   labs(title="Scatter Plot",
@@ -201,17 +201,14 @@ This theme is developed  based on `ggplot2` basic theme `theme_bw()`.
 lines on both axis are removed for this theme. Similar to `theme_seagull()`, 
 `theme_wombat()` has white background and light grey grid lines.
 
-## Comparing themes (300)
+## Themes Comparison
 
 This section is going to compare the potential themes `theme_seagull()` and
 `theme_wombat()` with `ggplot2` built in theme, `theme_bw()`. `theme_bw` is
 chosen for this comparison as it is one of the built-in themes that minimizes
 non-data components while still preserving light colored grid lines.
 
-* Compare with each other and basic theme
-* Advantage and disadvantage
-
-```{r theme-comparison, fig.cap="Comparison between theme_wombat (left) and theme_bw (right).", fig.height=14, fig.width=11}
+```{r theme-comparison, fig.cap="Comparison between theme_seagull (left), theme_wombat (middle), and theme_bw (right).", fig.height=14, fig.width=11}
 w2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
   geom_bar() + 
   scale_y_continuous(expand = c(0,0)) + 
@@ -272,28 +269,52 @@ bw3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
 (s1 + w1 + bw1) / (s2 + w2 + bw2) / (s3 + w3 + bw3)
 ```
 
+### Comparison with `theme_bw()`
+
 Side by side comparison of scatter plots, bar charts, and line charts between
 the three themes can be found in figure \@ref(fig:theme-comparison). One of 
-the difference between `dataviz` potential themes and `theme_bw()` is the size
+the differences between `dataviz` potential themes and `theme_bw()` is the size
 of the text. The axis title, plot title, subtitle, and caption with 
 `theme_seagull()` and `theme_wombat()` are easier to read in comparison to
 `theme_bw()`. Secondly, the legend position is located on the bottom of the
 plot as opposed to the right of the plot. The reason to the change in legend
 position is to maximize the data-ink ratio of the plots. Putting the legend
 on the right of the plot takes up the space that can be used to display the
-underlying data. Another way of maximising data-ink ratio is by minimising
-the margin around the plot. As shown in figure \@ref(fig:theme-comparison) 
-there are no extra space between the bars and lines with the axis lines in the 
-plots with `theme_seagull()` and `theme_wombat()`.
+underlying data. Another way of maximizing data-ink ratio is by reducing
+the margin around the plot. As shown in the bar plots and line plots in figure \@ref(fig:theme-comparison), there are no extra space between the bars/lines 
+with the axis lines in the plots with `theme_seagull()` and `theme_wombat()`.
 
+### Advantages and Disadvantages - `theme_seagull()`
 
-Figure \@ref(fig:wombat-facet) shows the comparison of faceted plot between
-these two themes.
+One of the objectives of `theme_seagull()` is to have a theme that increases 
+data-ink ratio as much as possible. In comparison to other two themes, 
+`theme_seagull()` has the least amount of grid lines and borders around the
+plot, making it to have the highest data-ink ratio. While there is no vertical 
+grid lines, major horizontal grid lines are preserved as they aid readers to 
+approximate and compare values between data points.
 
-Side by side comparison of scatter plots, bar charts, and line charts between
-`theme_seagull()` and `theme_minimal()` can be found in figure 
-\@ref(fig:seagull-comparison). Figure \@ref(fig:wombat-facet) shows the 
-comparison of faceted plot between these two themes.
+### Advantages and Disadvantages - `theme_wombat()`
+
+`theme_wombat()` is developed to be the middle ground between `theme_seagull()`
+and `theme_bw()`. In comparison to the `ggplot2` built-in theme, this theme
+is less cluttered as it does not have minor grid lines on both axis. Unlike
+`theme_seagull()`, however, this theme retains major vertical grid lines.
+
+### The Best Theme
+
+As stated above, `theme_seagull()` has the least clutters between the two 
+potential themes. However, `theme_wombat()` is likely to assist readers
+to perform comparative exercise more accurately comparative to `theme_seagull()`
+while still maintaining a high level of data-ink ratio. Using the scatter plot 
+example in figure \@ref(fig:theme-comparison), the major vertical grid lines 
+from `theme_wombat()` aids readers estimate the value of data points along the
+x axis. This shows that `theme_wombat()` is a good compromise of minimizing 
+clutters as well as allowing readers to extract information from the graph as 
+much as possible.
+
+\newpage
+* Compare with each other and basic theme
+* Advantage and disadvantage
 
 ### Faceted Plots
 
