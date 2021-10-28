@@ -50,9 +50,9 @@ increasing number of options in data visualizations over the years. Tufte
 found in mass media. Another study found that 30% of graphs found in Volume 207 
 (1980) of *Science* have one or more type of errors [@cleveland1984graphs].
 
-With widespread error in data visualisations, guidelines for better graphs
+With widespread error in data visualizations, guidelines for better graphs
 for quantitative and qualitative data were established. According to Tufte 
-[-@tufte2001visual], visualisations need to bring viewers' attention to the 
+[-@tufte2001visual], visualizations need to bring viewers' attention to the 
 substance of the data as opposed to graphic design, methodology or something 
 else. In addition, graphs should prevent distortion of the data and should 
 encourage viewers to compare different parts of data. Another suggestion from 
@@ -62,7 +62,7 @@ confused or distracted from the data. Some examples of chartjunk are moiré
 effect, heavy grid lines, noisy background, a fake perspective (i.e. 3-D charts).
 
 Cleveland and McGill [-@cleveland1984graphical] conducted a study of effective
-data visualisation based on graphical perception - humans' ability to visually
+data visualization based on graphical perception - humans' ability to visually
 decode information encoded on graphs. In the study, people are given elementary
 perceptual tasks to decode information from graphs. The tasks are then ordered
 based on the accuracy of the performance. The order of the elementary tasks from 
@@ -357,19 +357,75 @@ s4 / m4
 
 # Colour Palettes (1500)
 
-## Why color is important and what it is use for (300)
+## The Role of Colors in Data Visualisation (300)
 
-* It can be used for representing different variable, etc.
+In addition to themes, color also plays an important role in data 
+visualizations. Proper use of color in a visualization enhances the quality
+of information being presented [-@zeileis2009escaping]. One of the most important
+use of color in data visualizations is to differentiate one element from one
+another [@stone2006choosing]. A poor choice of color palette can impede viewers' 
+ability to effectively extract information from the visualization. 
 
-One of the most important elements in data visualization. When used well, 
-it can enhance the quality of information being presented.  It is essential
-to select a color palette as a poor set of colors may hinder readers' ability
-to understand the purpose of visualizations. Unfortunately, it is often the
-case that color choice is sub-optimal as there is little guidance on how to
-select effective colour palette for graphs [@zeileis2009escaping].
+With a simple visual features, some objects can be easily recognised compared
+to other objects without requiring attention. The target object will "pop out" 
+in field of vision regardless how many distractors surround it 
+[@treisman1985preattentive]. The use of color in data visualisation can facilitate
+this "pop-out" as it makes it can make some elements to be easier to be found.
 
-Stone [-@stone2006choosing] mentioned that differentiating one element from one
-another is the most important use of color in data visualization.
+```{r pop-out, fig.cap="It is easier to find the odd ones by using color"}
+set.seed(20211028)
+
+x <- rnorm(20)
+y <- rnorm(20)
+color <- c("red","red","blue","red","blue","red","red","red","red","red","red",
+           "blue","red","red","red","red","red","red","red","red")
+pop_out <- data.frame(x,y,color)
+
+p1 <- pop_out %>% ggplot(aes(x = x,
+                             y = y,
+                             color = color)) +
+  geom_point() +
+  theme_wombat() +
+  theme(legend.position = "none",
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank()) +
+  ggtitle("Color")
+
+p2 <- pop_out %>% ggplot(aes(x = x,
+                             y = y,
+                             shape = color)) +
+  geom_point() +
+  theme_wombat() +
+  theme(legend.position = "none",
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank()) +
+  ggtitle("Shape")
+
+p1 + p2
+```
+
+Figure \@ref(fig:pop-out) contains three "odd" observations that are different 
+than the rest. To represent this, the first panel uses color to differentiate 
+the different kinds of observations. The three observations are colored red, and
+the rest are blue. On the other hand, the second panel uses shape to represent
+this feature. Circle is used to represent the "odd" observations, and triangle is
+used for the rest. While readers have no problem in identifying the three 
+observations in the second panel, it is much easier to find these observations 
+on the first panel. It only requires low level of attention to find the observation
+of interest in the first panel.
+
+In addition to assisting viewers to differentiate one element to another, 
+colors can also be used to evoke viewers' emotions. Emotion is important
+in visualizations for story telling, communicative intent, and engagement
+[@bartram2017affective].  It was also found that emotions can significantly 
+improve many cognitive processes such as attention, learning, decision making, 
+and problem-solving [@harrison2012exploring].
+
+
 
 ## Color Model
 
@@ -388,6 +444,7 @@ that relates to hue or brightness of a color
 One color model that was developed based on human perception is 
 Hue-Chroma-Luminance  (HCL) color model. Hue corresponds to dominant wavelength, 
 chroma to colourfulness, luminance to brightness [@ihaka2003colour].
+
 
 ## Color scale types (300)
 
