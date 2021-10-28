@@ -441,7 +441,15 @@ stated that it is practically impossible for a human to control the perceptual
 properties of a color within this color model as there is no single dimension
 that relates to hue or brightness of a color
 
-One color model that was developed based on human perception is 
+One popular alternative to RGB system is Hue-Saturation-Value (HSV). This model
+is a simple transformation of RGB system and aims to capture the dimensions of 
+human visual perceptions [@smith1978color]. While HSV is easy to use, it has 
+several drawbacks: it is fairly difficult set HSV coordinates for colors that
+are in harmony [@zeileis2006choosing]. Furthermore, HSV encourages the use of 
+colors that are highly saturated. While these colors are good to attract viewers' 
+attention, it is difficult to look at for a long time [@zeileis2009escaping].
+
+Another color model that was developed based on human perception is 
 Hue-Chroma-Luminance  (HCL) color model. Hue corresponds to dominant wavelength, 
 chroma to colourfulness, luminance to brightness [@ihaka2003colour].
 
