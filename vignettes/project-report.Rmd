@@ -426,7 +426,7 @@ and problem-solving [@harrison2012exploring].
 ## Color Spaces
 
 To effectively use colors in visualizations, it is imperative to understand
-how human color perception works. It was found that human color vision evolved 
+how human color perception works. It was theorized that human color vision evolved 
 in three distinct stages [@ihaka2003colour]: 
 
 1. Perception of light and dark (monochrome)
@@ -437,20 +437,22 @@ As a result of these three color axes, colors are naturally described as
 locations in a three dimensional space. While these color axis provide 
 physiological description, human perception of colors do not corresponds to
 these axes. Human perception of color corresponds to the polar coordinates
-of this plane [@zeileis2006choosing]:
+of the color coordinate (yellow/blue and green/red), and a dark/light axis 
+[@zeileis2006choosing]:
 
 1. Hue: dominant wavelength
-2. Chroma: colorfulness
-3. Luminance: brightness
+2. Chroma: colorfulness (color intensity)
+3. Luminance: brightness (brightness)
 
-Unfortunately, not every software packages use color space developed based on
+Unfortunately, not all software packages use color space developed based on
 human perception. For example, the most common color map used by software 
-packages is Red-Green-Blue (RGB) [@stauffer2015somewhere]. This color space was 
-developed to generate color on computer screens not in corresponds to human 
-perception of color [@zeileis2009escaping]. Zeileis, Hornik, and Murrell further 
-stated that it is practically impossible for a human to control the perceptual 
-properties of a color within this color model as there is no single dimension 
-that relates to hue or brightness of a color
+packages, the Red-Green-Blue (RGB) [@stauffer2015somewhere], was primarily 
+developed to correspond with color generation on computer screens rather than 
+to correspond with human perception of color [@zeileis2009escaping]. 
+Zeileis, Hornik, and Murrell further stated that it is practically impossible
+for a human to control the perceptual properties of a color within this color 
+model as there is no single dimension that relates to hue or brightness of a 
+color
 
 One popular alternative to RGB system is Hue-Saturation-Value (HSV). This model
 is a simple transformation of RGB system and aims to capture the dimensions of 
@@ -462,30 +464,46 @@ the use of colors that are highly saturated. While these colors are good to
 attract viewers' attention, it is difficult to look at for a long time 
 [@zeileis2009escaping].
 
-HCL, short for Hue-Chroma-Luminance, was developed to overcome many problems 
-encountered by other color spaces. Developed based on human perception of
-color, this color space 
+HCL, which is short for Hue-Chroma-Luminance, was developed to overcome many 
+problems encountered by other color spaces. This color space is developed
+based on the three color attributes that corresponds to human perceptions:
+hue, chroma, and luminance [@sarifuddin2005new]. It was found that the three
+dimensions from this color space matches human visual perception well 
+[@zeileis2019colorspace]. In general, HCL color space can be used to generate 
+three types of color scales: qualitative, sequential, and diverging.
 
-To overcome the limitations presented by RGB and HSV color space, a perceptual-
-based color space was developed: Hue-Chorma-Luminance (HCL). Hue corresponds to 
-dominant wavelength, chroma to colourfulness, luminance to brightness 
-[@ihaka2003colour].
+## Types of Color Palettes (300)
 
+### Qualitative Palettes
 
-## Color scale types (300)
+This color palette is designed for coding categorical information where the 
+categories do not have particular ordering [@zeileis2019colorspace]. In other
+words, this color palette will give the same perceptual weight to each category
+so that there will be no perception of one group to be larger or more important
+than any other one [@zeileis2006choosing]. This color palette is commonly applied
+to bar plots or box plots.
 
-### Sequential
+### Sequential Palettes
 
-* Can talk about how Brewer did these color palettes
+Sequential pallets are used for coding ordered/numerical information that span
+in a certain interval [@zeileis2006choosing]. The low values of the interval
+are considered to be uninteresting, whereas high values are considered to be 
+interesting [@zeileis2019colorspace]. Low values are usually depicted by lighter
+colors, while darker colors are used for high values [@harrower2003colorbrewer].
+This palette is usually used on heatmaps.
 
-### Diverging
+### Diverging Palletes
 
-### Qualitative
-
-
-* for qualitative, we need more variation in the hue line. Need to avoid
-* implicit ordering
-* make chroma and luminance to have patterns (but not the same with the others)
+Similar to sequential palette, diverging pallets are designed for coding ordered/
+numerical information that ranges in an interval. The difference between 
+diverging and sequential palletes is that diverging pallets include a neutral
+value [@zeileis2006choosing]. This palette should be used when an important data
+class or break points need to be highlighted [@harrower2003colorbrewer]. Harrower 
+and Brewer further stated that this critical data class or break points is 
+highlighted by a change in in hue and luminance, and should represent a critical 
+value of the data (e.g. mean, median, or zero). For instance, the average GDP
+per capita in a choropleth map can be emphasised (set as neutral value) so that
+the values above and below the average can be shown in different hues.
 
 ## Color palette of choice
 
@@ -493,6 +511,7 @@ dominant wavelength, chroma to colourfulness, luminance to brightness
 
 * Hue is increasing in a very smooth pattern. More prefer to use this for
 * sequential for ordering
+* Can talk about how Brewer did these color palettes
 
 ```{r seal}
 seal_palette <- colorspace::sequential_hcl(7,
@@ -561,6 +580,10 @@ pal.safe(dolphin_palette, main = "dolphin_palette")
 ```
 
 ### Qualitative (200)
+
+* for qualitative, we need more variation in the hue line. Need to avoid
+* implicit ordering
+* make chroma and luminance to have patterns (but not the same with the others)
 
 ```{r other-qualitative}
 brewer_qualitative <- c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
