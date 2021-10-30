@@ -355,9 +355,7 @@ s4 / m4
 ```
 
 
-# Colour Palettes (1500)
-
-## The Role of Colors in Data Visualisation (300)
+# Choosing Color Palletes
 
 In addition to themes, color also plays an important role in data 
 visualizations. Proper use of color in a visualization enhances the quality
@@ -418,40 +416,60 @@ observations in the second panel, it is much easier to find these observations
 on the first panel. It only requires low level of attention to find the observation
 of interest in the first panel.
 
-In addition to assisting viewers to differentiate one element to another, 
+In addition to assisting viewers in differentiating one attribute to another, 
 colors can also be used to evoke viewers' emotions. Emotion is important
 in visualizations for story telling, communicative intent, and engagement
 [@bartram2017affective].  It was also found that emotions can significantly 
 improve many cognitive processes such as attention, learning, decision making, 
 and problem-solving [@harrison2012exploring].
 
+## Color Spaces
 
+To effectively use colors in visualizations, it is imperative to understand
+how human color perception works. It was found that human color vision evolved 
+in three distinct stages [@ihaka2003colour]: 
 
-## Color Model
+1. Perception of light and dark (monochrome)
+2. Perception of yellow/blue contrast
+3. Perception of green/red contrast
 
-* What potential color models are there?
-* Benefits and disadvantage of each color model
-* Discuss why do we choose HCL
+As a result of these three color axes, colors are naturally described as 
+locations in a three dimensional space. While these color axis provide 
+physiological description, human perception of colors do not corresponds to
+these axes. Human perception of color corresponds to the polar coordinates
+of this plane [@zeileis2006choosing]:
 
-According to Zeileis, Hornik, and Murrell [@zeileis2009escaping], Red-Green-Blue
-(RGB) color model is typically used by software packages. However, this color
-model was developed to generate color on computer screen as opposed to developed
-in corresponds to human perception of color. Zeileis, Hornik, and Murrell further
-stated that it is practically impossible for a human to control the perceptual
-properties of a color within this color model as there is no single dimension
+1. Hue: dominant wavelength
+2. Chroma: colorfulness
+3. Luminance: brightness
+
+Unfortunately, not every software packages use color space developed based on
+human perception. For example, the most common color map used by software 
+packages is Red-Green-Blue (RGB) [@stauffer2015somewhere]. This color space was 
+developed to generate color on computer screens not in corresponds to human 
+perception of color [@zeileis2009escaping]. Zeileis, Hornik, and Murrell further 
+stated that it is practically impossible for a human to control the perceptual 
+properties of a color within this color model as there is no single dimension 
 that relates to hue or brightness of a color
 
 One popular alternative to RGB system is Hue-Saturation-Value (HSV). This model
 is a simple transformation of RGB system and aims to capture the dimensions of 
-human visual perceptions [@smith1978color]. While HSV is easy to use, it has 
-several drawbacks: it is fairly difficult set HSV coordinates for colors that
-are in harmony [@zeileis2006choosing]. Furthermore, HSV encourages the use of 
-colors that are highly saturated. While these colors are good to attract viewers' 
-attention, it is difficult to look at for a long time [@zeileis2009escaping].
+human visual perceptions [@smith1978color]. Unfortunately, the result of mapping 
+HSV's three dimensions to three dimensions of human perceptions is very poor
+[@zeileis2006choosing]. Moreover, it is fairly difficult set HSV coordinates for 
+colors that are in harmony [@zeileis2006choosing]. Furthermore, HSV encourages 
+the use of colors that are highly saturated. While these colors are good to 
+attract viewers' attention, it is difficult to look at for a long time 
+[@zeileis2009escaping].
 
-Another color model that was developed based on human perception is 
-Hue-Chroma-Luminance  (HCL) color model. Hue corresponds to dominant wavelength, 
-chroma to colourfulness, luminance to brightness [@ihaka2003colour].
+HCL, short for Hue-Chroma-Luminance, was developed to overcome many problems 
+encountered by other color spaces. Developed based on human perception of
+color, this color space 
+
+To overcome the limitations presented by RGB and HSV color space, a perceptual-
+based color space was developed: Hue-Chorma-Luminance (HCL). Hue corresponds to 
+dominant wavelength, chroma to colourfulness, luminance to brightness 
+[@ihaka2003colour].
 
 
 ## Color scale types (300)
