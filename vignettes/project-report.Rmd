@@ -16,57 +16,90 @@ library(patchwork)
 library(pals)
 ```
 
-# Introduction (300)
+# Introduction
 
-According to Cleveland and McGill [-@cleveland1985graphical], data visualizations 
-are effective tools for communicating quantitative information and presenting 
-scientific data.
+This project relates to an edited book related to multilevel regression and 
+poststratification (MRP). As is the case with other books, there will be
+numerous visualisations used in this book. These plots will need to be both
+readable, cohesive, and accessible. There is a group of authors (around one to 
+five authors) who work together on a chapter. The editors then work to combine 
+all the chapters to finalise the book. With many authors contributing to the 
+book, there is a need to balance authors' autonomy so that the final version of 
+the book have a consistent look/design. One mean to achieve this is by producing 
+visualizations that meet a set of criteria.
 
-The aim of this project is to create a package that can produce figures that
-are aesthetically cohesive for a textbook in an automatic and reproducible
-manner. As these graphs are generally aimed to be consumed by other people, it
-is important for the aesthetics to be engaging. More importantly, the style of 
-the graphs needs to make it easier for users to compare and explore data.
+A style guide can be used to create a cohesive edited book. Implementing a 
+style guide, however, is time consuming and expensive. The editors/designers
+need to spend a lot of effort and time to update or reproduce figures. Another
+option that can be taken is by creating an R package that contains theme and 
+color scale functions that work with `ggplot2`. This will allow users
+(in this case, authors) to just add a theme and a color scale function to their
+plots. This is easy to use, and it will cause minimal disruptions to authors'
+work. More importantly, this will allow the book to have visualizations that are
+readable, cohesive, and accessible.
 
-# Themes (1500)
+There are several aspects that need to be considered to create a cohesive edited
+book. Firstly, a ggplot theme needs to be developed in a way that allows readers
+to extract information from the visualizations as much as possible. In addition
+to theme, various color scales that are accessible need to be developed for 
+different data types (e.g. categorical and numerical information). The theme
+and color scales will be wrapped in an R package called `dataviz`. The R package
+contains the following items:
 
-## What makes visualisations good? (300)
+* Function for the theme and color scales.
+* Documentations
+* Testing
 
-Azzam, Evergree, and Germuth [-@azzam2013data] stated that data visualization
-is defined by three criteria: 
+In the next section, the project will discuss how a theme that allows viewers
+to extract information as much as possible from a graph was developed for 
+the project. Next, the project will explore the theory behind color scales in
+data visualisations, and describe the methods of choosing color palettes for
+the project. In the fourth section, the report will explain how the theme
+and color schemes will be wrapped in an R package. To put it briefly, the
+report contributes themes, color schemes, and a package called `dataviz`.
+
+# Themes
+
+The first aspect that needs to be considered is how a good visualization looks 
+like, and whether there are general rule that can be applied across different 
+types of plots. However, before looking at principles of good data visualizations, 
+it is better to understand what constitute a visualization. Azzam, Evergree, and 
+Germuth [-@azzam2013data] stated that data visualization is defined by three 
+criteria: 
 
 * A process that is based quantitative or qualitative data
 * The result of the process is a graph that is representative of the raw data
 * The graph is readable and support exploration, examination, and communications
 of data.
 
-Without careful considerations, data visualisation has the 
+Without careful consideration, data visualization has the 
 potential to cause confusion resulting in misunderstanding or error in decision
-makings [@evergreen2011]. In addition, inefficient visual decoding may result in
+making [@evergreen2011]. In addition, inefficient visual decoding may result in
 users to not detect important aspect of the data [@cleveland1993model]. 
 Unfortunately, inefficient graphs are not uncommon occurrence, especially with 
-increasing number of options in data visualizations over the years. Tufte 
+increasing number of options in data visualization over the years. Tufte 
 [-@tufte2001visual] found that prevalent errors and data misrepresentation were 
 found in mass media. Another study found that 30% of graphs found in Volume 207 
 (1980) of *Science* have one or more type of errors [@cleveland1984graphs].
 
 With widespread error in data visualizations, guidelines for better graphs
 for quantitative and qualitative data were established. According to Tufte 
-[-@tufte2001visual], visualizations need to bring viewers' attention to the 
+[-@tufte2001visual], visualizations need to bring viewer's attention to the 
 substance of the data as opposed to graphic design, methodology or something 
 else. In addition, graphs should prevent distortion of the data and should 
 encourage viewers to compare different parts of data. Another suggestion from 
-Tufte is to avoid the usage of chartjunk. Chartjunk is any decorations that do 
-not provide new information to readers. This can easily cause viewers to be 
-confused or distracted from the data. Some examples of chartjunk are moiré 
-effect, heavy grid lines, noisy background, a fake perspective (i.e. 3-D charts).
+Tufte is to avoid the usage of chartjunk. Any decorations that do not provide 
+new information to readers are considered to be chartjunk. This can easily cause 
+viewers to be confused or distracted from the data. Some examples of chartjunk 
+are moiré effect, heavy grid lines, noisy background, a fake perspective 
+(i.e. 3-D charts).
 
 Cleveland and McGill [-@cleveland1984graphical] conducted a study of effective
-data visualization based on graphical perception - humans' ability to visually
-decode information encoded on graphs. In the study, people are given elementary
-perceptual tasks to decode information from graphs. The tasks are then ordered
-based on the accuracy of the performance. The order of the elementary tasks from 
-most to least accurate is:
+data visualization based on graphical perception to investigate humans' ability 
+to visually decode information encoded on graphs. In the study, people were 
+given elementary perceptual tasks to decode information from graphs. The tasks 
+are then ordered based on the accuracy of the performance. The order of the 
+elementary tasks from most to least accurate is:
 
 * Position along a common scale
 * Positions along nonaligned scales
@@ -75,19 +108,24 @@ most to least accurate is:
 * Volume, curvature
 * Shading, color saturation
 
-## Roles of themes in data visualisation (300)
+This shows that there are general rules that can be applied across different
+types of plots, and this can be computationally coded once for efficiency.
+The next section will discuss how this can be implemented through the use of
+`ggplot2` theme.
 
-Themes in `ggplot` package refers to **non-data** components of data visualizations.
-Themes allow users to customize plot background and title, axis line, ticks and 
-title, legend position, background, and title, grid lines, etc. On default,
-`ggplot` use `theme_grey` for every plots. However, `ggplot` provides other
-complete themes that users can use, such as `theme_bw()` and `theme_minimal()`.
+## Roles of Themes in Data Visualization
+
+Themes in `ggplot` package are **non-data** components of data visualizations.
+Themes allow user to customize plot the background, axis line, ticks, legend 
+position, grid, etc. As a default, `ggplot` uses `theme_grey` for plots. 
+However, `ggplot` provides other complete themes that users can use, such as 
+`theme_bw()` and `theme_minimal()`.
 
 Theme is especially important for a research book where there are many authors
 contributing to the book. Without a set theme, it is likely that each author 
-will apply their own visualization styles for their research. Not only setting 
-a theme for a research book allows authors not to spend their time to 
-customize their plots' appearance, but it also allows research books to 
+will apply their own visualization styles for their research. Not only does 
+setting a theme for a research book allow authors to avoid spending their time 
+to customize their plots' appearance, but it also allows research book to 
 have consistency in their visualizations.
 
 As stated in previous section, customizing plot themes is imperative in data 
@@ -96,35 +134,26 @@ graph.
 
 Give plot examples.
 
-## Criteria for good themes (300)
+## Criteria for good themes
 
-Tufte [-@tufte2001visual] introduced the term data-ink in his book. Data-ink
-is defined as a non-redundant ink; it is ink used on a graph that represent
-the underlying data. 
+There are five principles of data graphics that are proposed by Tufte 
+[-@tufte2001visual]. This project focuses on two of the principles that 
+specifically relate to a theme. In his book, Tufte introduced an important
+concept: data-ink. Data-ink is defined as a non-redundant ink; it is ink used 
+on a graph that represent the underlying data. 
 
 $$
-\begin{aligned}
-Data-ink ratio = \frac{data-ink}{total ink used to print the graphic}
-\end{aligned}
+\text{Data-ink ratio} = \frac{\text{data-ink}}{\text{total ink used to print the graphic}}
 $$
 
-Five principles of data graphics in relation to data-ink are proposed by Tufte:
-
-* Above all else show the data
-* Maximize the data-ink ratio
-* Erase non-data-ink, within reason
-* Erase redundant data-ink
-* Revise and edit
-
-Two of these principles are related to non-data components of visualizations.
 Good graphical representations can be achieved by reducing non-data ink as this
-a way to maximize data-ink ratio. Graphical inks that provide no new information
-about the underlying data are not beneficial to readers and sometimes result
-graphical clutters. However, maximizing data-ink ratio needs to be done 
-cautiously as components of the graph that provide useful information can be 
-mistakenly removed.
+a way to maximize data-ink ratio [@[-@tufte2001visual]. Graphical inks that 
+provide no new information about the underlying data are not beneficial to 
+readers and sometimes result graphical clutters. However, maximizing the 
+data-ink ratio needs to be done cautiously as components of the graph that 
+provide useful information can be removed by mistake.
 
-Design choices on data visualizations need to allow information presented in an
+Design choices on data visualizations need to allow information to be presented in an
 organised fashion. For example, the color of non-data components (axis, labels, 
 grid lines, borders) can be grey, and the data component can be brightly
 colored, making the data to be the focus of attention [@stone2006choosing]. 
@@ -269,8 +298,6 @@ bw3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
 (s1 + w1 + bw1) / (s2 + w2 + bw2) / (s3 + w3 + bw3)
 ```
 
-### Comparison with `theme_bw()`
-
 Side by side comparison of scatter plots, bar charts, and line charts between
 the three themes can be found in figure \@ref(fig:theme-comparison). One of 
 the differences between `dataviz` potential themes and `theme_bw()` is the size
@@ -284,8 +311,6 @@ underlying data. Another way of maximizing data-ink ratio is by reducing
 the margin around the plot. As shown in the bar plots and line plots in figure \@ref(fig:theme-comparison), there are no extra space between the bars/lines 
 with the axis lines in the plots with `theme_seagull()` and `theme_wombat()`.
 
-### Advantages and Disadvantages - `theme_seagull()`
-
 One of the objectives of `theme_seagull()` is to have a theme that increases 
 data-ink ratio as much as possible. In comparison to other two themes, 
 `theme_seagull()` has the least amount of grid lines and borders around the
@@ -293,14 +318,12 @@ plot, making it to have the highest data-ink ratio. While there is no vertical
 grid lines, major horizontal grid lines are preserved as they aid readers to 
 approximate and compare values between data points.
 
-### Advantages and Disadvantages - `theme_wombat()`
-
 `theme_wombat()` is developed to be the middle ground between `theme_seagull()`
 and `theme_bw()`. In comparison to the `ggplot2` built-in theme, this theme
 is less cluttered as it does not have minor grid lines on both axis. Unlike
 `theme_seagull()`, however, this theme retains major vertical grid lines.
 
-### The Best Theme
+### The Chosen Theme
 
 As stated above, `theme_seagull()` has the least clutters between the two 
 potential themes. However, `theme_wombat()` is likely to assist readers
@@ -311,49 +334,6 @@ from `theme_wombat()` aids readers estimate the value of data points along the
 x axis. This shows that `theme_wombat()` is a good compromise of minimizing 
 clutters as well as allowing readers to extract information from the graph as 
 much as possible.
-
-\newpage
-* Compare with each other and basic theme
-* Advantage and disadvantage
-
-### Faceted Plots
-
-```{r wombat-facet, fig.height=14, fig.width=11, fig.cap="Comparison between theme_wombat (top) and theme_bw (bottom) for faceted plot."}
-w4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
-  facet_wrap(~ class,scales="free")+
-  labs(title="Plot With Facets",
-       subtitle = "theme_wombat()",
-       caption = "Data: mpg") + 
-  theme_wombat()
-
-bw4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
-  facet_wrap(~ class,scales="free")+
-  labs(title="Plot With Facets",
-       subtitle = "theme_bw()",
-       caption = "Data: mpg") + 
-  theme_bw()
-
-w4 / bw4
-```
-
-```{r seagull-facet, fig.height=14, fig.width=11, fig.cap="Comparison between theme_seagull (top) and theme_minimal (bottom) for faceted plot."}
-s4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
-  facet_wrap(~ class,scales="free")+
-  labs(title="Plot With Facets",
-       subtitle = "theme_seagull()",
-       caption = "Data: mpg") + 
-  theme_seagull()
-
-m4 <- ggplot(data = mpg,aes(cty, hwy,color=drv))+geom_point(size=3) + 
-  facet_wrap(~ class,scales="free")+
-  labs(title="Plot With Facets",
-       subtitle = "theme_minimal()",
-       caption = "Data: mpg") + 
-  theme_minimal()
-
-s4 / m4
-```
-
 
 # Choosing Color Palletes
 
@@ -480,8 +460,8 @@ This color palette is designed for coding categorical information where the
 categories do not have particular ordering [@zeileis2019colorspace]. In other
 words, this color palette will give the same perceptual weight to each category
 so that there will be no perception of one group to be larger or more important
-than any other one [@zeileis2006choosing]. This color palette is commonly applied
-to bar plots or box plots.
+than any other one [@zeileis2006choosing]. This color palette is commonly 
+applied to bar plots or box plots.
 
 ### Sequential Palettes
 
@@ -502,16 +482,67 @@ class or break points need to be highlighted [@harrower2003colorbrewer]. Harrowe
 and Brewer further stated that this critical data class or break points is 
 highlighted by a change in in hue and luminance, and should represent a critical 
 value of the data (e.g. mean, median, or zero). For instance, the average GDP
-per capita in a choropleth map can be emphasised (set as neutral value) so that
-the values above and below the average can be shown in different hues.
+per-capita in a choropleth map can be emphasized (i.e. set as neutral value) so 
+that the values above and below the average can be shown in different hues.
 
 ## Color palette of choice
 
-### Sequential (200)
+In addition to plot themes, this project also contributes two color schemes for 
+each of the three color palettes type mentioned in the previous section.
+`colorspace` and `pals` packages are going to be used to build the color 
+palettes and assess them. Chosen color palettes need to be assessed to ensure
+that they achieve their intended purpose. For example, qualitative color palette
+needs to avoid implicit ordering as this is intended for coding categorical 
+information. In addition, it needs to be ensured that people with color vision
+impairment are able to distinguish the different colors in the chosen palettes.
+`pal.safe()` function from `pals` package allows us to see how color palettes
+are seen as seen by deutan, protan, and tritan color-blind.
 
-* Hue is increasing in a very smooth pattern. More prefer to use this for
-* sequential for ordering
-* Can talk about how Brewer did these color palettes
+### Qualitative Palettes (200)
+
+```{r qualitative}
+pal.safe(qualitative_hcl(4, palette = "harmonic"))
+```
+
+A strategy to choose this type of palette is by keeping chroma and luminance
+relatively constant, and hue varied; making all colors in the palette to balance 
+towards the same grey [@zeileis2009escaping]. However, keeping chroma and 
+luminance fixed may not be the best approach for an efficient color palette.
+
+Figure \@ref(fig:qualitative) shows a qualitative color palette set from 
+`colorspace` package called `harmonic` as seen by people that have color-blind. 
+he four colors in this palette maintain the same chroma and luminance, and 
+different hues. It can be seen that people with color-blind will have difficulty 
+in distinguishing some colors from each other. Moreover, this color palette 
+results in implied ordering of different data group.
+
+```{r quokka}
+quokka_palette <- c("#8C01E6", "#93B1EB", "#AB313D", "#D6CA24")
+pal.safe(quokka_palette)
+```
+
+```{r quoll}
+quoll_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
+pal.safe(quoll_palette)
+```
+
+The two qualitative color palettes developed for the project are called 
+`quokka_palette()` and `quoll_palette()`. In addition to differing hues,
+`quokka_palette()` and `quoll_palette()` also have differing chromas and 
+luminances to avoid implied ordering. Figure \@ref(fig:quokka) and figure 
+\@ref(fig:quoll) shows the quokka and quoll palettes respectively as seen by 
+people with color blindness. As shown in the figures, each color in these 
+palettes can easily be distinguished by people with deutan, protan, and tritan 
+color-blindness. Nevertheless, one limitation of these palettes is that they 
+have implied ordering. However, these palettes are still better showing 
+categorical information compared to `harmonic` palette.
+
+### Sequential Palettes
+
+One easy way to create a sequential palette is by choosing two values for each
+hue (h1 and h2), chroma (c1 and c2), and luminance (l1 and l2) 
+[@zeileis2006choosing]. `sequential_hcl` function will produce a set of 
+sequential palette with the interval specified for hue, chroma and luminance.
 
 ```{r seal}
 seal_palette <- colorspace::sequential_hcl(7,
@@ -520,12 +551,9 @@ seal_palette <- colorspace::sequential_hcl(7,
                                               l = c(40, 75),
                                               power = c(1,1))
 
-# color spectrum plot
-specplot(seal_palette) 
 # colorblind filter
 pal.safe(seal_palette, main = "seal_palette")
 ```
-
 
 ```{r snake}
 snake_palette <- colorspace::sequential_hcl(6,
@@ -535,21 +563,25 @@ snake_palette <- colorspace::sequential_hcl(6,
                                               power = c(0.5,1),
                                               rev = TRUE)
 
-# color spectrum plot
-specplot(snake_palette)
 # colorblind filter
 pal.safe(snake_palette, main = "snake_palette")
 ```
 
-* How did we choose them?
-* Come from another package?
-* How do we assess them?
+The two sequential palettes created for this project are `seal_palette()` and
+`snake_palette()`. Multi-hue (e.g. light yellow to dark cyan) sequential palettes
+are chosen for these palettes as it provides better contrast between different
+classes compared to single-hue sequential palette [@harrower2003colorbrewer].
+Seal palette is shown in figure \@ref(fig:seal), and Snake palette is depicted 
+in figure \@ref(fig:snake). As shown in the figures, people with deutan, protan, 
+and tritan color blindness are able to see the implied order and how the data 
+ranges from low to high values.
 
-* Talk about the HCL plot
-* Talk about the accessibility
-* Talk about how it should match the data
+### Diverging Palettes
 
-### Diverging (200)
+Diverging palettes can be built based on sequential palette: choosing two 
+different hues, chroma, and luminance [@zeileis2006choosing]. Function 
+`diverge_hcl()` is used to create a diverging palette based on these values, 
+and it will automatically choose the neutral color.
 
 ```{r dingo}
 dingo_palette <- colorspace::diverge_hcl(7,
@@ -558,8 +590,7 @@ dingo_palette <- colorspace::diverge_hcl(7,
                                            l = c(30, 90),
                                            power = 1.5)
 
-# color spectrum plot
-specplot(dingo_palette)
+
 # colorblind filter
 pal.safe(dingo_palette, main = "dingo_palette")
 ```
@@ -573,41 +604,17 @@ dolphin_palette <- colorspace::diverging_hcl(n = 7,
                                              power = c(0.5, 2),
                                              rev = TRUE)
 
-# color spectrum plot
-specplot(dolphin_palette)
 # colorblind filter
 pal.safe(dolphin_palette, main = "dolphin_palette")
 ```
 
-### Qualitative (200)
+Dingo and Dolphin palettes are diverging palettes developed for the project.
+These palettes are shown in figure \@ref(fig:dingo) and \@ref(fig:dolphin).
+Similar to the qualitative and sequential palettes developed for the project,
+colors in Dingo and Dolphin palettes can be easily distinguished by people with 
+deutan, protan, and tritan color-blindness.
 
-* for qualitative, we need more variation in the hue line. Need to avoid
-* implicit ordering
-* make chroma and luminance to have patterns (but not the same with the others)
 
-```{r other-qualitative}
-brewer_qualitative <- c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
-tol_qualitative <- c("#4477AA", "#EE6677", "#228833", "#CCBB44", "#66CCEE", "#AA3377", "#BBBBBB")
-```
-
-```{r quokka}
-quokka_palette <- c("#8C01E6", "#93B1EB", "#AB313D", "#D6CA24")
-
-# color spectrum plot
-specplot(quokka_palette)
-# colorblind filter
-pal.safe(quokka_palette, main = "quokka_palette")
-```
-Not ideal for Deutan and Protan because some of the colors looked paired.
-
-```{r quoll}
-quoll_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
-
-# color spectrum plot
-specplot(quoll_palette)
-# colorblind filter
-pal.safe(quoll_palette, main = "quoll_palette")
-```
 
 # R Package (1500)
 
