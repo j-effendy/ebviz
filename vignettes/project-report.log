@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.19)  1 NOV 2021 04:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.19)  1 NOV 2021 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project
+**C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project
 -report.tex
 
-(c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+(c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-08-27> (c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf
@@ -603,75 +603,75 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 (c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2] [3]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/scatter-grey-1.pdf, id=106, 361.35pt x 361.35pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/scatter-grey-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/scatter-grey-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/scatter-grey-1.pdf  used on i
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/scatter-grey-1.pdf  used on i
 nput line 286.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/seagull-scatter-1.pdf, id=108, 361.35pt x 361.35pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/seagull-scatter-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/seagull-scatter-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/seagull-scatter-1.pdf  used o
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/seagull-scatter-1.pdf  used o
 n input line 311.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-[4 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proje
+[4 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proje
 ct-report_files/figure-latex/scatter-grey-1.pdf>]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/wombat-scatter-1.pdf, id=122, 361.35pt x 361.35pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/wombat-scatter-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/wombat-scatter-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/wombat-scatter-1.pdf  used on
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/wombat-scatter-1.pdf  used on
  input line 330.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-[5 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proje
+[5 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proje
 ct-report_files/figure-latex/seagull-scatter-1.pdf>] [6 <c:/Users/jimmy/AppData
-/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-report_files/figure-lat
+/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-report_files/figure-lat
 ex/wombat-scatter-1.pdf>]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/theme-comparison-1.pdf, id=149, 794.97pt x 1011.78pt>
 
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/theme-comparison-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/theme-comparison-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/theme-comparison-1.pdf  used 
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/theme-comparison-1.pdf  used 
 on input line 350.
 (pdftex.def)             Requested size: 469.76819pt x 597.88678pt.
-[7] [8 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/p
+[7] [8 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/p
 roject-report_files/figure-latex/theme-comparison-1.pdf>]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/pop-out-1.pdf, id=172, 469.755pt x 325.215pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/pop-out-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/pop-out-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/pop-out-1.pdf  used on input 
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/pop-out-1.pdf  used on input 
 line 412.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[9 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proje
+[9 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proje
 ct-report_files/figure-latex/pop-out-1.pdf>] [10]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/qualitative-1.pdf, id=200, 469.755pt x 325.215pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/qualitative-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/qualitative-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/qualitative-1.pdf  used on in
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/qualitative-1.pdf  used on in
 put line 552.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [11]
@@ -679,29 +679,29 @@ put line 552.
 LaTeX Warning: Reference `fig:qualitative' on page 12 undefined on input line 5
 59.
 
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/quokka-1.pdf, id=210, 469.755pt x 325.215pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/quokka-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/quokka-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/quokka-1.pdf  used on input l
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/quokka-1.pdf  used on input l
 ine 566.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[12 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+[12 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/qualitative-1.pdf>]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/quoll-1.pdf, id=221, 469.755pt x 325.215pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/quoll-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/quoll-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/quoll-1.pdf  used on input li
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/quoll-1.pdf  used on input li
 ne 568.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[13 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+[13 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/quokka-1.pdf>]
 
 LaTeX Warning: Reference `fig:quokka' on page 14 undefined on input line 573.
@@ -715,29 +715,29 @@ Underfull \hbox (badness 2376) in paragraph at lines 570--580
 ect are called \T1/lmtt/m/n/10 quokka_palette() \T1/lmr/m/n/10 and
  []
 
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/seal-1.pdf, id=232, 469.755pt x 325.215pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/seal-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/seal-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/seal-1.pdf  used on input lin
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/seal-1.pdf  used on input lin
 e 589.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[14 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+[14 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/quoll-1.pdf>]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/snake-1.pdf, id=244, 469.755pt x 325.215pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/snake-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/snake-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/snake-1.pdf  used on input li
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/snake-1.pdf  used on input li
 ne 591.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[15 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+[15 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/seal-1.pdf>]
 
 LaTeX Warning: Reference `fig:seal' on page 16 undefined on input line 597.
@@ -745,29 +745,29 @@ LaTeX Warning: Reference `fig:seal' on page 16 undefined on input line 597.
 
 LaTeX Warning: Reference `fig:snake' on page 16 undefined on input line 598.
 
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/dingo-1.pdf, id=255, 469.755pt x 325.215pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/dingo-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/dingo-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/dingo-1.pdf  used on input li
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/dingo-1.pdf  used on input li
 ne 610.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[16 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+[16 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/snake-1.pdf>]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/project-
+<C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/project-
 report_files/figure-latex/dolphin-1.pdf, id=268, 469.755pt x 325.215pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/pro
+File: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/pro
 ject-report_files/figure-latex/dolphin-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+<use C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/dolphin-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-4
-92821fe3418.dir/project-report_files/figure-latex/dolphin-1.pdf  used on input 
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7
+ef025f74875.dir/project-report_files/figure-latex/dolphin-1.pdf  used on input 
 line 612.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[17 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+[17 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/dingo-1.pdf>]
 
 LaTeX Warning: Reference `fig:dingo' on page 18 undefined on input line 615.
@@ -775,7 +775,7 @@ LaTeX Warning: Reference `fig:dingo' on page 18 undefined on input line 615.
 
 LaTeX Warning: Reference `fig:dolphin' on page 18 undefined on input line 615.
 
-[18 <c:/Users/jimmy/AppData/Local/Temp/RtmpCg4pv5/preview-492821fe3418.dir/proj
+[18 <c:/Users/jimmy/AppData/Local/Temp/Rtmpq2paDo/preview-7ef025f74875.dir/proj
 ect-report_files/figure-latex/dolphin-1.pdf>] [19] (./project-report.aux)
 
 LaTeX Warning: There were undefined references.
@@ -802,7 +802,7 @@ pe1/public/lm/lmr12.pfb><c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-dist/font
 s/type1/public/lm/lmr17.pfb><c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-dist/
 fonts/type1/public/lm/lmri10.pfb><c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-
 dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on project-report.pdf (19 pages, 338716 bytes).
+Output written on project-report.pdf (19 pages, 338714 bytes).
 PDF statistics:
  384 PDF objects out of 1000 (max. 8388607)
  319 compressed objects within 4 object streams

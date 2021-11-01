@@ -619,13 +619,51 @@ Similar to the qualitative and sequential palettes developed for the project,
 colors in Dingo and Dolphin palettes can be easily distinguished by people with 
 deutan, protan, and tritan color-blindness.
 
+# R Package
 
+One of the objectives of this project is to create a solution for authors and
+editors of the research book to create visualizations that are readable, 
+cohesive, and accessible. The solution needs to be easy to use so that it
+does not disrupt authors' workflow. To achieve this, R codes necessary
+to create the chosen `ggplot2` theme and color schemes discussed in the previous
+two sections will be bundled in an R package called `dataviz`. R packages are 
+extensions to R that can comprise of codes, data, documentations, tests 
+[@wickham2015r]. 
 
-# R Package (1500)
+One of the reasons of creating an R package for this project is because of ease
+of use. Codes, documentation, and tests in an R package are built in a 
+standardized format so that any R users can install it [@wickham2015r]. In 
+addition, it is fairly simple to create an R package. Packages such as `Roxygen2`,
+`devtools`, and `testthat` provide great assistance in documenting and testing
+the package. Another benefit of using an R package is that updates to the themes
+and color schemes are not time consuming. Any updates to themes and color schemes
+simply need to be applied to the codes in R package; there is no need to update
+each plots in the book. This shows that using R package will allow us to achieve 
+one of the aim of the project: to provide solutions that cause minimal 
+disruption to authors' work.
 
-## Components of R Package
+R packages are typically stored in in a repository. Two of the most common
+repositories for R packages are Comprehensive R Archive Network (CRAN) and
+GitHub. For this project, the `dataviz` package will be stored in GitHub.
+GitHub is a popular choice for a repository as it has the integration with git, 
+a version control software. Version control records changes applied to the 
+package to a file. This allows user to recall specific versions of the package
+at later time [@noauthor_git_nodate].
 
-## How dataviz was created
+## R Package Components
+
+There are several components inside an the `dataviz` package: R codes, package 
+metadata, documentation, vignettes, tests, and Namespace. 
+
+R project 
+
+R codes within an R package is stored in `R/` directory.
+
+P4: R package components:
+* R packages contain R codes, package metadata, documentation, vignettes, 
+tests, and Namespace.
+
+## How `dataviz` was created
 
 ## Testing
 
