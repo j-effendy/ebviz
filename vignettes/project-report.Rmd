@@ -457,8 +457,6 @@ dimensions from this color space matches human visual perception well
 [@zeileis2019colorspace]. In general, HCL color space can be used to generate 
 three types of color scales: qualitative, sequential, and diverging.
 
-## Types of Color Palettes
-
 ### Qualitative Palettes
 
 This color palette is designed for coding categorical information where the 
@@ -493,115 +491,44 @@ that the values above and below the average can be shown in different hues.
 ## Color palette of choice
 
 In addition to plot themes, this project also contributes two color schemes for 
-each of the three color palettes type mentioned in the previous section.
-`colorspace` and `pals` packages are going to be used to build the color 
-palettes and assess them. Chosen color palettes need to be assessed to ensure
+each of the three color palettes type mentioned in the previous section. 
+`colorspace` and `pals` packages are going to be used to build the color palettes 
+and assess them. The chosen color palettes need to be assessed to ensure
 that they achieve their intended purpose. For example, qualitative color palette
-needs to avoid implicit ordering as this is intended for coding categorical 
+needs to avoid implicit ordering as this is intended for showing coding categorical 
 information. In addition, it needs to be ensured that people with color vision
 impairment are able to distinguish the different colors in the chosen palettes.
 `pal.safe()` function from `pals` package allows us to see how color palettes
 are seen by deutan, protan, and tritan color-blind.
 
+The methodology of choosing color palettes that are not only accessible but also 
+enhance the quality of visualizations will be discussed in this section. Firstly, the
+report will explore common strategies used in choosing qualitative, sequential, 
+and diverging palettes. Then, examples of palettes made from these strategies will
+be assessed. Lastly, the report will show how color schemes for 
+qualitative, sequential and diverging palettes are chosen for the project.
+
 ### Chosen Qualitative Palettes
 
-```{r qualitative}
-pal.safe(qualitative_hcl(4, palette = "harmonic"))
-```
-
-A strategy to choose this type of palette is by keeping chroma and luminance
-relatively constant, and hue varied; making all colors in the palette to balance 
-towards the same grey [@zeileis2009escaping]. However, keeping chroma and 
-luminance fixed may not be the best approach for an efficient color palette.
-
-Figure \@ref(fig:qualitative) shows a qualitative color palette set from 
-`colorspace` package called `harmonic` as seen by people that have color-blind. 
-The four colors in this palette maintain the same chroma and luminance, and 
-different hues. It can be seen that people with color-blind will have difficulty 
-in distinguishing some colors from each other. Moreover, this color palette 
-results in implied ordering of different data group.
-
-```{r quokka}
+```{r color-blind, fig.height=8, fig.cap="Color palettes as seen by people with vision impairment"}
 quokka_palette <- c("#8C01E6", "#93B1EB", "#AB313D", "#D6CA24")
-pal.safe(quokka_palette)
-```
-
-```{r quoll}
 quoll_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
-pal.safe(quoll_palette)
-```
-
-The two qualitative color palettes developed for the project are called 
-`quokka_palette()` and `quoll_palette()`. In addition to differing hues,
-`quokka_palette()` and `quoll_palette()` also have differing chromas and 
-luminances to avoid implied ordering. Figure \@ref(fig:quokka) and figure 
-\@ref(fig:quoll) shows the quokka and quoll palettes respectively as seen by 
-people with color blindness. As shown in the figures, each color in these 
-palettes can easily be distinguished by people with deutan, protan, and tritan 
-color-blindness. Nevertheless, one limitation of these palettes is that they 
-have implied ordering. However, these palettes are still better showing 
-categorical information compared to `harmonic` palette.
-
-### Chosen Sequential Palettes
-
-One easy way to create a sequential palette is by choosing two values for each
-hue (h1 and h2), chroma (c1 and c2), and luminance (l1 and l2) 
-[@zeileis2006choosing]. `sequential_hcl` function will produce a set of 
-sequential palette with the interval specified for hue, chroma and luminance.
-
-```{r seal}
 seal_palette <- colorspace::sequential_hcl(7,
-                                              h = c(0, -100),
+                                              h = c(0, -140),
                                               c = c(80,40),
                                               l = c(40, 75),
                                               power = c(1,1))
-
-# colorblind filter
-pal.safe(seal_palette, main = "seal_palette")
-```
-
-```{r snake}
 snake_palette <- colorspace::sequential_hcl(6,
                                               h = c(250, 90),
                                               c = c(40, 55),
                                               l = c(33,98),
                                               power = c(0.5,1),
                                               rev = TRUE)
-
-# colorblind filter
-pal.safe(snake_palette, main = "snake_palette")
-```
-
-The two sequential palettes created for this project are `seal_palette()` and
-`snake_palette()`. Multi-hue (e.g. light yellow to dark cyan) sequential palettes
-are chosen for these palettes as it provides better contrast between different
-classes compared to single-hue sequential palette [@harrower2003colorbrewer].
-Seal palette is shown in figure \@ref(fig:seal), and Snake palette is depicted 
-in figure \@ref(fig:snake). As shown in the figures, people with deutan, protan, 
-and tritan color blindness are able to see the implied order and how the data 
-ranges from low to high values.
-
-### Chosen Diverging Palettes
-
-Diverging palettes can be built based on sequential palette: choosing two 
-different hues, chroma, and luminance [@zeileis2006choosing]. Function 
-`diverge_hcl()` is used to create a diverging palette based on these values, 
-and it will automatically choose the neutral color.
-
-```{r dingo}
 dingo_palette <- colorspace::diverge_hcl(7,
                                            h = c(260, 0),
                                            c = 80,
                                            l = c(30, 90),
                                            power = 1.5)
-
-
-# colorblind filter
-pal.safe(dingo_palette, main = "dingo_palette")
-```
-
-```{r dolphin}
-# make the purple darker (modify hue)
 dolphin_palette <- colorspace::diverging_hcl(n = 7,
                                              h = c(265, 45),
                                              c = 80,
@@ -610,21 +537,130 @@ dolphin_palette <- colorspace::diverging_hcl(n = 7,
                                              rev = TRUE)
 
 # colorblind filter
-pal.safe(dolphin_palette, main = "dolphin_palette")
+par(mfrow=c(4,2))
+pal.safe(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
+pal.safe(quokka_palette, main = "Quokka Palette")
+pal.safe(quoll_palette, main = "Quoll Palette")
+pal.safe(seal_palette, main = "Seal Palette")
+pal.safe(snake_palette, main = "Snake Palette")
+pal.safe(dingo_palette, main = "Dingo Palette")
+pal.safe(dolphin_palette, main = "Dolphin Palette")
 ```
+
+```{r harmonic, fig.cap="HCL color spectrum plot for Harmonic palette"}
+specplot(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
+```
+
+One common strategy to choose this type of palette is by keeping chroma and luminance
+relatively constant, and hue varied; making all colors in the palette to balance 
+towards the same grey [@zeileis2009escaping]. While this strategy is relatively
+simple, keeping chroma and luminance fixed may not be the best approach to 
+choose color palette that are accessible.
+
+Figure \@ref(fig:harmonic) shows an example of a qualitative color palette from 
+`colorspace` package called harmonic. As shown in the figure, chroma
+and luminance remain constant, while the hue varies across the four colors.
+It is fair to say that this color set works relatively well to show categorical 
+information as it does not give implied ordering across different categories.
+This method, however, does not have the same result for people with visual
+impairment. It can be seen in figure \@ref(fig:color-blind) that people 
+with color-blindness will have difficulty in distinguishing some colors from 
+harmonic palette. For instance, there are three colors that look similar as seen 
+by people with tritan color-blindness. Moreover, this color palette results in 
+implied ordering of different data group for people with visual impairment.
+
+```{r quokka, fig.cap="HCL color spectrum plot for Quokka palette"}
+specplot(quokka_palette, main = "Quokka Palette")
+```
+
+```{r quoll, fig.cap="HCL color spectrum plot for Quoll palette"}
+specplot(quoll_palette, main = "Quoll Palette")
+```
+
+The two qualitative color palettes developed for the project are called 
+`quokka_palette()` and `quoll_palette()`. Figure \@ref(fig:quokka) and figure 
+\@ref(fig:quoll) shows the HCL color spectrum plot for these palettes. In
+contrast with the Harmonic Palette, Quokka and Quoll palettes have differing 
+hues, chroma and luminance across all colors. As a result, each color in
+these palettes can easily be distinguished by people with deutan, protan, and 
+tritan color-blindness (see figure \@ref(fig:color-blind)). However, removing
+implied ordering for qualitative palettes while ensuring that the palettes
+are accessible proves to be difficult. Figure \@ref(fig:color-blind) shows that
+while Quokka and Quoll palettes are better compared to Harmonic palette in
+not showing implied ordering for people with visual impairment, there are still 
+some colors that look "paired".
+
+### Chosen Sequential Palettes
+
+The strategy to choose a sequential palette is different to that of qualitative
+palette. One easy way to create a sequential palette is by choosing two values 
+for hue (h1 and h2), chroma (c1 and c2), luminance (l1 and l2), and power 
+transformations (p1 and p2) for chroma and luminance [@zeileis2006choosing].
+These values of hues, chroma, luminance, and power transformation can be used
+as inputs to `sequential_hcl` function to produce a set of sequential palette.
+
+```{r seal, fig.cap="HCL color spectrum plot for Seal palette"}
+specplot(seal_palette, main = "Seal Palette")
+```
+
+```{r snake, fig.cap="HCL color spectrum plot for Snake palette"}
+specplot(snake_palette, main = "Snake Palette")
+```
+
+The two sequential palettes created for this project are `seal_palette()` and
+`snake_palette()`. As shown in figure \@ref(fig:seal) and figure \@ref(fig:snake),
+these palettes use multi-hue schemes as opposed to single-hue schemes. Multi-hue
+palettes were chosen for the project as it provides better contrast between different
+classes compared to single-hue sequential palette [@harrower2003colorbrewer].
+Moreover, multi-hue sequential palettes avoids the use of extreme colors, as well
+as allow viewers to better discriminate the middle colors [@zeileis2019colorspace]. 
+In addition, figure \@ref(fig:color-blind) shows that people with deutan, protan, 
+and tritan color blindness are able to distinguish the colors in the palette.
+This means that color palettes will allow readers with color vision deficiency
+to see implied order and how the data ranges from low to high values.
+
+### Chosen Diverging Palettes
+
+The approach in choosing diverging palettes is similar to choosing sequential
+palettes. Diverging palettes can be built by choosing two values for
+hues, chroma, luminance, and power transformation for chroma and luminance 
+[@zeileis2006choosing]. Function `diverge_hcl()` is used to create a diverging 
+palette based on these values, and it will automatically choose the neutral color.
+
+```{r dingo, fig.cap="HCL color spectrum plot for Dingo palette"}
+specplot(dingo_palette, main = "Dingo Palette")
+```
+
+```{r dolphin, fig.cap="HCL color spectrum plot for Dolphin palette"}
+specplot(dolphin_palette, main = "Dolphin Palette")
+```
+
+One condition needs to be met when choosing a color pair for a diverging
+palette: the color pair should not create color confusions: naming confusions, 
+color vision impairment, and simultaneous contrast confusion 
+[@brewer1996guidelines]. Naming confusion happens when people use two 
+basic color names for the same color. On the other hand, simultaneous contrast
+refers to a phenomena where colors are affected by their opposite. For instance,
+a color will appear lighter when surrounded by a dark color, and a color will
+appear warmer when surrounded by a cool color [@brewer1992review]. This can be
+prevented by avoiding selecting opposite color pairs for diverging palettes
+[@brewer1996guidelines].
 
 Dingo and Dolphin palettes are diverging palettes developed for the project.
 These palettes are shown in figure \@ref(fig:dingo) and \@ref(fig:dolphin).
-Similar to the qualitative and sequential palettes developed for the project,
-colors in Dingo and Dolphin palettes can be easily distinguished by people with 
-deutan, protan, and tritan color-blindness.
+Red/blue pairs and orange/blue hue pairs are chosen for Dingo and Dolphin
+palettes respectively as these pairs create no naming confusions and 
+simultaneous contrast confusions [@brewer1996guidelines]. Moreover, these 
+palettes create no color confusion due to color vision impairment as colors in 
+Dingo and Dolphin palettes can be easily distinguished by people with color-blindness
+(shown in figure \@ref(fig:color-blind)).
 
 # R Package
 
 One of the objectives of this project is to create a solution for authors and
 editors of the research book to create visualizations that are readable, 
 cohesive, and accessible. The solution needs to be easy to use so that it
-does not disrupt authors' workflow. To achieve this, R codes necessary
+does not disrupt authors' workflow. Tr po achieve this, R codes necessary
 to create the chosen `ggplot2` theme and color schemes discussed in the previous
 two sections will be bundled in an R package called `dataviz`. R packages are 
 extensions to R that can comprise of codes, data, documentations, tests 
