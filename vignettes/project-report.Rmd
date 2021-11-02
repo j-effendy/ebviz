@@ -4,6 +4,7 @@ author: "Jimmy Effendy"
 date: "13/10/2021"
 output: bookdown::pdf_document2
 bibliography: references.bib
+csl: apa.csl
 ---
 
 ```{r setup, include=FALSE}
