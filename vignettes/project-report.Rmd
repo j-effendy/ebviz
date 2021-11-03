@@ -350,7 +350,7 @@ in field of vision regardless how many distractors surrounding it
 [@treisman1985preattentive]. The use of colour in data visualisation can facilitate
 this "pop-out" as it makes some elements to be easier to be found.
 
-```{r pop-out, fig.cap="It is easier to find the odd ones by using colour"}
+```{r pop-out, fig.cap="This plot shows the same data with groups highlighted with either colour (left hand panel) or shape (right hand panel). From this we see that it is easier to find the odd ones by using colour"}
 set.seed(20211028)
 
 x <- rnorm(20)

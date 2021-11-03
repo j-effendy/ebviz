@@ -1,9 +1,25 @@
-library(ggplot2)
-
+#' @title ggplot2 theme from dataviz
+#'
+#' @description
+#' This is a complete theme for ggplot2. This is built based on Tufte's principles
+#' of graphical excellence.
+#'
+#' @import ggplot2
+#'
+#' @export
+#'
+#' @examples
+#' ggplot(mtcars, aes(mpg,disp,color=factor(carb))) +
+#' geom_point(size=3) +
+#'   labs(title="Scatter Plot",
+#'        subtitle = "theme_seagull()",
+#'        caption = "Data: mtcars") +
+#'   theme_seagull()
+#'
 theme_seagull <- function(){
-  theme_minimal() %+replace%
+  ggplot2::theme_minimal() %+replace%
 
-    theme(
+    ggplot2::theme(
       # grid elements
       panel.grid.minor = element_blank(),
       panel.grid.major.x = element_blank(),
@@ -40,10 +56,28 @@ theme_seagull <- function(){
     )
 }
 
+#' @title ggplot2 theme from dataviz
+#'
+#' @description
+#' This is a complete theme for ggplot2. This is built based on Tufte's principles
+#' of graphical excellence.
+#'
+#' @import ggplot2
+#'
+#' @export
+#'
+#' @examples
+#' ggplot(mtcars, aes(mpg,disp,color=factor(carb))) +
+#' geom_point(size=3) +
+#'   labs(title="Scatter Plot",
+#'        subtitle = "theme_wombat()",
+#'        caption = "Data: mtcars") +
+#'   theme_wombat()
+#'
 theme_wombat <- function(){
-  theme_bw() %+replace%
+  ggplot2::theme_bw() %+replace%
 
-    theme(
+    ggplot2::theme(
       # grid elements
       panel.grid.minor = element_blank(),
       panel.border = element_rect(color = "#dadadf", fill = NA),
