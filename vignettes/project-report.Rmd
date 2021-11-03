@@ -494,7 +494,7 @@ that the values above and below the average can be shown in different hues.
 
 In addition to plot themes, this project also contributes two colour schemes for 
 each of the three colour palettes type mentioned in the previous section. 
-`colorspace` and `pals` packages are going to be used to build the colour palettes 
+`pals` packages are going to be used to build the colour palettes 
 and assess them. The chosen colour palettes need to be assessed to ensure
 that they achieve their intended purpose. For example, qualitative colour palette
 needs to avoid implicit ordering as this is intended for showing coding categorical 
@@ -683,18 +683,26 @@ a version control software. Version control records changes applied to the
 package to a file. This allows user to recall specific versions of the package
 at later time [@noauthor_git_nodate].
 
+In the next section, the report will discuss how the `dataviz` package was 
+created. It will discuss each component of the package, and what tools 
+were used in developing the package.
+
 ## R Package Components
 
-There are several components inside an the `dataviz` package: R codes, package 
-metadata, documentation, vignettes, tests, and Namespace. 
+One of the most important components of a package is the R codes. One firm
+rule for an R package is that its R functions need to be stored in R scripts 
+[@wickham2015r]. Following this rule, The `dataviz` put its R codes in  R 
+scripts, which are stored in `R` directory. The R codes required to construct 
+the chosen colour palettes and `ggplot2` themes discussed in previous sections are 
+stored in `colour.R` and `theme.R` respectively.
 
-R project 
-
-R codes within an R package is stored in `R/` directory.
-
-P4: R package components:
-* R packages contain R codes, package metadata, documentation, vignettes, 
-tests, and Namespace.
+In addition to R codes, documentation is also a crucial aspect of a well-made
+package [@wickham2015r]. In the absence of documentations, users wont a guide
+that assists them to use the package properly. Proper documentations also assist
+the authors of the package for future time. This assists authors to remember the
+purpose of the functions. One type of documentation is an object documentation;
+this can be accessed by `?` or `help()`. `roxygen2` and `devtools` packages are
+used in creating object documentation. 
 
 ## How `dataviz` was created
 
