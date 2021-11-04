@@ -1,276 +1,161 @@
-#' @title Qualitative color scales from dataviz
-#'
-#' @description The Quokka color scales is an accessible qualitative color scale.
-#' This color scale is useful to show categorical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(mtcars, aes(mpg,disp,color=factor(vs))) +
-#'     geom_point(size=3) + scale_color_quokka()
-#'
-scale_color_quokka <- function(){
-  color_palette <- c("#8C01E6", "#93B1EB", "#AB313D", "#D6CA24")
-
-  ggplot2::scale_color_manual(values = color_palette)
-}
-
-
-#' @title Qualitative color scales from dataviz
-#'
-#' @description The Quokka color scales is an accessible qualitative color scale.
-#' This color scale is useful to show categorical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(mpg, aes(class)) +
-#' geom_bar(aes(fill = drv)) +
-#' scale_fill_quokka()
-#'
-scale_fill_quokka <- function(){
-  color_palette <- c("#8C01E6", "#93B1EB", "#AB313D", "#D6CA24")
-
-  ggplot2::scale_fill_manual(values = color_palette)
-}
-
-#' @title Qualitative color scales from dataviz
-#'
-#' @description The Quoll color scales is an accessible qualitative color scale.
-#' This color scale is useful to show categorical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(mtcars, aes(mpg,disp,color=factor(vs))) +
-#'     geom_point(size=3) +
-#'     scale_color_quoll()
-#'
-scale_color_quoll <- function(){
-  color_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
-
-  ggplot2::scale_color_manual(values = color_palette)
-}
-
-#' @title Qualitative color scales from dataviz
-#'
-#' @description The Quoll color scales is an accessible qualitative color scale.
-#' This color scale is useful to show categorical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(mpg, aes(class)) +
-#' geom_bar(aes(fill = drv)) +
-#' scale_fill_quoll()
-#'
-scale_fill_quoll <- function(){
-  color_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
-
-  ggplot2::scale_fill_manual(values = color_palette)
-}
-
-
-#' @title Sequential color scales from dataviz
-#'
-#' @description The Seal color scales is an accessible sequential color scale.
-#' This color scale is useful to show numerical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(mtcars, aes(mpg,disp,color=mpg)) +
-#'     geom_point(size=3) +
-#'     scale_color_seal()
-#'
-scale_color_seal <- function(){
-  color_palette <- colorspace::sequential_hcl(7,
-                                              h = c(0, -100),
-                                              c = c(80,40),
-                                              l = c(40, 75),
-                                              power = c(1,1))
-
-  ggplot2::scale_color_gradientn(colors = color_palette)
-}
-
-#' @title Sequential color scales from dataviz
-#'
-#' @description The Seal color scales is an accessible sequential color scale.
-#' This color scale is useful to show numerical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(faithfuld) +
-#' geom_tile(aes(eruptions, waiting, fill = density)) +
-#' scale_fill_seal()
-#'
-scale_fill_seal <- function(){
-  color_palette <- colorspace::sequential_hcl(7,
-                                              h = c(0, -100),
-                                              c = c(80,40),
-                                              l = c(40, 75),
-                                              power = c(1,1))
-
-  ggplot2::scale_fill_gradientn(colors = color_palette)
-}
-
-#' @title Sequential color scales from dataviz
-#'
-#' @description The Snake color scales is an accessible sequential color scale.
-#' This color scale is useful to show numerical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(mtcars, aes(mpg,disp,color=mpg)) +
-#'     geom_point(size=3) +
-#'     scale_color_snake()
-#'
-scale_color_snake <- function(){
-  color_palette <- colorspace::sequential_hcl(6,
-                                              h = c(250, 90),
-                                              c = c(40, 55),
-                                              l = c(33,98),
-                                              power = c(0.5,1),
-                                              rev = TRUE)
-
-  ggplot2::scale_color_gradientn(colors = color_palette)
-}
-
-#' @title Sequential color scales from dataviz
-#'
-#' @description The Snake color scales is an accessible sequential color scale.
-#' This color scale is useful to show numerical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(faithfuld) +
-#' geom_tile(aes(eruptions, waiting, fill = density)) +
-#' scale_fill_snake()
-#'
-scale_fill_snake <- function(){
-  color_palette <- colorspace::sequential_hcl(6,
-                                              h = c(250, 90),
-                                              c = c(40, 55),
-                                              l = c(33,98),
-                                              power = c(0.5,1),
-                                              rev = TRUE)
-
-  ggplot2::scale_fill_gradientn(colors = color_palette)
-}
-
-#' @title Diverging color scales from dataviz
-#'
-#' @description The Dingo color scales is an accessible diverging color scale.
-#' This color scale is useful to show numerical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(mtcars, aes(mpg,disp,color=mpg)) +
-#'     geom_point(size=3) +
-#'     scale_color_dingo()
-#'
-scale_color_dingo <- function(){
-  color_palette <- colorspace::diverge_hcl(7,
-                                           h = c(260, 0),
-                                           c = 80,
-                                           l = c(30, 90),
-                                           power = 1.5)
-
-  ggplot2::scale_color_gradientn(colors = color_palette)
-}
-
-#' @title Diverging color scales from dataviz
-#'
-#' @description The Dingo color scales is an accessible diverging color scale.
-#' This color scale is useful to show numerical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(faithfuld) +
-#' geom_tile(aes(eruptions, waiting, fill = density)) +
-#' scale_fill_dingo()
-#'
-scale_fill_dingo <- function(){
-  color_palette <- colorspace::diverge_hcl(7,
-                                           h = c(260, 0),
-                                           c = 80,
-                                           l = c(30, 90),
-                                           power = 1.5)
-
-  ggplot2::scale_fill_gradientn(colors = color_palette)
-}
-
-#' @title Diverging color scales from dataviz
-#'
-#' @description The Dolphin color scales is an accessible diverging color scale.
-#' This color scale is useful to show numerical information in a plot.
-#'
-#' @import ggplot2
-#'
-#' @export
-#'
-#' @examples
-#' ggplot2::ggplot(mtcars, aes(mpg,disp,color=mpg)) +
-#'     geom_point(size=3) +
-#'     scale_color_dolphin()
-#'
-scale_color_dolphin <- function(){
-  color_palette <- colorspace::diverging_hcl(n = 7,
+# List of olor palettes
+quokka_palette <- c("#8C01E6", "#93B1EB", "#AB313D", "#D6CA24")
+quoll_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
+seal_palette <- colorspace::sequential_hcl(7,
+                                           h = c(0, -100),
+                                           c = c(80,40),
+                                           l = c(40, 75),
+                                           power = c(1,1))
+snake_palette <- colorspace::sequential_hcl(6,
+                                            h = c(250, 90),
+                                            c = c(40, 55),
+                                            l = c(33,98),
+                                            power = c(0.5,1),
+                                            rev = TRUE)
+dingo_palette <- colorspace::diverge_hcl(7,
+                                         h = c(260, 0),
+                                         c = 80,
+                                         l = c(30, 90),
+                                         power = 1.5)
+dolphin_palette <- colorspace::diverging_hcl(n = 7,
                                              h = c(265, 45),
                                              c = 80,
                                              l = c(70, 95),
                                              power = c(0.5, 2),
                                              rev = TRUE)
 
-  ggplot2::scale_color_gradientn(colors = color_palette)
-}
-
-#' @title Diverging color scales from dataviz
+#' Qualitative, sequential, and diverging color scales from dataviz
 #'
-#' @description The Dolphin color scales is an accessible diverging color scale.
-#' This color scale is useful to show numerical information in a plot.
+#' @param palette
 #'
-#' @import ggplot2
+#' @description The dataviz color scales provide accessible color schemes
+#' for various data types. Quoll and Quokka palettes are qualitative palettes,
+#' Seal and Snake palettes are sequential palettes, and Dingo and Dolphin
+#' palettes are diverging palettes.
 #'
 #' @export
 #'
-#' @examples
-#' ggplot2::ggplot(faithfuld) +
-#' geom_tile(aes(eruptions, waiting, fill = density)) +
-#' scale_fill_dolphin()
+#' @import ggplot2
 #'
-scale_fill_dolphin <- function(){
-  color_palette <- colorspace::diverging_hcl(n = 7,
-                                             h = c(265, 45),
-                                             c = 80,
-                                             l = c(70, 95),
-                                             power = c(0.5, 2),
-                                             rev = TRUE)
+#' @examples
+#' library(ggplot2)
+#'
+#' # Quokka palette
+#' ggplot(mtcars, aes(mpg,disp,color=factor(vs))) +
+#'     geom_point(size=3) +
+#'     scale_colour_dataviz("quokka")
+#'
+#' # Quoll palette
+#' ggplot(mtcars, aes(mpg,disp,color=factor(vs))) +
+#'     geom_point(size=3) +
+#'     scale_colour_dataviz("quoll")
+#'
+#' # Seal palette
+#' ggplot(mtcars, aes(mpg,disp,color=mpg)) +
+#'     geom_point(size=3) +
+#'     geom_point(size=3) +
+#'     scale_colour_dataviz("seal")
+#'
+#' # Snake palette
+#' ggplot(mtcars, aes(mpg,disp,color=mpg)) +
+#'     geom_point(size=3) +
+#'     geom_point(size=3) +
+#'     scale_colour_dataviz("snake")
+#'
+#' # Dingo palette
+#' ggplot(mtcars, aes(mpg,disp,color=mpg)) +
+#'     geom_point(size=3) +
+#'     scale_colour_dataviz("dingo")
+#'
+#' # Dolphin palette
+#' ggplot(mtcars, aes(mpg,disp,color=mpg)) +
+#'     geom_point(size=3) +
+#'     scale_colour_dataviz("dolphin")
+#'
+scale_colour_dataviz <- function(palette){
+  if (palette == "quokka"){
+    ggplot2::scale_color_manual(values = quokka_palette)
+  } else if (palette == "quoll") {
+    ggplot2::scale_color_manual(values = quoll_palette)
+  } else if (palette == "seal") {
+    ggplot2::scale_color_gradientn(colors = seal_palette)
+  } else if (palette == "snake") {
+    ggplot2::scale_color_gradientn(colors = snake_palette)
+  } else if (palette == "dingo") {
+    ggplot2::scale_color_gradientn(colors = dingo_palette)
+  } else if (palette == "dolphin") {
+    ggplot2::scale_color_gradientn(colors = dolphin_palette)
+  } else {
+    warning(paste("Palette", palette, "does not exist. Please choose from the
+                  following options: quokka, quoll, seal, snake, dingo, and dolphin"))
+  }
+}
 
-  ggplot2::scale_fill_gradientn(colors = color_palette)
+#' @rdname scale_colour_dataviz
+scale_color_dataviz <- scale_colour_dataviz
+
+
+#' Qualitative, sequential, and diverging color scales from dataviz
+#'
+#' @param palette
+#'
+#' @description The dataviz color scales provide accessible color schemes
+#' for various data types. Quoll and Quokka palettes are qualitative palettes,
+#' Seal and Snake palettes are sequential palettes, and Dingo and Dolphin
+#' palettes are diverging palettes.
+#'
+#' @export
+#'
+#' @import ggplot2
+#'
+#' @examples
+#' library(ggplot2)
+#'
+#' # Quokka palette
+#' ggplot(mpg, aes(class)) +
+#' geom_bar(aes(fill = drv)) +
+#' scale_fill_dataviz("quokka")
+#'
+#' # Quoll palette
+#' ggplot(mpg, aes(class)) +
+#' geom_bar(aes(fill = drv)) +
+#' scale_fill_dataviz("quoll")
+#'
+#' # Seal palette
+#' ggplot(faithfuld) +
+#' geom_tile(aes(eruptions, waiting, fill = density)) +
+#' scale_fill_dataviz("seal")
+#'
+#' # Snake palette
+#' ggplot(faithfuld) +
+#' geom_tile(aes(eruptions, waiting, fill = density)) +
+#' scale_fill_dataviz("snake")
+#'
+#' # Dingo palette
+#' ggplot(faithfuld) +
+#' geom_tile(aes(eruptions, waiting, fill = density)) +
+#' scale_fill_dataviz("dingo")
+#'
+#' # Dolphin palette
+#' ggplot(faithfuld) +
+#' geom_tile(aes(eruptions, waiting, fill = density)) +
+#' scale_fill_dataviz("dolphin")
+#'
+scale_fill_dataviz <- function(palette){
+  if (palette == "quokka"){
+    ggplot2::scale_fill_manual(values = quokka_palette)
+  } else if (palette == "quoll") {
+    ggplot2::scale_fill_manual(values = quoll_palette)
+  } else if (palette == "seal") {
+    ggplot2::scale_fill_gradientn(colors = seal_palette)
+  } else if (palette == "snake") {
+    ggplot2::scale_fill_gradientn(colors = snake_palette)
+  } else if (palette == "dingo") {
+    ggplot2::scale_fill_gradientn(colors = dingo_palette)
+  } else if (palette == "dolphin") {
+    ggplot2::scale_fill_gradientn(colors = dolphin_palette)
+  } else {
+    warning(paste("Palette", palette, "does not exist. Please choose from the
+                  following options: quokka, quoll, seal, snake, dingo, and dolphin"))
+  }
 }

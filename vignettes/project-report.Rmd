@@ -149,7 +149,7 @@ $$
 $$
 
 Good graphical representations can be achieved by reducing non-data ink as this
-a way to maximize data-ink ratio [@[-@tufte2001visual]. Graphical inks that 
+a way to maximize data-ink ratio [@tufte2001visual]. Graphical inks that 
 provide no new information about the underlying data are not beneficial to 
 readers and sometimes result graphical clutters. However, maximizing the 
 data-ink ratio needs to be done cautiously as components of the graph that 
@@ -425,11 +425,7 @@ locations in a three dimensional space. While these colour axis provide
 physiological description, human perception of colours do not corresponds to
 these axes. Human perception of colour corresponds to the polar coordinates
 of the colour coordinate (yellow/blue and green/red), and a dark/light axis 
-[@zeileis2006choosing]:
-
-1. Hue: dominant wavelength
-2. Chroma: colourfulness (colour intensity)
-3. Luminance: brightness (brightness)
+[@zeileis2006choosing].
 
 Unfortunately, not all software packages use colour space was developed based on
 human perception. For example, the most common colour map used by software 
@@ -579,17 +575,12 @@ specplot(quoll_palette, main = "Quoll Palette")
 ```
 
 The two qualitative colour palettes developed for the project are called 
-`quokka_palette()` and `quoll_palette()`. Figure \@ref(fig:qualitative) shows 
+Quokka and Quoll palettes. Figure \@ref(fig:qualitative) shows 
 the HCL colour spectrum plot for these palettes. In
 contrast with the Harmonic Palette, Quokka and Quoll palettes have differing 
 hues, chroma and luminance across all colours. As a result, each colour in
 these palettes can easily be distinguished by people with deutan, protan, and 
-tritan colour-blindness (see figure \@ref(fig:color-blind)). However, removing
-implied ordering for qualitative palettes while ensuring that the palettes
-are accessible proves to be difficult. Figure \@ref(fig:color-blind) shows that
-while Quokka and Quoll palettes are better compared to Harmonic palette in
-not showing implied ordering for people with visual impairment, there are still 
-some colours that look "paired".
+tritan colour-blindness (see figure \@ref(fig:color-blind)). 
 
 ### Chosen Sequential Palettes
 
@@ -606,8 +597,8 @@ specplot(seal_palette, main = "Seal Palette")
 specplot(snake_palette, main = "Snake Palette")
 ```
 
-The two sequential palettes created for this project are `seal_palette()` and
-`snake_palette()`. As shown in figure \@ref(fig:sequential),
+The two sequential palettes created for this project are Seal and
+Snake palettes. As shown in figure \@ref(fig:sequential),
 these palettes use multi-hue schemes as opposed to single-hue schemes. Multi-hue
 palettes were chosen for the project as it provides better contrast between different
 classes compared to single-hue sequential palette [@harrower2003colorbrewer].
@@ -687,28 +678,74 @@ In the next section, the report will discuss how the `dataviz` package was
 created. It will discuss each component of the package, and what tools 
 were used in developing the package.
 
-## R Package Components
+## `dataviz` Components
 
 One of the most important components of a package is the R codes. One firm
 rule for an R package is that its R functions need to be stored in R scripts 
 [@wickham2015r]. Following this rule, The `dataviz` put its R codes in  R 
-scripts, which are stored in `R` directory. The R codes required to construct 
-the chosen colour palettes and `ggplot2` themes discussed in previous sections are 
-stored in `colour.R` and `theme.R` respectively.
+scripts, which are stored in `R` directory. The chosen colour palettes can be 
+accessed from `scale_colour_dataviz` and `scale_fill_dataviz` functions which
+are stored in `colour.R`. These functions take the name of the palette as an 
+input (e.g. quokka). The ggplot theme chosen for the project can be used by
+function `theme_wombat()` which is stored in an R script called `theme.R`. 
 
 In addition to R codes, documentation is also a crucial aspect of a well-made
 package [@wickham2015r]. In the absence of documentations, users wont a guide
 that assists them to use the package properly. Proper documentations also assist
 the authors of the package for future time. This assists authors to remember the
 purpose of the functions. One type of documentation is an object documentation;
-this can be accessed by `?` or `help()`. `roxygen2` and `devtools` packages are
-used in creating object documentation. 
+this can be accessed by `?` or `help()`. Information such as function's 
+description, usage, argument, and examples can be found in the documentation.
+`roxygen2`, `devtools`, and `usethis` packages are used in creating object 
+documentation.
 
-## How `dataviz` was created
+Another crucial aspect to package development is testing. While testing add
+extra works to package development, it ensures that the package works
+as intended. Package `testthat` and `usethis` are used to write the tests for
+`dataviz` package. A test that was used for this package is to ensure that 
+users use valid input when using `scale_colour_dataviz` and `scale_fill_dataviz`.
 
-## Testing
+\newpage
 
-# Conclusion (300)
+# Conclusions and Limitations
+
+## Conclusions
+
+One of the challenges in producing a research book is create a book that has
+a consistent look/design. Typically, there is a group of authors that work on
+a chapter of an edited book. These authors will have their own way/style in
+producing their visualizations for the book. Not only do these visualizations
+need to have a consistent design, but they also need to be readable and 
+accessible.
+
+The aim of the project is to provide a solution that can ensure that 
+visualizations in the research book meet the criteria mentioned in the previous
+section in an efficient manner. To achieve this objective, a ggplot theme was 
+developed for the project. In addition, several colour scales for various
+data types are also created. The chosen theme was developed based on Tufte's
+principles of graphical excellence. This is to ensure the viewers to extract
+information as much as possible from the visualizations. Moreover, the colour
+palettes were developed with a colour space that was based on human perception.
+Furthermore, how colours seen by people with visual impairment was taken into 
+consideration to ensure that the colour palettes are accessible. The theme and
+colour schemes are bundled in an R package for efficiency.
+
+## Limitations
+
+One limitation in the package is related to colour palettes, specifically
+the chosen qualitative palettes. As mentioned in the previous section,
+this palette is specifically used for show **un-ordered** categorical information.
+It is therefore imperative to avoid implying that one group is larger or more
+important than other groups. However, removing implied ordering while ensuring 
+accessibility proves to be difficult. Figure \@ref(fig:color-blind) shows that
+while Quokka and Quoll palettes are better compared to Harmonic palette in
+avoiding implied ordering for people with visual impairment, there are still 
+some colours that look "paired". In addition, Quokka and Quoll 'only' have four
+colours. It is difficult to produce a qualitative palette that have more than 
+four colours while still ensuring that people with color deficiency are able to 
+distinguish the colours from one another.
+
+Other potential limitations: lack of testings, lack of colour assessments.
 
 \newpage
 
