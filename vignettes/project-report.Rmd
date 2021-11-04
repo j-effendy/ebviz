@@ -19,10 +19,25 @@ library(pals)
 
 \newpage
 
+# Abstract
+
+The work involved in the productions of visualizations in an edited book
+is often laborious. With many authors involved, it is difficult to produce
+an edited book that have a cohesive design. This project aims to reduce 
+workflow required in producing visualizations that are readable, cohesive, and
+accessible in a Multilevel Regression and Poststratification (MRP) edited book.
+The project contributes to a ggplot theme and accessible colour schemes. The 
+theme is developed based on Tufte's principle of data graphical excellence.
+In addition, the project also develops two colour schemes for each type of
+colour palettes: qualitative, sequential, and diverging palettes. These theme
+and colour palettes are bundled together in an R package called `dataviz`.
+An R package is used for this project as authors can easily install the package
+and use its functions for their research.
+
 # Introduction
 
-This project relates to an edited book about multilevel regression and 
-poststratification (MRP). As is the case with other books, there will be
+This project relates to an edited book about Multilevel Regression and 
+Poststratification (MRP). As is the case with other books, there will be
 numerous visualizations that will be used within the book. These plots will need to be
 readable, cohesive, and accessible. There is a group of authors (around one to 
 five authors) who work together on a chapter. The editors then work to combine 
