@@ -1,5 +1,6 @@
 ---
 title: "Project Report"
+subtitle: "Automatic Visualisations Aesthetic Production for Multilevel Regression and Poststratification Book"
 author: "Jimmy Effendy"
 date: "13/10/2021"
 output: bookdown::pdf_document2
