@@ -34,7 +34,7 @@ devtools::install_github("j-effendy/dataviz")
 These are basic plot examples of `theme_seagull()` and `theme_wombat()` using 
 `mtcars` and `economics_long` dataset:
 
-```{r theme, echo=FALSE}
+```{r theme, echo=FALSE, fig.width=10, fig.height=15}
 
 library(dataviz)
 library(ggplot2)
@@ -94,44 +94,62 @@ s3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
 ```
 
 These are basic plot examples of `dataviz` colour palettes using 
-`mtcars` and `economics_long` dataset:
+`mtcars` dataset:
 
-```{r colour, echo=FALSE}
+```{r colour, echo=FALSE, fig.width=10, fig.height=15}
 library(dataviz)
 library(ggplot2)
 library(patchwork)
 
 p1 <- ggplot(mtcars, aes(mpg,disp,color=factor(vs))) +
-       geom_point(size=3) +
-       scale_colour_dataviz("quokka") +
-    theme_wombat()
+        geom_point(size=3) +
+        scale_colour_dataviz("quokka") +
+        labs(title="Scatter Plot",
+             subtitle = "Quokka Palette",
+             caption = "Data: mtcars") +
+        theme_wombat()
 
 p2 <- ggplot(mtcars, aes(mpg,disp,color=factor(vs))) +
-       geom_point(size=3) +
-       scale_colour_dataviz("quoll") +
-    theme_wombat()
+        geom_point(size=3) +
+        scale_colour_dataviz("quoll") +
+        labs(title="Scatter Plot",
+               subtitle = "Quoll Palette",
+               caption = "Data: mtcars") +
+        theme_wombat()
 
 p3 <- ggplot(mtcars, aes(mpg,disp,color=mpg)) +
-       geom_point(size=3) +
-       geom_point(size=3) +
-       scale_colour_dataviz("seal") +
-    theme_wombat()
+        geom_point(size=3) +
+        geom_point(size=3) +
+        scale_colour_dataviz("seal") +
+        labs(title="Scatter Plot",
+                 subtitle = "Seal Palette",
+                 caption = "Data: mtcars") +
+        theme_wombat()
 
 p4 <- ggplot(mtcars, aes(mpg,disp,color=mpg)) +
-       geom_point(size=3) +
-       geom_point(size=3) +
-       scale_colour_dataviz("snake") +
-    theme_wombat()
+        geom_point(size=3) +
+        geom_point(size=3) +
+        scale_colour_dataviz("snake") +
+        labs(title="Scatter Plot",
+                 subtitle = "Snake Palette",
+                 caption = "Data: mtcars") +
+        theme_wombat()
 
 p5 <- ggplot(mtcars, aes(mpg,disp,color=mpg)) +
-       geom_point(size=3) +
-       scale_colour_dataviz("dingo") +
-    theme_wombat()
+        geom_point(size=3) +
+        scale_colour_dataviz("dingo") +
+        labs(title="Scatter Plot",
+                 subtitle = "Dingo Palette",
+                 caption = "Data: mtcars") +
+        theme_wombat()
 
 p6 <- ggplot(mtcars, aes(mpg,disp,color=mpg)) +
-       geom_point(size=3) +
-       scale_colour_dataviz("dolphin") +
-    theme_wombat()
+        geom_point(size=3) +
+        scale_colour_dataviz("dolphin") +
+        labs(title="Scatter Plot",
+                 subtitle = "Dolphin Palette",
+                 caption = "Data: mtcars") +
+        theme_wombat()
 
 (p1 + p2) / (p3 + p4) / (p5 + p6)
 ```
