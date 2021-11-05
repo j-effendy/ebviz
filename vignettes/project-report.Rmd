@@ -77,6 +77,8 @@ the project. In the fourth section, the report will explain how the theme
 and colour schemes will be wrapped in an R package. To put it briefly, the
 report contributes themes, colour schemes, and a package called `dataviz`.
 
+\newpage
+
 # Themes
 
 The first aspect that needs to be considered is how a good visualization looks 
@@ -361,9 +363,9 @@ use of colour in data visualizations is to differentiate one element from one
 another [@stone2006choosing]. However, a poor choice of colour palette can impede 
 viewers' ability to effectively extract information from the visualization. 
 
-With a simple visual features, some objects can be easily recognised compared
-to other objects without requiring attention. The target object will "pop-out" 
-in field of vision regardless how many distractors surrounding it 
+With a simple visual feature, some objects can be easily recognised without 
+requiring much attention. The target object will "pop-out" 
+in field of vision regardless of how many distractors surrounding it 
 [@treisman1985preattentive]. The use of colour in data visualization can facilitate
 this "pop-out" as it makes some elements to be easier to be found.
 
@@ -403,10 +405,10 @@ p2 <- pop_out %>% ggplot(aes(x = x,
 p1 + p2
 ```
 
-A great example to show how easy it is for colour to be recognised is stated
-in Healy's book [@healy2018data]. Figure \@ref(fig:pop-out) contains three "odd" 
-observations that are different 
-than the rest. To represent this, the first panel uses colour to differentiate 
+Figure \@ref(fig:pop-out) is an example, which is adapted from Healy's [-@healy2018data] 
+book about data visualization, that demonstrates how easy it is for colour to be 
+recognised in a visualization. The figure contains three "odd" observations that 
+are different than the rest. To represent this, the first panel uses colour to differentiate 
 the different kinds of observations. The three observations are coloured red, and
 the rest are blue. On the other hand, the second panel uses shape to represent
 this feature. Circle is used to represent the "odd" observations, and triangle is
@@ -647,11 +649,11 @@ specplot(dingo_palette, main = "Dingo Palette")
 specplot(dolphin_palette, main = "Dolphin Palette")
 ```
 
-Three conditions need to be met for for a diverging palette to avoid colour 
-confusion. Colour confusion are caused by naming confusions, colour vision 
+Three conditions need to be met by a diverging palette to avoid colour 
+confusions. Colour confusions are caused by naming confusions, colour vision 
 impairment, and simultaneous contrast confusion [@brewer1996guidelines]. 
 Naming confusion happens when people use two basic colour names for the same 
-colour (e.g. a colour was called red when given once, then pink when given 
+colour (e.g. a colour was called red when presented once, then pink at 
 another time). On the other hand, simultaneous contrast
 refers to a phenomena where colours are affected by their opposite (e.g.
 a colour will appear lighter when surrounded by a dark colour, and a colour will
@@ -666,7 +668,7 @@ palettes respectively as these pairs create no naming confusions and
 simultaneous contrast confusions [@brewer1996guidelines]. Moreover, these 
 palettes create no colour confusion due to colour vision impairment as colours in 
 Dingo and Dolphin palettes can be easily distinguished by people with colour-blindness
-(shown in figure \@ref(fig:color-blind)). Another reason of choosing these pairs
+(shown in figure \@ref(fig:color-blind)). Another reason for choosing these pairs
 is because red/blue pair is often used in the topic of the edited book, MRP, 
 to show electoral result (e.g. Democratic and Republican party). Therefore,
 it is important to have a red/blue scale and a non-red/blue scale for functionality
@@ -701,7 +703,7 @@ GitHub is a popular choice for a repository as it has the integration with git,
 a version control software. Version control records changes applied to the 
 package to a file. This allows user to recall specific versions of the package
 at later time [@loeliger2012version]. An alternate option to GitHub is 
-Comprehensive R Archive Network (CRAN), however, this is not suitable for this 
+Comprehensive R Archive Network (CRAN). CRAN, however, is not suitable for this 
 package as `dataviz` has a fairly small scope and is intended for a small group 
 of people (i.e. authors of the MRP research book). CRAN is usually a repository 
 used for more complex R packages intended for large group of people.
@@ -728,21 +730,19 @@ the authors of the package for future use. This assists authors to remember the
 purpose of the functions. One type of documentation is an object documentation;
 this can be accessed by the `?` operator or `help()`. Information such as function 
 description, usage, argument(s), and examples can be found in the documentation.
-The `roxygen2` [@roxigen2], `devtools` [@devtools], and `usethis` [@usethis] 
+The `roxygen2` [@roxygen2], `devtools` [@devtools], and `usethis` [@usethis] 
 packages are used in creating object documentation.
 
 Another crucial aspect to package development is testing. While testing add
 extra work to package development, it ensures that the package works
-as intended. It also ensures that the package works for "edge cases" - the less
+as intended. It also ensures that the package works for edge cases - the less
 common uses that a user might use. In addition, testing ensures error and warning
-messages to appear when required (and not when they are not supposed to appear).
+messages to appear when required (and not appear when they are not supposed to).
 In other words, testing provide protection and quality assurance for users.
 We use the packages `testthat` [@testthat] and `usethis` [@usethis] to write 
 the tests for the `dataviz` package. One example of a test that was used for 
 this package is one that ensures that users use valid input when using 
 `scale_colour_dataviz` and `scale_fill_dataviz`.
-
-\newpage
 
 # Conclusions and Limitations
 
@@ -774,14 +774,14 @@ It is therefore imperative to avoid implying that one group is larger or more
 important than other groups. However, removing implied ordering while ensuring 
 accessibility proved to be difficult. Figure \@ref(fig:color-blind) shows that
 while the Quokka and Quoll palettes are better than Harmonic palette in
-avoiding implied ordering for people with visual impairment, there are still 
+avoiding implied ordering for people with colour visual impairment, there are still 
 some colours that look paired. In addition, Quokka and Quoll only have four
 colours. It is difficult to produce a qualitative palette that have more than 
-four colours while still ensuring that people with color impairment are able to 
+four colours while still ensuring that people with colour impairment are able to 
 distinguish the colours from one another.
 
 One area of future work for this project is to work on writing additional 
-testings. A test can be developed to ensure that a warning message will appear
+testings. For instance, a test can be developed to ensure that a warning message will appear
 when the theme function is applied to a non-ggplot object. Another test that 
 can be applied to the package is to ensure an error to pop-up when applying
 a diverging palette to a categorical variable. Another approach that can be 
