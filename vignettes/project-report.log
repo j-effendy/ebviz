@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.19)  5 NOV 2021 01:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.19)  5 NOV 2021 21:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/projec
-t-report.tex
-
-(c:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
+**C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project
 -report.tex
+
+(c:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-08-27> (c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf
 -dist/tex/latex/base/article.cls
@@ -580,13 +580,13 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 105
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./project-report.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 3.
+(Font)              <10> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 3.
+(Font)              <7> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 3.
+(Font)              <5> on input line 4.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-0.
+1.
 (c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
@@ -598,163 +598,125 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 {c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
 x.map}]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-46.
+62.
 (c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2] [3]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/scatter-grey-1.pdf, id=106, 361.35pt x 361.35pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/scatter-grey-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/scatter-grey-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/scatter-grey-1.pdf  used on 
-input line 285.
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/scatter-grey-1.pdf, id=101, 361.35pt x 361.35pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/scatter-grey-1.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/scatter-grey-1.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/scatter-grey-1.pdf  used on i
+nput line 302.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-[4 <c:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/proj
-ect-report_files/figure-latex/scatter-grey-1.pdf>]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/theme-comparison-1.pdf, id=119, 794.97pt x 1011.78pt
->
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/theme-comparison-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/theme-comparison-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/theme-comparison-1.pdf  used
- on input line 314.
-(pdftex.def)             Requested size: 469.76819pt x 597.88678pt.
-[5] [6 <c:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/
-project-report_files/figure-latex/theme-comparison-1.pdf>]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/pop-out-1.pdf, id=149, 469.755pt x 325.215pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/pop-out-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/pop-out-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/pop-out-1.pdf  used on input
- line 403.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[7 <c:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/proj
-ect-report_files/figure-latex/pop-out-1.pdf>] [8]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/color-blind-1.pdf, id=174, 469.755pt x 578.16pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/color-blind-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/color-blind-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/color-blind-1.pdf  used on i
-nput line 542.
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/theme-comparison-1.pdf, id=103, 794.97pt x 939.51pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/theme-comparison-1.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/theme-comparison-1.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/theme-comparison-1.pdf  used 
+on input line 331.
+(pdftex.def)             Requested size: 469.76819pt x 555.18057pt.
+[4] [5 <c:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/p
+roject-report_files/figure-latex/scatter-grey-1.pdf>] [6 <c:/Users/jimmy/AppDat
+a/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-report_files/figure-la
+tex/theme-comparison-1.pdf>]
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/pop-out-1.pdf, id=142, 469.755pt x 216.81pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/pop-out-1.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/pop-out-1.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/pop-out-1.pdf  used on input 
+line 420.
+(pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
+[7] [8 <c:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/p
+roject-report_files/figure-latex/pop-out-1.pdf>] [9]
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/color-blind-1.pdf, id=178, 469.755pt x 578.16pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/color-blind-1.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/color-blind-1.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/color-blind-1.pdf  used on in
+put line 561.
 (pdftex.def)             Requested size: 469.75386pt x 578.15858pt.
-[9] [10 <c:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir
+[10] [11 <c:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir
 /project-report_files/figure-latex/color-blind-1.pdf>]
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/harmonic-1.pdf, id=195, 469.755pt x 325.215pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/harmonic-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/harmonic-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/harmonic-1.pdf  used on inpu
-t line 547.
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/harmonic-1.pdf, id=195, 469.755pt x 325.215pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/harmonic-1.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/harmonic-1.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/harmonic-1.pdf  used on input
+ line 566.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-LaTeX Warning: Reference `fig:color-blind' on page 11 undefined on input line 5
-63.
-
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/qualitative-1.pdf, id=197, 469.755pt x 216.81pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/qualitative-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/qualitative-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/qualitative-1.pdf  used on i
-nput line 569.
-(pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/qualitative-2.pdf, id=198, 469.755pt x 216.81pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/qualitative-2.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/qualitative-2.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/qualitative-2.pdf  used on i
-nput line 569.
-(pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-[][]
- []
-
-[11 <c:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/harmonic-1.pdf>]
-
-LaTeX Warning: Reference `fig:qualitative' on page 12 undefined on input line 5
-72.
-
 
 LaTeX Warning: Reference `fig:color-blind' on page 12 undefined on input line 5
-77.
+82.
 
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/sequential-1.pdf, id=209, 469.755pt x 216.81pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/sequential-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/sequential-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/sequential-1.pdf  used on in
-put line 589.
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/qualitative-1.pdf, id=197, 469.755pt x 216.81pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/qualitative-1.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/qualitative-1.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/qualitative-1.pdf  used on in
+put line 588.
 (pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/sequential-2.pdf, id=210, 469.755pt x 216.81pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/sequential-2.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/sequential-2.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/sequential-2.pdf  used on in
-put line 589.
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/qualitative-2.pdf, id=198, 469.755pt x 216.81pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/qualitative-2.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/qualitative-2.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/qualitative-2.pdf  used on in
+put line 588.
 (pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 589--590
+Underfull \hbox (badness 10000) in paragraph at lines 588--589
 [][]
  []
 
-[12 <c:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/qualitative-1.pdf> <c:/Users/jimmy/AppData/Local
-/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project-report_files/figure-latex/qu
-alitative-2.pdf>]
+[12 <c:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/harmonic-1.pdf>]
 
-LaTeX Warning: Reference `fig:sequential' on page 13 undefined on input line 59
-2.
+LaTeX Warning: Reference `fig:qualitative' on page 13 undefined on input line 5
+91.
 
 
 LaTeX Warning: Reference `fig:color-blind' on page 13 undefined on input line 5
-98.
+96.
 
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/diverging-1.pdf, id=227, 469.755pt x 216.81pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/diverging-1.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/diverging-1.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/diverging-1.pdf  used on inp
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/sequential-1.pdf, id=209, 469.755pt x 216.81pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/sequential-1.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/sequential-1.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/sequential-1.pdf  used on inp
 ut line 612.
 (pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
-<C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project
--report_files/figure-latex/diverging-2.pdf, id=228, 469.755pt x 216.81pt>
-File: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pr
-oject-report_files/figure-latex/diverging-2.pdf Graphic file (type pdf)
-<use C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/diverging-2.pdf>
-Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-1
-5aa8143d11e8.dir/project-report_files/figure-latex/diverging-2.pdf  used on inp
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/sequential-2.pdf, id=210, 469.755pt x 216.81pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/sequential-2.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/sequential-2.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/sequential-2.pdf  used on inp
 ut line 612.
 (pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
 
@@ -762,44 +724,81 @@ Underfull \hbox (badness 10000) in paragraph at lines 612--613
 [][]
  []
 
-[13 <c:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/sequential-1.pdf> <c:/Users/jimmy/AppData/Local/
-Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project-report_files/figure-latex/seq
-uential-2.pdf>]
+[13 <c:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/qualitative-1.pdf> <c:/Users/jimmy/AppData/Local/
+Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-report_files/figure-latex/qual
+itative-2.pdf>]
 
-LaTeX Warning: Reference `fig:diverging' on page 14 undefined on input line 626
-.
+LaTeX Warning: Reference `fig:sequential' on page 14 undefined on input line 61
+5.
 
 
 LaTeX Warning: Reference `fig:color-blind' on page 14 undefined on input line 6
-32.
+21.
 
-[14 <c:/Users/jimmy/AppData/Local/Temp/RtmpuoEVZW/preview-15aa8143d11e8.dir/pro
-ject-report_files/figure-latex/diverging-1.pdf> <c:/Users/jimmy/AppData/Local/T
-emp/RtmpuoEVZW/preview-15aa8143d11e8.dir/project-report_files/figure-latex/dive
-rging-2.pdf>]
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/diverging-1.pdf, id=228, 469.755pt x 216.81pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/diverging-1.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/diverging-1.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/diverging-1.pdf  used on inpu
+t line 636.
+(pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
+<C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/project-
+report_files/figure-latex/diverging-2.pdf, id=229, 469.755pt x 216.81pt>
+File: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/pro
+ject-report_files/figure-latex/diverging-2.pdf Graphic file (type pdf)
+<use C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/diverging-2.pdf>
+Package pdftex.def Info: C:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c
+0482feb24e3.dir/project-report_files/figure-latex/diverging-2.pdf  used on inpu
+t line 636.
+(pdftex.def)             Requested size: 469.75386pt x 216.80946pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
+[][]
+ []
+
+[14 <c:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/sequential-1.pdf> <c:/Users/jimmy/AppData/Local/T
+emp/RtmpcfeGon/preview-c0482feb24e3.dir/project-report_files/figure-latex/seque
+ntial-2.pdf>]
+
+LaTeX Warning: Reference `fig:diverging' on page 15 undefined on input line 651
+.
+
+
+LaTeX Warning: Reference `fig:color-blind' on page 15 undefined on input line 6
+57.
+
+[15 <c:/Users/jimmy/AppData/Local/Temp/RtmpcfeGon/preview-c0482feb24e3.dir/proj
+ect-report_files/figure-latex/diverging-1.pdf> <c:/Users/jimmy/AppData/Local/Te
+mp/RtmpcfeGon/preview-c0482feb24e3.dir/project-report_files/figure-latex/diverg
+ing-2.pdf>]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 671.
-[15]
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 703.
+[16]
 
-LaTeX Warning: Reference `fig:color-blind' on page 16 undefined on input line 7
-33.
+LaTeX Warning: Reference `fig:color-blind' on page 17 undefined on input line 7
+66.
 
-[16] [17] (./project-report.aux)
+[17] [18] [19] (./project-report.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `project-report.out' has not changed.
-(rerunfilecheck)             Checksum: EB95E7CE4924E9F921B9D39F36482F44;2128.
+(rerunfilecheck)             Checksum: D0860D26F93E1B15D60FD785DEA83915;1986.
  ) 
 Here is how much of TeX's memory you used:
- 10939 strings out of 480559
- 168318 string characters out of 5901780
- 465839 words of memory out of 5000000
- 28256 multiletter control sequences out of 15000+600000
+ 10943 strings out of 480559
+ 168267 string characters out of 5901780
+ 469220 words of memory out of 5000000
+ 28254 multiletter control sequences out of 15000+600000
  459953 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,6n,66p,511b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,6n,66p,598b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.e
 nc}{c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.
 enc}{c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts
@@ -812,10 +811,10 @@ s/type1/public/lm/lmr17.pfb><c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-dist/
 fonts/type1/public/lm/lmri10.pfb><c:/Users/jimmy/AppData/Roaming/TinyTeX/texmf-
 dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/jimmy/AppData/Roaming/TinyTeX/t
 exmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on project-report.pdf (17 pages, 364254 bytes).
+Output written on project-report.pdf (19 pages, 370023 bytes).
 PDF statistics:
- 375 PDF objects out of 1000 (max. 8388607)
- 312 compressed objects within 4 object streams
- 101 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 391 PDF objects out of 1000 (max. 8388607)
+ 326 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 168 words of extra memory for PDF output out of 10000 (max. 10000000)
 

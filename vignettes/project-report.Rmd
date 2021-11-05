@@ -23,7 +23,7 @@ library(pals)
 
 The work involved in the productions of visualizations in an edited book
 is often laborious. With many authors involved, it is difficult to produce
-an edited book that have a cohesive design. This project aims to reduce 
+an edited book that has a cohesive design. This project aims to reduce 
 workflow required in producing visualizations that are readable, cohesive, and
 accessible in a Multilevel Regression and Poststratification (MRP) edited book.
 The project contributes to a ggplot theme and accessible colour schemes. The 
@@ -50,7 +50,7 @@ A style guide can be used to create a cohesive edited book. Implementing a
 style guide, however, is time consuming and expensive. The editors/designers
 need to spend a lot of effort and time to update or reproduce figures. Another
 option that can be taken is by creating an R package that contains theme and 
-colour scale functions that work with `ggplot2`. This will allow users
+colour scale functions that work with `ggplot2` [@ggplot2]. This will allow users
 (in this case, authors) to add a theme and a colour scale function to their
 plots. This is easy to use, and it will cause minimal disruptions to authors'
 workflow. More importantly, this will allow the book to have visualizations that are
@@ -81,7 +81,7 @@ report contributes themes, colour schemes, and a package called `dataviz`.
 The first aspect that needs to be considered is how a good visualization looks 
 like, and whether there are general rule that can be applied across different 
 types of plots. However, before looking at principles of good data visualizations, 
-it is better to understand what constitute a visualization. Azzam, Evergree, and 
+it is better to understand what constitute a visualization. Azzam, Evergreen, and 
 Germuth [-@azzam2013data] stated that data visualization is defined by three 
 criteria: 
 
@@ -92,13 +92,14 @@ of data.
 
 Without careful consideration, data visualization has the 
 potential to cause confusion resulting in misunderstanding or error in decision
-making [@evergreen2011]. In addition, inefficient visual decoding may result in
+making [@evergreen2011eval]. In addition, inefficient visual decoding may result in
 users to not detect important aspect of the data [@cleveland1993model]. 
 Unfortunately, inefficient graphs are not uncommon occurrence, especially with 
 increasing number of options in data visualization over the years. Tufte 
 [-@tufte2001visual] found that prevalent errors and data misrepresentation were 
-found in mass media. Another study found that 30% of graphs found in Volume 207 
-(1980) of *Science* have one or more type of errors [@cleveland1984graphs].
+found in mass media. Another study found that a total of 1,365 cases of unnecessary
+graphical elements were found out of 20,080 visualizations from a set of articles
+published between 1996 and 2016 [@friedman2021data].
 
 With widespread error in data visualizations, guidelines for better graphs
 for quantitative and qualitative data were established. According to Tufte 
@@ -109,8 +110,8 @@ encourage viewers to compare different parts of data. Another suggestion from
 Tufte is to avoid the usage of chartjunk. Any decorations that do not provide 
 new information to readers are considered to be chartjunk. This can easily cause 
 viewers to be confused or distracted from the data. Some examples of chartjunk 
-are moiré effect, heavy grid lines, noisy background, a fake perspective 
-(i.e. 3-D charts).
+are moiré effect (the illusion of vibration caused by excessive patterns), 
+heavy grid lines, noisy background, a fake perspective (i.e. 3-D charts).
 
 Cleveland and McGill [-@cleveland1984graphical] conducted a study of effective
 data visualization based on graphical perception to investigate humans' ability 
@@ -129,14 +130,14 @@ elementary tasks from most to least accurate is:
 This shows that there are general rules that can be applied across different
 types of plots, and this can be computationally coded once for efficiency.
 The next section will discuss how this can be implemented through the use of
-`ggplot2` theme.
+`ggplot2` [@ggplot2] theme.
 
 ## Roles of Themes in Data Visualization
 
-Themes in `ggplot` package are **non-data** components of data visualizations.
+Themes in `ggplot` [@ggplot2] package are *non-data* components of data visualizations.
 Themes allow user to customize plot the background, axis line, ticks, legend 
-position, grid, etc. As a default, `ggplot` uses `theme_grey` for plots. 
-However, `ggplot` provides other complete themes that users can use, such as 
+position, grid, etc. As a default, `ggplot` [@ggplot2] uses `theme_grey` for plots. 
+However, `ggplot` [@ggplot2] provides other complete themes that users can use, such as 
 `theme_bw()` and `theme_minimal()`.
 
 Theme is especially important for a research book where there are many authors
@@ -179,7 +180,7 @@ different elements of the visualizations.
 
 ## Potential Themes
 
-```{r scatter-grey, fig.cap="A scatter plot example with 'theme_grey()'", fig.height=5, fig.width=5}
+```{r scatter-grey, fig.cap="A scatter plot example from `mtcars` dataset with `theme_grey()`. This theme uses light grey background with white grid lines.", fig.height=5, fig.width=5}
 g1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
   geom_point(size=3) + 
   labs(title="Scatter Plot",
@@ -189,7 +190,7 @@ g1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) +
 g1
 ```
 
-`theme_grey()` is the default `ggplot2` theme with grey background and white 
+The defualt `ggplot2` theme is `theme_grey()`, with grey background and white 
 grid lines. These colour combinations reduces the contrast between the background 
 and grid lines and gives the data plots more value-added appearance 
 [@carr1994using]. Moreover, grey background allows the plot to have a similar
@@ -209,9 +210,9 @@ Tufte principles of data graphics, but also to create a theme that is suitable
 for a wide range of plots. There are two potential themes that were developed for 
 `dataviz`: `theme_seagull()` and `theme_wombat()`.
 
-### theme_seagull
+### Seagull Theme
 
-```{r theme-comparison, fig.cap="Comparison between theme_seagull (left), theme_wombat (middle), and theme_bw (right).", fig.height=14, fig.width=11}
+```{r theme-comparison, fig.cap="Comparison between `theme_seagull` (left), `theme_wombat` (middle), and `theme_bw` (right). The rows represent different figure types from a data example from R. Basic colour palette from R is used to show categorical variables for this example. In the next section, we will discuss accessible colour palettes that are developed for the project.", fig.height=13, fig.width=11}
 w1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
   geom_point(size=3) + 
   labs(title="Scatter Plot",
@@ -287,9 +288,9 @@ bw3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
 ```
 
 Plot examples with `theme_seagull()` can be seen in figure \@ref(fig:theme-comparison). 
-This `ggplot2` theme is built based on `theme_minmal()`. The idea behind this
+This `ggplot2` theme is built based on `theme_minimal()`. The idea behind this
 theme is to reduce non-data components as much as possible by maximizing white 
-space around the plot. `%+replace%` operator is used to change the elements of 
+space around the plot. The `%+replace%` operator is used to change the elements of 
 the plots. Axis line on the y axis is removed, and axis line on the x axis is 
 thicker. The major vertical grid lines and minor grid lines on both axis are removed. 
 The grid lines, as shown in figure \@ref(fig:theme-comparison), are visually 
@@ -297,11 +298,11 @@ muted so that it does not distract the data points. Cleveland
 [-@cleveland1993visualizing] found that grid lines enhance readers' perceptions 
 in making visual comparison and accuracy of information extraction. 
 
-### theme_wombat
+### Wombat Theme
 
 Another potential theme for this project is called `theme_wombat()`.
 This theme is developed  based on `ggplot2` basic theme `theme_bw()`. 
-`%+replace%` operator is also used to develop `theme_wombat()`. It can be seen
+The `%+replace%` operator is also used to develop `theme_wombat()`. It can be seen
 in figure \@ref(fig:theme-comparison) that minor grid lines on both axis are 
 removed for this theme. Similar to `theme_seagull()`, `theme_wombat()` has 
 white background and light grey grid lines.
@@ -309,9 +310,9 @@ white background and light grey grid lines.
 ## Themes Comparison
 
 This section is going to compare the potential themes `theme_seagull()` and
-`theme_wombat()` with `ggplot2` built in theme, `theme_bw()`. `theme_bw` is
-chosen for this comparison as it is one of the built-in themes that minimizes
-non-data components while still preserving light coloured grid lines.
+`theme_wombat()` with `ggplot2` [@ggplot2] built in theme, `theme_bw()`. 
+The `theme_bw` is chosen for this comparison as it is one of the built-in themes 
+that minimizes non-data components while still preserving light coloured grid lines.
 
 Side by side comparison of scatter plots, bar charts, and line charts between
 the three themes can be found in figure \@ref(fig:theme-comparison). One of 
@@ -333,19 +334,19 @@ plot, making it to have the highest data-ink ratio. While there is no vertical
 grid lines, major horizontal grid lines are preserved as they aid readers to 
 approximate and compare values between data points.
 
-`theme_wombat()` is developed to be the middle ground between `theme_seagull()`
+The `theme_wombat()` is developed to be the middle ground between `theme_seagull()`
 and `theme_bw()`. In comparison to the `ggplot2` built-in theme, this theme
 is less cluttered as it does not have minor grid lines on both axis. Unlike
 `theme_seagull()`, however, this theme retains major vertical grid lines.
 
 ### The Chosen Theme
 
-As stated above, `theme_seagull()` has the least clutters between the two 
-potential themes. However, `theme_wombat()` is likely to assist readers
-to perform comparative exercise more accurately comparative to `theme_seagull()`
+As stated above, `theme_seagull()` has the least clutter between the two 
+potential themes.However, `theme_wombat()` is likely to assist readers
+to perform comparison more accurately than `theme_seagull()`
 while still maintaining a high level of data-ink ratio. Using the scatter plot 
 example in figure \@ref(fig:theme-comparison), the major vertical grid lines 
-from `theme_wombat()` aids readers estimate the value of data points along the
+from `theme_wombat()` aids readers' ability to estimate the value of data points along the
 x axis. This shows that `theme_wombat()` is a good compromise of minimizing 
 clutters as well as allowing readers to extract information from the graph as 
 much as possible.
@@ -360,12 +361,12 @@ another [@stone2006choosing]. However, a poor choice of colour palette can imped
 viewers' ability to effectively extract information from the visualization. 
 
 With a simple visual features, some objects can be easily recognised compared
-to other objects without requiring attention. The target object will "pop out" 
+to other objects without requiring attention. The target object will "pop-out" 
 in field of vision regardless how many distractors surrounding it 
-[@treisman1985preattentive]. The use of colour in data visualisation can facilitate
+[@treisman1985preattentive]. The use of colour in data visualization can facilitate
 this "pop-out" as it makes some elements to be easier to be found.
 
-```{r pop-out, fig.cap="This plot shows the same data with groups highlighted with either colour (left hand panel) or shape (right hand panel). From this we see that it is easier to find the odd ones by using colour"}
+```{r pop-out, fig.cap="This plot shows the same data with groups highlighted with either colour (left hand panel) or shape (right hand panel). From this, we see that it is easier to find the odd ones by using colour.", fig.height=3}
 set.seed(20211028)
 
 x <- rnorm(20)
@@ -401,7 +402,9 @@ p2 <- pop_out %>% ggplot(aes(x = x,
 p1 + p2
 ```
 
-Figure \@ref(fig:pop-out) contains three "odd" observations that are different 
+A great example to show how easy it is for colour to be recognised is stated
+in Healy's book [@healy2018data]. Figure \@ref(fig:pop-out) contains three "odd" 
+observations that are different 
 than the rest. To represent this, the first panel uses colour to differentiate 
 the different kinds of observations. The three observations are coloured red, and
 the rest are blue. On the other hand, the second panel uses shape to represent
@@ -505,14 +508,14 @@ that the values above and below the average can be shown in different hues.
 
 In addition to plot themes, this project also contributes two colour schemes for 
 each of the three colour palettes type mentioned in the previous section. 
-`pals` packages are going to be used to build the colour palettes 
+The `pals` packages used to build the colour palettes 
 and assess them. The chosen colour palettes need to be assessed to ensure
-that they achieve their intended purpose. For example, qualitative colour palette
-needs to avoid implicit ordering as this is intended for showing coding categorical 
-information. In addition, it needs to be ensured that people with colour vision
-impairment are able to distinguish the different colours in the chosen palettes.
-`pal.safe()` function from `pals` package allows us to see how colour palettes
-are seen by deutan, protan, and tritan colour-blind.
+that they achieve their intended purpose. For example, the qualitative colour palette
+needs to avoid implicit ordering as this palette is intended for representing categorical 
+variables. In addition, we need to ensure that people with colour vision
+impairments are able to distinguish the different colours in the chosen palettes.
+The `pal.safe()` function from `pals` package allows us to see how colour palettes
+are seen by deutan, protan, and tritan colour-blind people.
 
 The methodology of choosing colour palettes that are not only accessible but also 
 enhance the quality of visualizations will be discussed in this section. Firstly, the
@@ -523,7 +526,7 @@ qualitative, sequential and diverging palettes are chosen for the project.
 
 ### Chosen Qualitative Palettes
 
-```{r color-blind, fig.height=8, fig.cap="colour palettes as seen by people with vision impairment"}
+```{r color-blind, fig.height=8, fig.cap="Colour palettes as seen by people with colour vision impairment. The first six colour palettes the palettes that were developed for this project. The last palette, Harmonic palette, is a colour palette from `pals` package."}
 quokka_palette <- c("#8C01E6", "#93B1EB", "#AB313D", "#D6CA24")
 quoll_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
 seal_palette <- colorspace::sequential_hcl(7,
@@ -551,17 +554,17 @@ dolphin_palette <- colorspace::diverging_hcl(n = 7,
 
 # colorblind filter
 par(mfrow=c(4,2))
-pal.safe(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
 pal.safe(quokka_palette, main = "Quokka Palette")
 pal.safe(quoll_palette, main = "Quoll Palette")
 pal.safe(seal_palette, main = "Seal Palette")
 pal.safe(snake_palette, main = "Snake Palette")
 pal.safe(dingo_palette, main = "Dingo Palette")
 pal.safe(dolphin_palette, main = "Dolphin Palette")
+pal.safe(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
 ```
 \newpage
 
-```{r harmonic, fig.cap="HCL colour spectrum plot for Harmonic palette"}
+```{r harmonic, fig.cap="HCL colour spectrum plot for Harmonic palette. This palette has constant luminance and chroma, but varying hues across the four colours."}
 specplot(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
 ```
 
@@ -583,7 +586,7 @@ harmonic palette. For instance, there are three colours that look similar as see
 by people with tritan colour-blindness. Moreover, this colour palette results in 
 implied ordering of different data group for people with visual impairment.
 
-```{r qualitative, fig.height=3, fig.cap="HCL colour spectrum plot for Quokka and Quoll palette"}
+```{r qualitative, fig.height=3, fig.cap="HCL colour spectrum plot for Quokka and Quoll palette. The hues, chroma, and luminance vary across the four colours for Quokka and Quoll palettes. These varying hues, chroma and luminance avoid natural ordering."}
 par(mfrow=c(1,2))
 specplot(quokka_palette, main = "Quokka Palette")
 specplot(quoll_palette, main = "Quoll Palette")
@@ -595,7 +598,9 @@ the HCL colour spectrum plot for these palettes. In
 contrast with the Harmonic Palette, Quokka and Quoll palettes have differing 
 hues, chroma and luminance across all colours. As a result, each colour in
 these palettes can easily be distinguished by people with deutan, protan, and 
-tritan colour-blindness (see figure \@ref(fig:color-blind)). 
+tritan colour-blindness (see figure \@ref(fig:color-blind)). Furthermore,
+natural ordering implied by Quokka and Quoll is less prominent than Harmonic
+palette.
 
 ### Chosen Sequential Palettes
 
@@ -603,10 +608,12 @@ The strategy to choose a sequential palette is different to that of qualitative
 palette. One easy way to create a sequential palette is by choosing two values 
 for hue (h1 and h2), chroma (c1 and c2), luminance (l1 and l2), and power 
 transformations (p1 and p2) for chroma and luminance [@zeileis2006choosing].
-These values of hues, chroma, luminance, and power transformation can be used
+These values of hues, chroma, luminance, and power transformation are used
 as inputs to `sequential_hcl` function to produce a set of sequential palette.
+The power transformation allows the chroma and luminance to increase from low
+values to high values in a nonlinear fashion.
 
-```{r sequential, fig.height=3, fig.cap="HCL colour spectrum plot for Seal and Snake palette"}
+```{r sequential, fig.height=3, fig.cap="HCL colour spectrum plot for Seal and Snake palettes. These palettes range between two hues from darker to lighter shades (or vice versa)."}
 par(mfrow=c(1,2))
 specplot(seal_palette, main = "Seal Palette")
 specplot(snake_palette, main = "Snake Palette")
@@ -616,38 +623,40 @@ The two sequential palettes created for this project are Seal and
 Snake palettes. As shown in figure \@ref(fig:sequential),
 these palettes use multi-hue schemes as opposed to single-hue schemes. Multi-hue
 palettes were chosen for the project as it provides better contrast between different
-classes compared to single-hue sequential palette [@harrower2003colorbrewer].
-Moreover, multi-hue sequential palettes avoids the use of extreme colours, as well
-as allow viewers to better discriminate the middle colours [@zeileis2019colorspace]. 
+values compared to a single-hue sequential palette [@harrower2003colorbrewer].
+Moreover, multi-hue sequential palettes avoid the use of extreme colours, as well
+as allowing viewers to better discriminate the middle colours [@zeileis2019colorspace]. 
 In addition, figure \@ref(fig:color-blind) shows that people with deutan, protan, 
 and tritan colour blindness are able to distinguish the colours in the palette.
-This means that colour palettes will allow readers with colour vision deficiency
+This means that the colour palettes will allow readers with colour vision impairment
 to see implied order and how the data ranges from low to high values.
 
 ### Chosen Diverging Palettes
 
 The approach in choosing diverging palettes is similar to choosing sequential
 palettes. Diverging palettes can be built by choosing two values for
-hues, chroma, luminance, and power transformation for chroma and luminance 
-[@zeileis2006choosing]. Function `diverge_hcl()` is used to create a diverging 
-palette based on these values, and it will automatically choose the neutral colour.
+hues (h1 and h2), chroma (c1 and c2), luminance (l1 and l2), and power 
+transformation (p1 and p2) for chroma and luminance [@zeileis2006choosing]. 
+These values will be taken as inputs to function `diverge_hcl()` to create a diverging 
+palette. It will automatically choose the neutral colour for the palette.
 
-```{r diverging, fig.height=3, fig.cap="HCL colour spectrum plot for Dingo and Dolphin palette"}
+```{r diverging, fig.height=3, fig.cap="HCL colour spectrum plot for Dingo and Dolphin palette. Similar to sequential palettes, these palettes range between two hues from darker to lighter shades. The only difference is that this palette has a neutral colour."}
 par(mfrow=c(1,2))
 specplot(dingo_palette, main = "Dingo Palette")
 specplot(dolphin_palette, main = "Dolphin Palette")
 ```
 
-One condition needs to be met when choosing a colour pair for a diverging
-palette: the colour pair should not create colour confusions: naming confusions, 
-colour vision impairment, and simultaneous contrast confusion 
-[@brewer1996guidelines]. Naming confusion happens when people use two 
-basic colour names for the same colour. On the other hand, simultaneous contrast
-refers to a phenomena where colours are affected by their opposite. For instance,
+Three conditions need to be met for for a diverging palette to avoid colour 
+confusion. Colour confusion are caused by naming confusions, colour vision 
+impairment, and simultaneous contrast confusion [@brewer1996guidelines]. 
+Naming confusion happens when people use two basic colour names for the same 
+colour (e.g. a colour was called red when given once, then pink when given 
+another time). On the other hand, simultaneous contrast
+refers to a phenomena where colours are affected by their opposite (e.g.
 a colour will appear lighter when surrounded by a dark colour, and a colour will
-appear warmer when surrounded by a cool colour [@brewer1992review]. This can be
-prevented by avoiding selecting opposite colour pairs for diverging palettes
-[@brewer1996guidelines].
+appear warmer when surrounded by a cool colour) [@brewer1992review]. This can be
+prevented by avoiding selecting pairs of colours that are opposite in the colour 
+wheel for diverging palettes [@brewer1996guidelines].
 
 Dingo and Dolphin palettes are diverging palettes developed for the project.
 These palettes are shown in figure \@ref(fig:diverging).
@@ -656,38 +665,45 @@ palettes respectively as these pairs create no naming confusions and
 simultaneous contrast confusions [@brewer1996guidelines]. Moreover, these 
 palettes create no colour confusion due to colour vision impairment as colours in 
 Dingo and Dolphin palettes can be easily distinguished by people with colour-blindness
-(shown in figure \@ref(fig:color-blind)).
+(shown in figure \@ref(fig:color-blind)). Another reason of choosing these pairs
+is because red/blue pair is often used in the topic of the edited book, MRP, 
+to show electoral result (e.g. Democratic and Republican party). Therefore,
+it is important to have a red/blue scale and a non-red/blue scale for functionality
+in the book.
 
 # R Package
 
 One of the objectives of this project is to create a solution for authors and
 editors of the research book to create visualizations that are readable, 
 cohesive, and accessible. The solution needs to be easy to use so that it
-does not disrupt authors' workflow. To achieve this, R codes necessary
-to create the chosen `ggplot2` theme and colour schemes discussed in the previous
-two sections will be bundled in an R package called `dataviz`. R packages are 
-extensions to R that can comprise of codes, data, documentations, tests 
-[@wickham2015r]. 
+does not disrupt authors' workflow. To achieve this, R code necessary
+to create the chosen `ggplot2` [@ggplot2] theme and colour schemes will be bundled in an R 
+package called `dataviz`. R packages are extensions to R that can comprise of 
+codes, data, documentation, and tests [@wickham2015r]. 
 
-One of the reasons of creating an R package for this project is because of ease
-of use. Codes, documentation, and tests in an R package are built in a 
-standardized format so that any R users can install it [@wickham2015r]. In 
-addition, it is fairly simple to create an R package. Packages such as `Roxygen2`,
-`devtools`, and `testthat` provide great assistance in documenting and testing
-the package. Another benefit of using an R package is that updates to the theme
-and colour schemes are not time consuming. Any updates to themes and colour schemes
-simply need to be applied to the codes in R package; there is no need to update
-each plots in the book. This shows that using R package will allow us to achieve 
-one of the aim of the project: to provide solutions that cause minimal 
-disruption to authors' work.
+One of the reasons for creating an R package for this project is because of the
+ease of use. Codes, documentation, and tests in an R package are built in a 
+standardized format so that any R user can install it [@wickham2015r]. In 
+addition, it is fairly simple to create an R package. Packages such as `roxygen2` 
+[@roxygen2], `devtools` [@devtools], and `testthat` [@testthat] provide great 
+assistance in documenting and testing the package. Another benefit of using an 
+R package is that any updates to the theme and colour schemes are not time 
+consuming for the users. Any updates to themes and colour schemes simply need to 
+be applied to the code in the R package. There is no need to update the code 
+for each plots in the book; it just needs to be recompiled. This shows that 
+using an R package will allow us to achieve one of the aims of the project: 
+to provide a solution that causes minimal disruption to authors' work.
 
-R packages are typically stored in in a repository. Two of the most common
-repositories for R packages are Comprehensive R Archive Network (CRAN) and
-GitHub. For this project, the `dataviz` package will be stored in GitHub.
+For users to be able to easily access an R package, it needs to be stored in a 
+repository. For this project, the `dataviz` package will be stored in GitHub.
 GitHub is a popular choice for a repository as it has the integration with git, 
 a version control software. Version control records changes applied to the 
 package to a file. This allows user to recall specific versions of the package
-at later time [@noauthor_git_nodate].
+at later time [@loeliger2012version]. An alternate option to GitHub is 
+Comprehensive R Archive Network (CRAN), however, this is not suitable for this 
+package as `dataviz` has a fairly small scope and is intended for a small group 
+of people (i.e. authors of the MRP research book). CRAN is usually a repository 
+used for more complex R packages intended for large group of people.
 
 In the next section, the report will discuss how the `dataviz` package was 
 created. It will discuss each component of the package, and what tools 
@@ -695,72 +711,87 @@ were used in developing the package.
 
 ## `dataviz` Components
 
-One of the most important components of a package is the R codes. One firm
+One of the most important components of a package is the R code. One firm
 rule for an R package is that its R functions need to be stored in R scripts 
-[@wickham2015r]. Following this rule, The `dataviz` put its R codes in  R 
+[@wickham2015r]. Following this rule, the `dataviz` has its R code in  R 
 scripts, which are stored in `R` directory. The chosen colour palettes can be 
-accessed from `scale_colour_dataviz` and `scale_fill_dataviz` functions which
+accessed from the `scale_colour_dataviz` and `scale_fill_dataviz` functions which
 are stored in `colour.R`. These functions take the name of the palette as an 
 input (e.g. quokka). The ggplot theme chosen for the project can be used by
 function `theme_wombat()` which is stored in an R script called `theme.R`. 
 
 In addition to R codes, documentation is also a crucial aspect of a well-made
-package [@wickham2015r]. In the absence of documentations, users wont a guide
-that assists them to use the package properly. Proper documentations also assist
-the authors of the package for future time. This assists authors to remember the
+package [@wickham2015r]. In the absence of documentation, users will not have a guide
+that assists them to use the package properly. Proper documentation also assists
+the authors of the package for future use. This assists authors to remember the
 purpose of the functions. One type of documentation is an object documentation;
-this can be accessed by `?` or `help()`. Information such as function's 
-description, usage, argument, and examples can be found in the documentation.
-`roxygen2`, `devtools`, and `usethis` packages are used in creating object 
-documentation.
+this can be accessed by the `?` operator or `help()`. Information such as function 
+description, usage, argument(s), and examples can be found in the documentation.
+The `roxygen2` [@roxigen2], `devtools` [@devtools], and `usethis` [@usethis] 
+packages are used in creating object documentation.
 
 Another crucial aspect to package development is testing. While testing add
-extra works to package development, it ensures that the package works
-as intended. Package `testthat` and `usethis` are used to write the tests for
-`dataviz` package. A test that was used for this package is to ensure that 
-users use valid input when using `scale_colour_dataviz` and `scale_fill_dataviz`.
+extra work to package development, it ensures that the package works
+as intended. It also ensures that the package works for "edge cases" - the less
+common uses that a user might use. In addition, testing ensures error and warning
+messages to appear when required (and not when they are not supposed to appear).
+In other words, testing provide protection and quality assurance for users.
+We use the packages `testthat` [@testthat] and `usethis` [@usethis] to write 
+the tests for the `dataviz` package. One example of a test that was used for 
+this package is one that ensures that users use valid input when using 
+`scale_colour_dataviz` and `scale_fill_dataviz`.
 
 \newpage
 
 # Conclusions and Limitations
 
-## Conclusions
-
-One of the challenges in producing a research book is create a book that has
-a consistent look/design. Typically, there is a group of authors that work on
-a chapter of an edited book. These authors will have their own way/style in
-producing their visualizations for the book. Not only do these visualizations
-need to have a consistent design, but they also need to be readable and 
-accessible.
+One of the challenges in producing a research book is creating a book that has
+a consistent look or design. Typically, there is a group of authors that work on
+every chapter of an edited book. These authors will have their own unique style in
+producing their visualizations for the book. While this is not a bad thing, 
+visualizations style needs to be standardized to keep the look of the book 
+consistent. Not only do these visualizations need to have a consistent design, 
+but they also need to be readable and accessible.
 
 The aim of the project is to provide a solution that can ensure that 
 visualizations in the research book meet the criteria mentioned in the previous
-section in an efficient manner. To achieve this objective, a ggplot theme was 
-developed for the project. In addition, several colour scales for various
-data types are also created. The chosen theme was developed based on Tufte's
-principles of graphical excellence. This is to ensure the viewers to extract
-information as much as possible from the visualizations. Moreover, the colour
-palettes were developed with a colour space that was based on human perception.
-Furthermore, how colours seen by people with visual impairment was taken into 
-consideration to ensure that the colour palettes are accessible. The theme and
-colour schemes are bundled in an R package for efficiency.
-
-## Limitations
+paragraph in an efficient manner. To achieve this objective, a ggplot theme was 
+developed for the project. The chosen theme was developed based on Tufte's
+principles of graphical excellence. In addition, several colour scales for various
+data types were also created. The colour palettes were developed using a colour 
+space that was based on human perception. Furthermore, to ensure that color is 
+accessible, we visualized how these colours as they would be seen by people with 
+colour visual impairment. These theme and colour scales were developed to ensure
+that the viewers to extract information as much as possible from the 
+visualizations. The theme and colour schemes are bundled in an R package for 
+efficiency.
 
 One limitation in the package is related to colour palettes, specifically
 the chosen qualitative palettes. As mentioned in the previous section,
-this palette is specifically used for show **un-ordered** categorical information.
+this palette is specifically used to show *un-ordered* categorical information.
 It is therefore imperative to avoid implying that one group is larger or more
 important than other groups. However, removing implied ordering while ensuring 
-accessibility proves to be difficult. Figure \@ref(fig:color-blind) shows that
-while Quokka and Quoll palettes are better compared to Harmonic palette in
+accessibility proved to be difficult. Figure \@ref(fig:color-blind) shows that
+while the Quokka and Quoll palettes are better than Harmonic palette in
 avoiding implied ordering for people with visual impairment, there are still 
-some colours that look "paired". In addition, Quokka and Quoll 'only' have four
+some colours that look paired. In addition, Quokka and Quoll only have four
 colours. It is difficult to produce a qualitative palette that have more than 
-four colours while still ensuring that people with color deficiency are able to 
+four colours while still ensuring that people with color impairment are able to 
 distinguish the colours from one another.
 
-Other potential limitations: lack of testings, lack of colour assessments.
+One area of future work for this project is to work on writing additional 
+testings. A test can be developed to ensure that a warning message will appear
+when the theme function is applied to a non-ggplot object. Another test that 
+can be applied to the package is to ensure an error to pop-up when applying
+a diverging palette to a categorical variable. Another approach that can be 
+done in the future is by having the users (i.e. the authors of the MRP books)
+to test the functionality of the package for a period of time. This allows
+the users to provide feedback, and this can be used to improve the package.
+These testings are beneficial to protect the quality of the package.
+
+In summary, this project contributes an R package containing a ggplot theme and
+six colour palettes developed to assist MRP book authors in creating visualizations that
+are readable, cohesive, and accessible.
 
 \newpage
 
