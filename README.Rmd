@@ -1,0 +1,137 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# dataviz
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `dataviz` is to assist authors of a Multiple Regression Poststratification
+edited book in creating visualizations that are readable, cohesive, and accessible.
+
+## Installation
+
+You can install the `dataviz` package from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("j-effendy/dataviz")
+```
+## Example
+
+These are basic plot examples of `theme_seagull()` and `theme_wombat()` using 
+`mtcars` and `economics_long` dataset:
+
+```{r theme, echo=FALSE}
+
+library(dataviz)
+library(ggplot2)
+library(patchwork)
+
+w1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
+  geom_point(size=3) + 
+  labs(title="Scatter Plot",
+       subtitle = "theme_wombat()",
+       caption = "Data: mtcars") +
+  theme_wombat()
+
+w2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
+  geom_bar() + 
+  scale_y_continuous(expand = c(0,0)) + 
+  scale_x_discrete(expand = c(0,0)) +
+  labs(title="Bar Plot",
+       subtitle = "theme_wombat()",
+       caption = "Data: mtcars") +
+  theme_wombat()
+
+w3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
+  geom_line() +
+   scale_y_continuous(expand = c(0,0)) + 
+   scale_x_date(expand = c(0,0)) +
+  labs(title = "Line Plot",
+       subtitle = "theme_wombat()",
+       caption = "Data: economics_long") +
+  theme_wombat()
+
+s1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
+  geom_point(size=3) + 
+  labs(title="Scatter Plot",
+       subtitle = "theme_seagull()",
+       caption = "Data: mtcars") +
+  theme_seagull()
+
+s2 <- ggplot(mtcars, aes(factor(carb),fill=factor(carb))) + 
+  geom_bar() + 
+  scale_y_continuous(expand = c(0,0)) + 
+  scale_x_discrete(expand = c(0,0)) +
+  labs(title="Bar Plot",
+       subtitle = "theme_seagull()",
+       caption = "Data: mtcars") +
+  theme_seagull()
+
+s3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
+  geom_line() +
+  scale_y_continuous(expand = c(0,0)) + 
+  scale_x_date(expand = c(0,0)) +
+  labs(title = "Line Plot",
+       subtitle = "theme_seagull()",
+       caption = "Data: economics_long") +
+  theme_seagull()
+
+(s1 + w1) / (s2 + w2) / (s3 + w3)
+```
+
+These are basic plot examples of `dataviz` colour palettes using 
+`mtcars` and `economics_long` dataset:
+
+```{r colour, echo=FALSE}
+library(dataviz)
+library(ggplot2)
+library(patchwork)
+
+p1 <- ggplot(mtcars, aes(mpg,disp,color=factor(vs))) +
+       geom_point(size=3) +
+       scale_colour_dataviz("quokka") +
+    theme_wombat()
+
+p2 <- ggplot(mtcars, aes(mpg,disp,color=factor(vs))) +
+       geom_point(size=3) +
+       scale_colour_dataviz("quoll") +
+    theme_wombat()
+
+p3 <- ggplot(mtcars, aes(mpg,disp,color=mpg)) +
+       geom_point(size=3) +
+       geom_point(size=3) +
+       scale_colour_dataviz("seal") +
+    theme_wombat()
+
+p4 <- ggplot(mtcars, aes(mpg,disp,color=mpg)) +
+       geom_point(size=3) +
+       geom_point(size=3) +
+       scale_colour_dataviz("snake") +
+    theme_wombat()
+
+p5 <- ggplot(mtcars, aes(mpg,disp,color=mpg)) +
+       geom_point(size=3) +
+       scale_colour_dataviz("dingo") +
+    theme_wombat()
+
+p6 <- ggplot(mtcars, aes(mpg,disp,color=mpg)) +
+       geom_point(size=3) +
+       scale_colour_dataviz("dolphin") +
+    theme_wombat()
+
+(p1 + p2) / (p3 + p4) / (p5 + p6)
+```
