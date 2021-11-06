@@ -6,6 +6,8 @@ date: "13/10/2021"
 output: bookdown::pdf_document2
 bibliography: references.bib
 csl: apa.csl
+header-includes:
+   - \usepackage{subfig}
 ---
 
 ```{r setup, include=FALSE}
@@ -565,11 +567,14 @@ pal.safe(dingo_palette, main = "Dingo Palette")
 pal.safe(dolphin_palette, main = "Dolphin Palette")
 pal.safe(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
 ```
+
 \newpage
+
 
 ```{r harmonic, fig.cap="HCL colour spectrum plot for Harmonic palette. This palette has constant luminance and chroma, but varying hues across the four colours."}
 specplot(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
 ```
+
 
 One common strategy to choose this type of palette is by keeping chroma and luminance
 relatively constant, and hue varied; making all colours in the palette to balance 
@@ -589,11 +594,12 @@ harmonic palette. For instance, there are three colours that look similar as see
 by people with tritan colour-blindness. Moreover, this colour palette results in 
 implied ordering of different data group for people with visual impairment.
 
-```{r qualitative, fig.height=3, fig.cap="HCL colour spectrum plot for Quokka and Quoll palette. The hues, chroma, and luminance vary across the four colours for Quokka and Quoll palettes. These varying hues, chroma and luminance avoid natural ordering."}
-par(mfrow=c(1,2))
+
+```{r qualitative, fig.height=3, fig.cap="HCL colour spectrum plot for Quokka and Quoll palette. The hues, chroma, and luminance vary across the four colours for Quokka and Quoll palettes. These varying hues, chroma and luminance avoid natural ordering.",fig.subcap=c("",""), fig.ncol = 1}
 specplot(quokka_palette, main = "Quokka Palette")
 specplot(quoll_palette, main = "Quoll Palette")
 ```
+
 
 The two qualitative colour palettes developed for the project are called 
 Quokka and Quoll palettes. Figure \@ref(fig:qualitative) shows 
@@ -622,6 +628,7 @@ specplot(seal_palette, main = "Seal Palette")
 specplot(snake_palette, main = "Snake Palette")
 ```
 
+
 The two sequential palettes created for this project are Seal and
 Snake palettes. As shown in figure \@ref(fig:sequential),
 these palettes use multi-hue schemes as opposed to single-hue schemes. Multi-hue
@@ -648,6 +655,7 @@ par(mfrow=c(1,2))
 specplot(dingo_palette, main = "Dingo Palette")
 specplot(dolphin_palette, main = "Dolphin Palette")
 ```
+
 
 Three conditions need to be met by a diverging palette to avoid colour 
 confusions. Colour confusions are caused by naming confusions, colour vision 
