@@ -1,5 +1,5 @@
 ---
-title: "Dataviz: An R package to create accessible and cohesive R plots for an edited research book"
+title: "dataviz: An R package to create accessible and cohesive R plots for an edited research book"
 author: "Jimmy Effendy"
 date: "7/11/2021"
 output: 
