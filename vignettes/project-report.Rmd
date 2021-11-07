@@ -1,8 +1,7 @@
 ---
-title: "Project Report"
-subtitle: "Automatic Visualisations Aesthetic Production for Multilevel Regression and Poststratification Book"
+title: "Dataviz: An R package to create accessible and cohesive R plots for an edited research book"
 author: "Jimmy Effendy"
-date: "13/10/2021"
+date: "7/11/2021"
 output: 
   bookdown::pdf_document2:
     extra_dependencies: "subfig"
