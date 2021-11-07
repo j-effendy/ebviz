@@ -50,7 +50,7 @@ theme_seagull <- function(){
       plot.subtitle = element_text(size = rel(1.1),
                                    margin = margin(0,0,0.5,0, unit = "cm"),
                                    hjust = 0),
-      plot.caption = element_text(size = rel(0.8),
+      plot.caption = element_text(size = rel(0.5),
                                   margin = margin(1,0,0,0, unit = "cm"),
                                   hjust = 1)
     )
@@ -107,8 +107,7 @@ theme_wombat <- function(){
       plot.subtitle = element_text(size = rel(1.1),
                                    margin = margin(0,0,0.5,0, unit = "cm"),
                                    hjust = 0),
-      plot.caption = element_text(size = rel(0.8),
-                                  margin = margin(1,0,0,0, unit = "cm"),
+      plot.caption = element_text(margin = margin(1,0,0,0, unit = "cm"),
                                   hjust = 1)
     )
 }

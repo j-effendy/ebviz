@@ -3,7 +3,9 @@ title: "Project Report"
 subtitle: "Automatic Visualisations Aesthetic Production for Multilevel Regression and Poststratification Book"
 author: "Jimmy Effendy"
 date: "13/10/2021"
-output: bookdown::pdf_document2
+output: 
+  bookdown::pdf_document2:
+    extra_dependencies: "subfig"
 bibliography: references.bib
 csl: apa.csl
 ---
@@ -527,9 +529,7 @@ and diverging palettes. Then, examples of palettes made from these strategies wi
 be assessed. Lastly, the report will show how colour schemes for 
 qualitative, sequential and diverging palettes are chosen for the project.
 
-### Chosen Qualitative Palettes
-
-```{r color-blind, fig.height=8, fig.cap="Colour palettes as seen by people with colour vision impairment. The first six colour palettes the palettes that were developed for this project. The last palette, Harmonic palette, is a colour palette from `pals` package."}
+```{r color-blind, fig.height=8, fig.cap="Colour palettes as seen by people with colour vision impairment. The first six colour palettes the palettes that were developed for this project. The last palette, Harmonic palette, is a colour palette from `pals` package.", fig.subcap=c("","","","","","",""), fig.ncol = 3, fig.align='center', out.width="75%", out.height="25%"}
 quokka_palette <- c("#8C01E6", "#93B1EB", "#AB313D", "#D6CA24")
 quoll_palette <- c('#8D5698', '#EFD36F', '#247A3E', '#17B0A8')
 seal_palette <- colorspace::sequential_hcl(7,
@@ -556,7 +556,6 @@ dolphin_palette <- colorspace::diverging_hcl(n = 7,
                                              rev = TRUE)
 
 # colorblind filter
-par(mfrow=c(4,2))
 pal.safe(quokka_palette, main = "Quokka Palette")
 pal.safe(quoll_palette, main = "Quoll Palette")
 pal.safe(seal_palette, main = "Seal Palette")
@@ -565,11 +564,9 @@ pal.safe(dingo_palette, main = "Dingo Palette")
 pal.safe(dolphin_palette, main = "Dolphin Palette")
 pal.safe(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
 ```
-\newpage
 
-```{r harmonic, fig.cap="HCL colour spectrum plot for Harmonic palette. This palette has constant luminance and chroma, but varying hues across the four colours."}
-specplot(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
-```
+
+### Chosen Qualitative Palettes
 
 One common strategy to choose this type of palette is by keeping chroma and luminance
 relatively constant, and hue varied; making all colours in the palette to balance 
@@ -577,7 +574,7 @@ towards the same grey [@zeileis2009escaping]. While this strategy is relatively
 simple, keeping chroma and luminance fixed may not be the best approach to 
 choose colour palette that are accessible.
 
-Figure \@ref(fig:harmonic) shows an example of a qualitative colour palette from 
+Panel (g) in figure \@ref(fig:specplot) shows an example of a qualitative colour palette from 
 `colorspace` package called harmonic. As shown in the figure, chroma
 and luminance remain constant, while the hue varies across the four colours.
 It is fair to say that this colour set works relatively well to show categorical 
@@ -589,14 +586,18 @@ harmonic palette. For instance, there are three colours that look similar as see
 by people with tritan colour-blindness. Moreover, this colour palette results in 
 implied ordering of different data group for people with visual impairment.
 
-```{r qualitative, fig.height=3, fig.cap="HCL colour spectrum plot for Quokka and Quoll palette. The hues, chroma, and luminance vary across the four colours for Quokka and Quoll palettes. These varying hues, chroma and luminance avoid natural ordering."}
-par(mfrow=c(1,2))
+```{r specplot, fig.height=3, fig.cap="HCL colour spectrum plot for colour palettes of choice. The first six colour palettes the palettes that were developed for this project. The last palette, Harmonic palette, is a colour palette from `pals` package.", fig.subcap=c("","","","","","",""), fig.ncol = 2,fig.align='center', out.width="50%", out.height="25%"}
 specplot(quokka_palette, main = "Quokka Palette")
 specplot(quoll_palette, main = "Quoll Palette")
+specplot(seal_palette, main = "Seal Palette")
+specplot(snake_palette, main = "Snake Palette")
+specplot(dingo_palette, main = "Dingo Palette")
+specplot(dolphin_palette, main = "Dolphin Palette")
+specplot(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
 ```
 
 The two qualitative colour palettes developed for the project are called 
-Quokka and Quoll palettes. Figure \@ref(fig:qualitative) shows 
+Quokka and Quoll palettes. Panel (a) and (b) in figure \@ref(fig:specplot) shows 
 the HCL colour spectrum plot for these palettes. In
 contrast with the Harmonic Palette, Quokka and Quoll palettes have differing 
 hues, chroma and luminance across all colours. As a result, each colour in
@@ -616,14 +617,8 @@ as inputs to `sequential_hcl` function to produce a set of sequential palette.
 The power transformation allows the chroma and luminance to increase from low
 values to high values in a nonlinear fashion.
 
-```{r sequential, fig.height=3, fig.cap="HCL colour spectrum plot for Seal and Snake palettes. These palettes range between two hues from darker to lighter shades (or vice versa)."}
-par(mfrow=c(1,2))
-specplot(seal_palette, main = "Seal Palette")
-specplot(snake_palette, main = "Snake Palette")
-```
-
 The two sequential palettes created for this project are Seal and
-Snake palettes. As shown in figure \@ref(fig:sequential),
+Snake palettes. As shown in panel (c) and (d) in figure \@ref(fig:specplot),
 these palettes use multi-hue schemes as opposed to single-hue schemes. Multi-hue
 palettes were chosen for the project as it provides better contrast between different
 values compared to a single-hue sequential palette [@harrower2003colorbrewer].
@@ -643,12 +638,6 @@ transformation (p1 and p2) for chroma and luminance [@zeileis2006choosing].
 These values will be taken as inputs to function `diverge_hcl()` to create a diverging 
 palette. It will automatically choose the neutral colour for the palette.
 
-```{r diverging, fig.height=3, fig.cap="HCL colour spectrum plot for Dingo and Dolphin palette. Similar to sequential palettes, these palettes range between two hues from darker to lighter shades. The only difference is that this palette has a neutral colour."}
-par(mfrow=c(1,2))
-specplot(dingo_palette, main = "Dingo Palette")
-specplot(dolphin_palette, main = "Dolphin Palette")
-```
-
 Three conditions need to be met by a diverging palette to avoid colour 
 confusions. Colour confusions are caused by naming confusions, colour vision 
 impairment, and simultaneous contrast confusion [@brewer1996guidelines]. 
@@ -662,7 +651,7 @@ prevented by avoiding selecting pairs of colours that are opposite in the colour
 wheel for diverging palettes [@brewer1996guidelines].
 
 Dingo and Dolphin palettes are diverging palettes developed for the project.
-These palettes are shown in figure \@ref(fig:diverging).
+These palettes are shown in panel (e) and (f) in figure \@ref(fig:specplot).
 Red/blue pairs and orange/blue hue pairs are chosen for Dingo and Dolphin
 palettes respectively as these pairs create no naming confusions and 
 simultaneous contrast confusions [@brewer1996guidelines]. Moreover, these 
