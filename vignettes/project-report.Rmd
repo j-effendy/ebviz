@@ -117,7 +117,7 @@ Tufte is to avoid the usage of chartjunk. Any decorations that do not provide
 new information to readers are considered to be chartjunk. This can easily cause 
 viewers to be confused or distracted from the data. Some examples of chartjunk 
 are moiré effect (the illusion of vibration caused by excessive patterns), 
-heavy grid lines, noisy background, a fake perspective (i.e. 3-D charts).
+heavy grid lines, noisy background, and a fake perspective (i.e. 3-D charts).
 
 Cleveland and McGill [-@cleveland1984graphical] conducted a study of effective
 data visualization based on graphical perception to investigate humans' ability 
@@ -173,15 +173,15 @@ $$
 Good graphical representations can be achieved by reducing non-data ink as this
 a way to maximize data-ink ratio [@tufte2001visual]. Graphical inks that 
 provide no new information about the underlying data are not beneficial to 
-readers and sometimes result graphical clutters. However, maximizing the 
+readers and sometimes result in graphical clutters. However, maximizing the 
 data-ink ratio needs to be done cautiously as components of the graph that 
 provide useful information can be removed by mistake.
 
 Design choices on data visualizations need to allow information to be presented in an
-organised fashion. For example, the colour of non-data components (axis, labels, 
-grid lines, borders) can be grey, and the data component can be brightly
+organised fashion. One option is to make the colour of non-data components (axis, labels, 
+grid lines, borders) to be grey, and the data component to be brightly
 coloured, making the data to be the focus of attention [@stone2006choosing]. 
-This will assist readers to better understand the roles and relationship between 
+This was found to assist readers to better understand the roles and relationship between 
 different elements of the visualizations.
 
 ## Potential Themes
@@ -196,7 +196,7 @@ g1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) +
 g1
 ```
 
-The defualt `ggplot2` theme is `theme_grey()`, with grey background and white 
+The default `ggplot2` theme is `theme_grey()`, with grey background and white 
 grid lines. These colour combinations reduces the contrast between the background 
 and grid lines and gives the data plots more value-added appearance 
 [@carr1994using]. Moreover, grey background allows the plot to have a similar
@@ -205,8 +205,8 @@ the flow of a text [@WickhamHadleygEGf].
 
 While having a grey background and white grid
 lines have their benefits, some steps can be made to improve the theme. As
-shown in figure \@ref(fig:scatter-grey), having a grey panel background  
-on top of a white plot background unnecessarily increase non-data components.
+shown in figure \@ref(fig:scatter-grey), having a grey panel background
+on top of a white plot background increases non-data components.
 In addition, having both major and minor grid lines distracts readers from the
 real data, and rarely needed as data visualizations are not meant to provide
 precise quantitative value [@few2005grid].
