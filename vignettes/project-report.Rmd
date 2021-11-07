@@ -7,6 +7,8 @@ output:
     extra_dependencies: "subfig"
 bibliography: references.bib
 csl: apa.csl
+header-includes:
+   - \usepackage{subfig}
 ---
 
 ```{r setup, include=FALSE}
@@ -563,8 +565,6 @@ pal.safe(dingo_palette, main = "Dingo Palette")
 pal.safe(dolphin_palette, main = "Dolphin Palette")
 pal.safe(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
 ```
-
-
 ### Chosen Qualitative Palettes
 
 One common strategy to choose this type of palette is by keeping chroma and luminance
@@ -585,6 +585,7 @@ harmonic palette. For instance, there are three colours that look similar as see
 by people with tritan colour-blindness. Moreover, this colour palette results in 
 implied ordering of different data group for people with visual impairment.
 
+
 ```{r specplot, fig.height=3, fig.cap="HCL colour spectrum plot for colour palettes of choice. The first six colour palettes the palettes that were developed for this project. The last palette, Harmonic palette, is a colour palette from `pals` package.", fig.subcap=c("","","","","","",""), fig.ncol = 2,fig.align='center', out.width="50%", out.height="25%"}
 specplot(quokka_palette, main = "Quokka Palette")
 specplot(quoll_palette, main = "Quoll Palette")
@@ -594,6 +595,7 @@ specplot(dingo_palette, main = "Dingo Palette")
 specplot(dolphin_palette, main = "Dolphin Palette")
 specplot(qualitative_hcl(4, palette = "harmonic"), main = "Harmonic Palette")
 ```
+
 
 The two qualitative colour palettes developed for the project are called 
 Quokka and Quoll palettes. Panel (a) and (b) in figure \@ref(fig:specplot) shows 
