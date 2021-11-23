@@ -219,6 +219,7 @@ for a wide range of plots. There are two potential themes that were developed fo
 ### Seagull Theme
 
 ```{r theme-comparison, fig.cap="Comparison between `theme_seagull` (left), `theme_wombat` (middle), and `theme_bw` (right). The rows represent different figure types from a data example from R. Basic colour palette from R is used to show categorical variables for this example. In the next section, we will discuss accessible colour palettes that are developed for the project.", fig.height=13, fig.width=11}
+
 w1 <- ggplot(mtcars, aes(mpg,disp,color=factor(carb))) + 
   geom_point(size=3) + 
   labs(title="Scatter Plot",
