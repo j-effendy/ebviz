@@ -1,23 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# mrpviz
+# ebviz
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of `mrpviz` is to assist authors of a Multiple Regression
+The goal of `ebviz` is to assist authors of a Multiple Regression
 Poststratification edited book in creating visualizations that are
 readable, cohesive, and accessible.
 
 ## Installation
 
-You can install the `mrpviz` package from [GitHub](https://github.com/)
+You can install the `ebviz` package from [GitHub](https://github.com/)
 with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("j-effendy/mrpviz")
+devtools::install_github("j-effendy/ebviz")
 ```
 
 ## Example
@@ -27,12 +27,12 @@ using `mtcars` and `economics_long` dataset:
 
 <img src="man/figures/README-theme-1.png" width="100%" />
 
-These are basic plot examples of `mrpviz` colour palettes using `mtcars`
+These are basic plot examples of `ebviz` colour palettes using `mtcars`
 dataset:
 
     #> 
     #> Attaching package: 'dataviz'
-    #> The following objects are masked from 'package:mrpviz':
+    #> The following objects are masked from 'package:ebviz':
     #> 
     #>     theme_seagull, theme_wombat
 
