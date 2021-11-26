@@ -1,3 +1,3 @@
-test_that("scale_colour_dataviz", {
-  expect_warning(scale_colour_dataviz("kangaroo"))
+test_that("scale_colour_mrpviz", {
+  expect_warning(scale_colour_mrpviz("kangaroo"))
 })

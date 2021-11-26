@@ -1,5 +1,5 @@
 ---
-title: "dataviz: An R package to create accessible and cohesive R plots for an edited research book"
+title: "mrpviz: An R package to create accessible and cohesive R plots for an edited research book"
 author: "Jimmy Effendy"
 date: "7/11/2021"
 output: 
@@ -15,7 +15,7 @@ header-includes:
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(ggplot2)
 library(tidyverse)
-library(dataviz)
+library(mrpviz)
 library(colorspace)
 library(patchwork)
 library(pals)
@@ -34,7 +34,7 @@ The project contributes to a ggplot theme and accessible colour schemes. The
 theme is developed based on Tufte's principle of data graphical excellence.
 In addition, the project also develops two colour schemes for each type of
 colour palettes: qualitative, sequential, and diverging palettes. These theme
-and colour palettes are bundled together in an R package called `dataviz`.
+and colour palettes are bundled together in an R package called `mrpviz`.
 An R package is used for this project as authors can easily install the package
 and use its functions for their research.
 
@@ -65,7 +65,7 @@ book. Firstly, a ggplot theme needs to be developed in a way that allows readers
 to extract information from the visualizations as much as possible. In addition
 to theme, various colour scales that are accessible need to be developed for 
 different data types (e.g. categorical and numerical information). The theme
-and colour scales will be wrapped in an R package called `dataviz`. The R package
+and colour scales will be wrapped in an R package called `mrpviz`. The R package
 contains the following items:
 
 * Function for the theme and colour scales.
@@ -78,7 +78,7 @@ the project. Next, the project will explore the theory behind colour scales in
 data visualizations, and describe the methods of choosing colour palettes for
 the project. In the fourth section, the report will explain how the theme
 and colour schemes will be wrapped in an R package. To put it briefly, the
-report contributes themes, colour schemes, and a package called `dataviz`.
+report contributes themes, colour schemes, and a package called `mrpviz`.
 
 \newpage
 
@@ -214,7 +214,7 @@ precise quantitative value [@few2005grid].
 A ggplot theme is developed for this project that is not only based on 
 Tufte principles of data graphics, but also to create a theme that is suitable 
 for a wide range of plots. There are two potential themes that were developed for 
-`dataviz`: `theme_seagull()` and `theme_wombat()`.
+`mrpviz`: `theme_seagull()` and `theme_wombat()`.
 
 ### Seagull Theme
 
@@ -323,7 +323,7 @@ that minimizes non-data components while still preserving light coloured grid li
 
 Side by side comparison of scatter plots, bar charts, and line charts between
 the three themes can be found in figure \@ref(fig:theme-comparison). One of 
-the differences between `dataviz` potential themes and `theme_bw()` is the size
+the differences between `mrpviz` potential themes and `theme_bw()` is the size
 of the text. The axis title, plot title, subtitle, and caption with 
 `theme_seagull()` and `theme_wombat()` are easier to read in comparison to
 `theme_bw()`. Secondly, the legend position is located on the bottom of the
@@ -672,7 +672,7 @@ editors of the research book to create visualizations that are readable,
 cohesive, and accessible. The solution needs to be easy to use so that it
 does not disrupt authors' workflow. To achieve this, R code necessary
 to create the chosen `ggplot2` [@ggplot2] theme and colour schemes will be bundled in an R 
-package called `dataviz`. R packages are extensions to R that can comprise of 
+package called `mrpviz`. R packages are extensions to R that can comprise of 
 codes, data, documentation, and tests [@wickham2015r]. 
 
 One of the reasons for creating an R package for this project is because of the
@@ -689,27 +689,27 @@ using an R package will allow us to achieve one of the aims of the project:
 to provide a solution that causes minimal disruption to authors' work.
 
 For users to be able to easily access an R package, it needs to be stored in a 
-repository. For this project, the `dataviz` package will be stored in GitHub.
+repository. For this project, the `mrpviz` package will be stored in GitHub.
 GitHub is a popular choice for a repository as it has the integration with git, 
 a version control software. Version control records changes applied to the 
 package to a file. This allows user to recall specific versions of the package
 at later time [@loeliger2012version]. An alternate option to GitHub is 
 Comprehensive R Archive Network (CRAN). CRAN, however, is not suitable for this 
-package as `dataviz` has a fairly small scope and is intended for a small group 
+package as `mrpviz` has a fairly small scope and is intended for a small group 
 of people (i.e. authors of the MRP research book). CRAN is usually a repository 
 used for more complex R packages intended for large group of people.
 
-In the next section, the report will discuss how the `dataviz` package was 
+In the next section, the report will discuss how the `mrpviz` package was 
 created. It will discuss each component of the package, and what tools 
 were used in developing the package.
 
-## `dataviz` Components
+## `mrpviz` Components
 
 One of the most important components of a package is the R code. One firm
 rule for an R package is that its R functions need to be stored in R scripts 
-[@wickham2015r]. Following this rule, the `dataviz` has its R code in  R 
+[@wickham2015r]. Following this rule, the `mrpviz` has its R code in  R 
 scripts, which are stored in `R` directory. The chosen colour palettes can be 
-accessed from the `scale_colour_dataviz` and `scale_fill_dataviz` functions which
+accessed from the `scale_colour_mrpviz` and `scale_fill_mrpviz` functions which
 are stored in `colour.R`. These functions take the name of the palette as an 
 input (e.g. quokka). The ggplot theme chosen for the project can be used by
 function `theme_wombat()` which is stored in an R script called `theme.R`. 
@@ -731,9 +731,9 @@ common uses that a user might use. In addition, testing ensures error and warnin
 messages to appear when required (and not appear when they are not supposed to).
 In other words, testing provide protection and quality assurance for users.
 We use the packages `testthat` [@testthat] and `usethis` [@usethis] to write 
-the tests for the `dataviz` package. One example of a test that was used for 
+the tests for the `mrpviz` package. One example of a test that was used for 
 this package is one that ensures that users use valid input when using 
-`scale_colour_dataviz` and `scale_fill_dataviz`.
+`scale_colour_mrpviz` and `scale_fill_mrpviz`.
 
 # Conclusions and Limitations
 

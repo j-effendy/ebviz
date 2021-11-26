@@ -24,11 +24,11 @@ dolphin_palette <- colorspace::diverging_hcl(n = 7,
                                              power = c(0.5, 2),
                                              rev = TRUE)
 
-#' Qualitative, sequential, and diverging color scales from dataviz
+#' Qualitative, sequential, and diverging color scales from mrpviz
 #'
 #' @param palette
 #'
-#' @description The dataviz color scales provide accessible color schemes
+#' @description The mrpviz color scales provide accessible color schemes
 #' for various data types. Quoll and Quokka palettes are qualitative palettes,
 #' Seal and Snake palettes are sequential palettes, and Dingo and Dolphin
 #' palettes are diverging palettes.
@@ -43,36 +43,36 @@ dolphin_palette <- colorspace::diverging_hcl(n = 7,
 #' # Quokka palette
 #' ggplot(mtcars, aes(mpg,disp,color=factor(vs))) +
 #'     geom_point(size=3) +
-#'     scale_colour_dataviz("quokka")
+#'     scale_colour_mrpviz("quokka")
 #'
 #' # Quoll palette
 #' ggplot(mtcars, aes(mpg,disp,color=factor(vs))) +
 #'     geom_point(size=3) +
-#'     scale_colour_dataviz("quoll")
+#'     scale_colour_mrpviz("quoll")
 #'
 #' # Seal palette
 #' ggplot(mtcars, aes(mpg,disp,color=mpg)) +
 #'     geom_point(size=3) +
 #'     geom_point(size=3) +
-#'     scale_colour_dataviz("seal")
+#'     scale_colour_mrpviz("seal")
 #'
 #' # Snake palette
 #' ggplot(mtcars, aes(mpg,disp,color=mpg)) +
 #'     geom_point(size=3) +
 #'     geom_point(size=3) +
-#'     scale_colour_dataviz("snake")
+#'     scale_colour_mrpviz("snake")
 #'
 #' # Dingo palette
 #' ggplot(mtcars, aes(mpg,disp,color=mpg)) +
 #'     geom_point(size=3) +
-#'     scale_colour_dataviz("dingo")
+#'     scale_colour_mrpviz("dingo")
 #'
 #' # Dolphin palette
 #' ggplot(mtcars, aes(mpg,disp,color=mpg)) +
 #'     geom_point(size=3) +
-#'     scale_colour_dataviz("dolphin")
+#'     scale_colour_mrpviz("dolphin")
 #'
-scale_colour_dataviz <- function(palette){
+scale_colour_mrpviz <- function(palette){
   if (palette == "quokka"){
     ggplot2::scale_color_manual(values = quokka_palette)
   } else if (palette == "quoll") {
@@ -91,15 +91,15 @@ scale_colour_dataviz <- function(palette){
   }
 }
 
-#' @rdname scale_colour_dataviz
-scale_color_dataviz <- scale_colour_dataviz
+#' @rdname scale_colour_mrpviz
+scale_color_mrpviz <- scale_colour_mrpviz
 
 
-#' Qualitative, sequential, and diverging color scales from dataviz
+#' Qualitative, sequential, and diverging color scales from mrpviz
 #'
 #' @param palette
 #'
-#' @description The dataviz color scales provide accessible color schemes
+#' @description The mrpviz color scales provide accessible color schemes
 #' for various data types. Quoll and Quokka palettes are qualitative palettes,
 #' Seal and Snake palettes are sequential palettes, and Dingo and Dolphin
 #' palettes are diverging palettes.
@@ -114,34 +114,34 @@ scale_color_dataviz <- scale_colour_dataviz
 #' # Quokka palette
 #' ggplot(mpg, aes(class)) +
 #' geom_bar(aes(fill = drv)) +
-#' scale_fill_dataviz("quokka")
+#' scale_fill_mrpviz("quokka")
 #'
 #' # Quoll palette
 #' ggplot(mpg, aes(class)) +
 #' geom_bar(aes(fill = drv)) +
-#' scale_fill_dataviz("quoll")
+#' scale_fill_mrpviz("quoll")
 #'
 #' # Seal palette
 #' ggplot(faithfuld) +
 #' geom_tile(aes(eruptions, waiting, fill = density)) +
-#' scale_fill_dataviz("seal")
+#' scale_fill_mrpviz("seal")
 #'
 #' # Snake palette
 #' ggplot(faithfuld) +
 #' geom_tile(aes(eruptions, waiting, fill = density)) +
-#' scale_fill_dataviz("snake")
+#' scale_fill_mrpviz("snake")
 #'
 #' # Dingo palette
 #' ggplot(faithfuld) +
 #' geom_tile(aes(eruptions, waiting, fill = density)) +
-#' scale_fill_dataviz("dingo")
+#' scale_fill_mrpviz("dingo")
 #'
 #' # Dolphin palette
 #' ggplot(faithfuld) +
 #' geom_tile(aes(eruptions, waiting, fill = density)) +
-#' scale_fill_dataviz("dolphin")
+#' scale_fill_mrpviz("dolphin")
 #'
-scale_fill_dataviz <- function(palette){
+scale_fill_mrpviz <- function(palette){
   if (palette == "quokka"){
     ggplot2::scale_fill_manual(values = quokka_palette)
   } else if (palette == "quoll") {

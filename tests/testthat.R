@@ -1,4 +1,4 @@
 library(testthat)
-library(dataviz)
+library(mrpviz)
 
-test_check("dataviz")
+test_check("mrpviz")
