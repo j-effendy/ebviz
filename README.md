@@ -30,10 +30,4 @@ using `mtcars` and `economics_long` dataset:
 These are basic plot examples of `ebviz` colour palettes using `mtcars`
 dataset:
 
-    #> 
-    #> Attaching package: 'dataviz'
-    #> The following objects are masked from 'package:ebviz':
-    #> 
-    #>     theme_seagull, theme_wombat
-
 <img src="man/figures/README-colour-1.png" width="100%" />

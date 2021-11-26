@@ -96,7 +96,7 @@ s3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
 These are basic plot examples of `ebviz` colour palettes using 
 `mtcars` dataset:
 
-```{r colour, echo=FALSE, fig.width=10, fig.height=15}
+```{r colour, echo=FALSE, fig.width=10, fig.height=15, message=FALSE}
 library(dataviz)
 library(ggplot2)
 library(patchwork)
