@@ -1,4 +1,4 @@
-#' @title ggplot2 theme from mrpviz
+#' @title ggplot2 theme from ebviz
 #'
 #' @description
 #' This is a complete theme for ggplot2. This is built based on Tufte's principles
@@ -56,7 +56,7 @@ theme_seagull <- function(){
     )
 }
 
-#' @title ggplot2 theme from mrpviz
+#' @title ggplot2 theme from ebviz
 #'
 #' @description
 #' This is a complete theme for ggplot2. This is built based on Tufte's principles

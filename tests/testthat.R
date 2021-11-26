@@ -1,4 +1,4 @@
 library(testthat)
-library(mrpviz)
+library(ebviz)
 
-test_check("mrpviz")
+test_check("ebviz")

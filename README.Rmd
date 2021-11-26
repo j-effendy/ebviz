@@ -13,21 +13,21 @@ knitr::opts_chunk$set(
 )
 ```
 
-# mrpviz
+# ebviz
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of `mrpviz` is to assist authors of a Multiple Regression Poststratification
+The goal of `ebviz` is to assist authors of a Multiple Regression Poststratification
 edited book in creating visualizations that are readable, cohesive, and accessible.
 
 ## Installation
 
-You can install the `mrpviz` package from [GitHub](https://github.com/) with:
+You can install the `ebviz` package from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("j-effendy/mrpviz")
+devtools::install_github("j-effendy/ebviz")
 ```
 ## Example
 
@@ -36,7 +36,7 @@ These are basic plot examples of `theme_seagull()` and `theme_wombat()` using
 
 ```{r theme, echo=FALSE, fig.width=10, fig.height=15}
 
-library(mrpviz)
+library(ebviz)
 library(ggplot2)
 library(patchwork)
 
@@ -93,7 +93,7 @@ s3 <- ggplot(economics_long, aes(date, value01, colour = variable)) +
 (s1 + w1) / (s2 + w2) / (s3 + w3)
 ```
 
-These are basic plot examples of `mrpviz` colour palettes using 
+These are basic plot examples of `ebviz` colour palettes using 
 `mtcars` dataset:
 
 ```{r colour, echo=FALSE, fig.width=10, fig.height=15}

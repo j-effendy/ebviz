@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme.R
 \name{theme_seagull}
 \alias{theme_seagull}
-\title{ggplot2 theme from mrp_ebviz}
+\title{ggplot2 theme from ebviz}
 \usage{
 theme_seagull()
 }
